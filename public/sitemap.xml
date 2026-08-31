@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Core Main Pages -->
+  <url>
+    <loc>https://shreyachaudharymakeup.com/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://shreyachaudharymakeup.com/IMG_0398.JPEG</image:loc>
+      <image:title>Shreya Chaudhary Makeup Artist with Real Bride in Meerut</image:title>
+      <image:caption>Signature luxury bridal HD makeup in Meerut &amp; Delhi NCR by Shreya Chaudhary</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://shreyachaudharymakeup.com/IMG_5032.JPG.jpeg</image:loc>
+      <image:title>Royal Crimson &amp; Gold Couture Bridal Look</image:title>
+      <image:caption>Flawless 3D HD bridal makeup on location in Meerut</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/services</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/services/bridal-makeup</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://shreyachaudharymakeup.com/IMG_5032.JPG.jpeg</image:loc>
+      <image:title>Bridal Makeup Artist in Meerut - Shreya Chaudhary</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/services/engagement-makeup</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://shreyachaudharymakeup.com/IMG_0537.JPG.jpeg</image:loc>
+      <image:title>Engagement Makeup in Meerut - Shreya Chaudhary</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/services/party-makeup</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://shreyachaudharymakeup.com/IMG_4411.JPG.jpeg</image:loc>
+      <image:title>Party and Reception Makeup in Meerut - Shreya Chaudhary</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/portfolio</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/portfolio/bridal</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/portfolio/engagement</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/portfolio/party</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/about</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/why-shreya</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/packages</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/brands</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/testimonials</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/contact</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Geographic / Regional Location Hubs -->
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations/meerut</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations/noida</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations/greater-noida</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations/ghaziabad</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations/muzaffarnagar</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations/shamli</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations/delhi-ncr</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Policy Pages -->
+  <url>
+    <loc>https://shreyachaudharymakeup.com/booking-policy</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://shreyachaudharymakeup.com/privacy-policy</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

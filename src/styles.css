@@ -1,0 +1,208 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Shreya Chaudhary Makeup — design system.
+ * Palette derived from the brand monogram: deep charcoal, warm ivory,
+ * muted blush, soft peach, champagne. All colors in oklch.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 10px);
+
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-charcoal: var(--charcoal);
+  --color-ivory: var(--ivory);
+  --color-blush: var(--blush);
+  --color-peach: var(--peach);
+  --color-champagne: var(--champagne);
+  --color-ink: var(--ink);
+}
+
+:root {
+  --radius: 0.125rem;
+
+  --charcoal: oklch(0.22 0.008 30);
+  --ink: oklch(0.16 0.006 30);
+  --ivory: oklch(0.978 0.008 78);
+  --blush: oklch(0.76 0.075 8);
+  --peach: oklch(0.855 0.072 62);
+  --champagne: oklch(0.925 0.026 78);
+
+  --background: oklch(0.978 0.008 78);
+  --foreground: oklch(0.22 0.008 30);
+  --card: oklch(0.992 0.004 78);
+  --card-foreground: oklch(0.22 0.008 30);
+  --popover: oklch(0.992 0.004 78);
+  --popover-foreground: oklch(0.22 0.008 30);
+  --primary: oklch(0.22 0.008 30);
+  --primary-foreground: oklch(0.978 0.008 78);
+  --secondary: oklch(0.945 0.016 70);
+  --secondary-foreground: oklch(0.22 0.008 30);
+  --muted: oklch(0.945 0.014 70);
+  --muted-foreground: oklch(0.48 0.014 40);
+  --accent: oklch(0.855 0.072 62);
+  --accent-foreground: oklch(0.22 0.008 30);
+  --destructive: oklch(0.55 0.19 25);
+  --destructive-foreground: oklch(0.978 0.008 78);
+  --border: oklch(0.885 0.014 70);
+  --input: oklch(0.885 0.014 70);
+  --ring: oklch(0.76 0.075 8);
+}
+
+.dark {
+  --background: oklch(0.16 0.006 30);
+  --foreground: oklch(0.97 0.008 78);
+  --card: oklch(0.22 0.008 30);
+  --card-foreground: oklch(0.97 0.008 78);
+  --popover: oklch(0.22 0.008 30);
+  --popover-foreground: oklch(0.97 0.008 78);
+  --primary: oklch(0.97 0.008 78);
+  --primary-foreground: oklch(0.16 0.006 30);
+  --secondary: oklch(0.26 0.009 30);
+  --secondary-foreground: oklch(0.97 0.008 78);
+  --muted: oklch(0.26 0.009 30);
+  --muted-foreground: oklch(0.74 0.014 50);
+  --accent: oklch(0.855 0.072 62);
+  --accent-foreground: oklch(0.16 0.006 30);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.76 0.075 8);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+  }
+
+  ::selection {
+    background: var(--color-peach);
+    color: var(--color-charcoal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-blush);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility rule-line {
+  &::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 1px;
+    margin-top: 1.25rem;
+    background: var(--color-blush);
+  }
+}
+
+@utility reveal {
+  animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@utility animate-marquee-fast {
+  animation: marquee 18s linear infinite;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

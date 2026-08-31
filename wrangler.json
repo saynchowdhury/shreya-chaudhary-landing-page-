@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shreya-chaudhary-makeup",
+  "pages_build_output_dir": "dist/client",
+  "compatibility_date": "2026-08-31",
+  "compatibility_flags": ["nodejs_compat"]
+}
