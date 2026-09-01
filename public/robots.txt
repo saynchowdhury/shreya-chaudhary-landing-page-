@@ -2,25 +2,32 @@
 
 User-agent: *
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 # AI & LLM Search Engine Crawlers (AEO)
 User-agent: GPTBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: PerplexityBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: ClaudeBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: Google-Extended
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: Applebot-Extended
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: CCBot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 # Search Engine Crawlers
 User-agent: Googlebot
