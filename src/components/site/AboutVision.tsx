@@ -111,7 +111,7 @@ export function AboutVision() {
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-5 border-t border-charcoal/10 pt-6">
               <div className="flex items-center gap-3">
                 <img
-                  src="/shreya chaudharycolorful monogram without bg.png"
+                  src="/shreya-chaudhary-monogram.png"
                   alt="Shreya Chaudhary monogram"
                   width={40}
                   height={40}

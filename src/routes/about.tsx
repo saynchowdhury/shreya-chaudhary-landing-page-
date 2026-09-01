@@ -66,7 +66,7 @@ function AboutPage() {
             </div>
             <div className="mt-8 flex items-center gap-4">
               <img
-                src="/shreya chaudharycolorful monogram without bg.png"
+                src="/shreya-chaudhary-monogram.png"
                 alt="Shreya Chaudhary Monogram"
                 width={56}
                 height={56}

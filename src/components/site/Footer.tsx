@@ -14,7 +14,7 @@ export function Footer() {
           <div className="flex flex-col space-y-4">
             <div className="flex items-center gap-3.5">
               <img
-                src="/shreya chaudharycolorful logo with dark bg (1).png"
+                src="/shreya-chaudhary-logo.png"
                 alt="Shreya Chaudhary Makeup logo"
                 width={52}
                 height={52}

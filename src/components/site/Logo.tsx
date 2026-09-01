@@ -13,7 +13,7 @@ export function Logo({
   className?: string;
   tone?: "dark" | "light";
 }) {
-  const logoSrc = "/shreya chaudharycolorful logo with dark bg (1).png";
+  const logoSrc = "/shreya-chaudhary-logo.png";
 
   return (
     <Link
