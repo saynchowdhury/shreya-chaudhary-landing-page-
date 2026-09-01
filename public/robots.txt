@@ -1,48 +1,84 @@
-# Robots.txt for Shreya Chaudhary Makeup
+# ==============================================================================
+# ROBOTS.TXT FOR SHREYA CHAUDHARY MAKEUP
+# ==============================================================================
+# This configuration is optimized for Agent-Actionable discovery (AEO), 
+# traditional Search Engine Optimization (SEO), and bot protection.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# GLOBAL CONTENT SIGNALS (AI & RAG PREFERENCES)
+# ------------------------------------------------------------------------------
+# Directs AI models on how to treat the site's content:
+# ai-train=no : Do not use our proprietary images/text to train base models.
+# search=yes  : Allow indexing for AI-generated search results (e.g., SearchGPT).
+# ai-input=yes: Allow agents to read content for RAG to assist human users.
 Content-Signal: ai-train=no, search=yes, ai-input=yes
 
+# ------------------------------------------------------------------------------
+# 1. AI AGENTS, LLMs, & AEO DISCOVERY (Explicitly Allowed)
+# ------------------------------------------------------------------------------
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Omgilibot
+User-agent: Omgili
+User-agent: anthropic-ai
+User-agent: Cohere-training
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /pricing.md
+
+# ------------------------------------------------------------------------------
+# 2. MAJOR SEARCH ENGINES & SOCIAL CRAWLERS (Explicitly Allowed)
+# ------------------------------------------------------------------------------
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Video
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Slurp
+User-agent: YandexBot
+User-agent: Twitterbot
+User-agent: facebookexternalhit
+User-agent: LinkedInBot
+User-agent: Pinterestbot
+Allow: /
+
+# ------------------------------------------------------------------------------
+# 3. GLOBAL FALLBACK RULES
+# ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
-# AI & LLM Search Engine Crawlers (AEO)
-User-agent: GPTBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
+# Block internal Cloudflare diagnostic paths
+Disallow: /cdn-cgi/
+# Block any potential future API or backend routes from being indexed
+Disallow: /api/
+Disallow: /_next/
+Disallow: /_worker.js/
 
-User-agent: PerplexityBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
+# ------------------------------------------------------------------------------
+# 4. AGGRESSIVE SCRAPERS & SPAM BOTS (Blocked to save bandwidth)
+# ------------------------------------------------------------------------------
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: MJ12bot
+User-agent: DotBot
+User-agent: PetalBot
+User-agent: BLEXBot
+User-agent: DataForSeoBot
+User-agent: Barkrowler
+User-agent: MegaIndex.ru
+User-agent: SeznamBot
+Disallow: /
 
-User-agent: ClaudeBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
-User-agent: Google-Extended
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
-User-agent: Applebot-Extended
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
-User-agent: CCBot
-Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
-# Search Engine Crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-# XML Sitemap
+# ------------------------------------------------------------------------------
+# SITEMAP DISCOVERY
+# ------------------------------------------------------------------------------
 Sitemap: https://shreyachaudharymakeup.com/sitemap.xml
