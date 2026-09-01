@@ -20,6 +20,13 @@ export default defineConfig({
       preset: process.env.NITRO_PRESET || "cloudflare_pages",
       compressPublicAssets: true,
       minify: true,
+      routeRules: {
+        "/**": {
+          headers: {
+            "Link": '</llms.txt>; rel="describedby"; type="text/plain", </.well-known/llms.txt>; rel="describedby"; type="text/plain", </sitemap.xml>; rel="sitemap"; type="application/xml"',
+          },
+        },
+      },
     }),
     viteReact(),
   ],
