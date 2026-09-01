@@ -8,10 +8,10 @@
   },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node -e \"const fs=require('fs'); if(fs.existsSync('dist/_worker.js/wrangler.json')) fs.unlinkSync('dist/_worker.js/wrangler.json');\"",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
-    "deploy": "vite build && wrangler pages deploy dist --project-name=shreya-chaudhary-makeup --branch=main",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=shreya-chaudhary-makeup --branch=main",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
