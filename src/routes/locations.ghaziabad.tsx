@@ -23,7 +23,7 @@ const ghaziabadFaqs = [
   {
     question: "What is included in the Ghaziabad bridal makeup package?",
     answer:
-      "The bridal package (₹15,000) includes full 3D HD bridal makeup, luxury skincare prep, on-location hair styling, floral/veil pinning, and jewelry/dupatta draping in one sitting.",
+      "The bridal package (₹15,000) includes full HD bridal makeup, luxury skincare prep, on-location hair styling, floral/veil pinning, and jewelry/dupatta draping in one sitting.",
   },
   {
     question: "How do I secure my wedding date for Ghaziabad?",

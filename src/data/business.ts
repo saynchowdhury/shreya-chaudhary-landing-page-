@@ -18,7 +18,7 @@ export const business = {
   instagramHandle: "@shreyachaudharymakeup",
   instagramUrl: "https://www.instagram.com/shreyachaudharymakeup/?hl=en",
   /** Google My Business listing & review link */
-  googleMyBusinessUrl: "https://share.google/oDIkgvCN9vudZt2XW",
+  googleMyBusinessUrl: "https://share.google/0MU1hPOtXvFMT4SeZ",
   /** JustDial verified directory profile */
   justdialUrl: "https://www.justdial.com/Meerut/Shreya-Chaudhary-Makeup-Konark-Colony/9999PX121-X121-241211201125-I7A2_BZDET",
   /** WedMeGood verified bridal profile */
@@ -43,7 +43,7 @@ export const business = {
   engagementBenefitNote:
     "Ask about our engagement booking benefits and available add-ons.",
   pricingNote:
-    "Prices and availability are subject to booking details and location requirements.",
+    "Published prices exclude on-location travel expenses. Travel charges are calculated on actuals based on venue distance.",
 } as const;
 
 export const locationLabel = `${business.city}, ${business.state}`;

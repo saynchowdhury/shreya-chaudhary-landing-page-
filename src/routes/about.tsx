@@ -58,7 +58,7 @@ function AboutPage() {
                 With <strong>6+ years of professional bridal artistry</strong>, Shreya Chaudhary has established a reputation for weightless, skin-like HD finishes that look just as luminous in person as they do in high-definition 4K wedding cinematography.
               </p>
               <p>
-                We reject the one-size-fits-all salon assembly line. We custom-blend base shades to match your exact undertone using strictly authentic international cosmetics (NARS, Huda Beauty, Rare Beauty, MAC, Milani, Forever 52, PAC, Recode).
+                We reject the one-size-fits-all salon assembly line. We custom-blend base shades to match your exact undertone using strictly authentic international cosmetics (NARS, Charlotte Tilbury, Huda Beauty, Laura Mercier, Rare Beauty, MAC, Milani, Forever 52, PAC, Recode).
               </p>
               <p>
                 Every bridal booking includes on-location hair styling, jewelry setting, dupatta draping, and calm, unhurried attention in your bridal suite.

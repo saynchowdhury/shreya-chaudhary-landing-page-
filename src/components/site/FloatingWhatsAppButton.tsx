@@ -8,7 +8,7 @@ export function FloatingWhatsAppButton() {
   );
 
   return (
-    <aside aria-label="Bridal Consultation on WhatsApp" className="fixed bottom-6 right-6 z-40 hidden md:block">
+    <aside aria-label="Bridal Consultation on WhatsApp" className="fixed bottom-8 right-8 z-40 hidden lg:block">
       <a
         href={whatsappUrl}
         target="_blank"

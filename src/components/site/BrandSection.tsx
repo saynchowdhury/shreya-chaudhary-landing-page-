@@ -7,22 +7,25 @@ export function BrandList() {
         return (
           <li
             key={brand.name}
-            className="group flex flex-col justify-between rounded-lg border border-charcoal/15 bg-card p-6 shadow-xs transition-all hover:border-charcoal/40 hover:shadow-md"
+            className="group flex flex-col justify-between rounded-xl border border-charcoal/15 bg-card p-6 shadow-xs transition-all hover:border-charcoal/40 hover:shadow-lg"
           >
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[0.62rem] uppercase tracking-[0.2em] font-semibold text-blush">
-                  {brand.category}
-                </span>
-              </div>
-              <div className="h-10 flex items-center">
-                {brand.logo ? (
-                  <img src={brand.logo} alt={`${brand.name} logo`} className="h-8 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
-                ) : (
-                  <h3 className="font-display text-2xl text-charcoal font-medium">
-                    {brand.name}
-                  </h3>
-                )}
+              <span className="text-[0.62rem] uppercase tracking-[0.2em] font-bold text-blush">
+                {brand.category}
+              </span>
+
+              {/* Brand Logo + Name */}
+              <div className="mt-4 flex items-center gap-3.5">
+                <div className="flex h-12 w-20 items-center justify-center overflow-hidden rounded-lg bg-white border border-charcoal/8 p-2 shadow-xs">
+                  <img
+                    src={brand.logo}
+                    alt={`${brand.name} official logo`}
+                    className="h-full w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="font-display text-lg text-charcoal font-bold tracking-tight">
+                  {brand.name}
+                </h3>
               </div>
             </div>
             <p className="mt-4 border-t border-charcoal/10 pt-3 text-xs leading-relaxed text-muted-foreground">
@@ -34,4 +37,3 @@ export function BrandList() {
     </ul>
   );
 }
-

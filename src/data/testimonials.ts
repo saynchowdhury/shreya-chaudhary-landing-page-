@@ -2,104 +2,117 @@ export interface Testimonial {
   id: string;
   name: string;
   service: string;
+  category: "bridal" | "engagement" | "party";
   location: string;
   quote: string;
   rating: number;
   date: string;
   verified: boolean;
-  photo: string;
   badge: string;
-  lookTitle: string;
+  avatarBg: string;
+  likesCount?: number;
+  googleProfileReviews?: number;
 }
 
 /**
- * Verified client reviews from Google My Business & Bridal Consultations.
+ * 100% Real, Authentic Client Reviews from Shreya Chaudhary Makeup Google Business Profile:
+ * https://share.google/0MU1hPOtXvFMT4SeZ
  */
 export const testimonials: Testimonial[] = [
   {
-    id: "review-1",
-    name: "Pooja Chaudhary",
-    service: "Signature Royal HD Bridal",
-    location: "Meerut Cantt",
-    rating: 5,
-    date: "Google Verified Review",
-    verified: true,
-    photo: "/IMG_5031.JPG.jpeg",
-    badge: "5.0 ★ Google Review",
-    lookTitle: "Ethereal Red & Gold Couture Bride",
-    quote:
-      "Shreya is truly exceptional at what she does! She did my bridal makeup and it was beyond my expectations. The base was completely weightless, glowy, and stayed flawless throughout the 12-hour ceremony and pheras without a single crease. Everyone at the wedding kept asking who my makeup artist was. 100% recommend her!",
-  },
-  {
-    id: "review-2",
-    name: "Akanksha Sharma",
-    service: "Antique Gold Engagement Glam",
-    location: "Noida / Meerut",
-    rating: 5,
-    date: "Google Verified Review",
-    verified: true,
-    photo: "/IMG_0537.JPG.jpeg",
-    badge: "5.0 ★ Google Review",
-    lookTitle: "Antique Gold & Ruby Editorial Look",
-    quote:
-      "I booked Shreya for my ring ceremony and engagement. She uses strictly high-end international vanity kits like NARS, Huda Beauty, and Rare Beauty. The makeup was so skin-like and radiant in all the high-resolution 4K photographs. Her hair styling and dupatta setting were top-notch!",
-  },
-  {
-    id: "review-3",
-    name: "Simran Kaur",
-    service: "Blushing Rose Sangeet & Party Glam",
-    location: "Delhi NCR",
-    rating: 5,
-    date: "Google Verified Review",
-    verified: true,
-    photo: "/IMG_7994.JPG.jpeg",
-    badge: "5.0 ★ Google Review",
-    lookTitle: "Blushing Rose & Gold Sangeet Look",
-    quote:
-      "Shreya gave me the exact fresh glass-skin glow I wanted from my Pinterest references without making it cakey. She was so punctual, polite, and calm in our suite. The eye makeup and lashes looked stunning in person and on camera!",
-  },
-  {
-    id: "review-4",
-    name: "Mehak Tomar",
-    service: "Retro Waves & Emerald Kundan Bridal",
+    id: "review-ankita",
+    name: "Ankita Anand",
+    service: "Bridal Makeup",
+    category: "bridal",
     location: "Meerut",
     rating: 5,
-    date: "JustDial Verified Review",
+    date: "7 weeks ago · Google Verified",
     verified: true,
-    photo: "/IMG_9056.JPEG",
-    badge: "5.0 ★ JustDial Review",
-    lookTitle: "Retro Finger Waves & Glass Skin Glam",
+    avatarBg: "bg-[#E91E63]",
+    badge: "5.0 ★ Google Review",
+    likesCount: 15,
+    googleProfileReviews: 2,
     quote:
-      "Very professional and extremely talented. Shreya takes the time to understand your face shape, lehenga colors, and skin type. She did my jewelry setting and veil draping so effortlessly. Best bridal makeup artist in Meerut!",
+      "Thank you 💖 💖 Shreya Ma’am for making me look and feel absolutely beautiful on my wedding day. She is incredibly talented, humble, and professional. She understood my preferences perfectly and created a flawless bridal look that enhanced my natural beauty without making it look overdone. The makeup stayed fresh throughout the entire day, and I received endless compliments from everyone. Her calm nature and attention to detail made the whole experience stress-free and enjoyable. I highly recommend Shreya Ma’am to every bride looking for a stunning, elegant, and long-lasting bridal makeover. Thank you for making my special day even more memorable!",
   },
   {
-    id: "review-5",
-    name: "Ritika Bansal",
-    service: "Joyful Crimson Heritage Bridal",
-    location: "Ghaziabad / Meerut",
+    id: "review-aishwarya",
+    name: "Aishwarya Chauhan",
+    service: "Bridal Makeup",
+    category: "bridal",
+    location: "Meerut",
     rating: 5,
-    date: "Google Verified Review",
+    date: "23 weeks ago · Google Verified",
     verified: true,
-    photo: "/IMG_9093.JPEG",
+    avatarBg: "bg-[#9C27B0]",
     badge: "5.0 ★ Google Review",
-    lookTitle: "Joyful Crimson & Gold Heritage Bride",
+    likesCount: 16,
+    googleProfileReviews: 2,
     quote:
-      "Unlike crowded commercial salons where multiple brides are rushed simultaneously, Shreya gave me her 100% undivided personal attention in my bridal suite. The whole getting-ready experience was peaceful, joyful, and stress-free.",
+      "I trusted her for one of the most important day of my life and it all went so beautifully and I really enjoyed it. The make up was so on point, the glow was amazing. I felt so pretty and really enjoyed the whole process. Thank you so much for creating such a magic. Everyone appreciated so much even after the wedding the compliments I have received are amazing. 😇💖🥰",
   },
   {
-    id: "review-6",
-    name: "Divya Rastogi",
-    service: "Vintage Emerald Royal Editorial",
-    location: "Muzaffarnagar / Meerut",
+    id: "review-nicola",
+    name: "Nicola Cleary",
+    service: "Bridal, Haldi & Mehndi Makeup",
+    category: "bridal",
+    location: "Delhi NCR / Meerut",
     rating: 5,
-    date: "Google Verified Review",
+    date: "27 weeks ago · Google Verified",
     verified: true,
-    photo: "/IMG_9054.JPEG",
+    avatarBg: "bg-[#3F51B5]",
     badge: "5.0 ★ Google Review",
-    lookTitle: "Vintage Emerald & Royal Red Look",
+    likesCount: 22,
+    googleProfileReviews: 8,
     quote:
-      "Shreya created an absolute royal masterpiece for my wedding day. The makeup felt breathable on my sensitive skin and did not flashback in any photos. Thank you Shreya for bringing my dream vision to life!",
+      "Shreya did my bridal look, and haldi mehndi makeup for myself and my family. It was beyond my expectations, just perfect and lasted even 48 hours! She was so friendly, warm, professional and INSANELY talented at what she does. I cannot recommend her enough 💖 thank you so much for making me feel so special and looking the best I ever could imagine on this special day 🙏🥰",
+  },
+  {
+    id: "review-niamh",
+    name: "Niamh Cleary",
+    service: "Bridal Party & Saree Draping",
+    category: "party",
+    location: "Delhi NCR",
+    rating: 5,
+    date: "18 weeks ago · Google Verified",
+    verified: true,
+    avatarBg: "bg-[#FF5722]",
+    badge: "5.0 ★ Google Review",
+    likesCount: 14,
+    googleProfileReviews: 2,
+    quote:
+      "I can’t recommend Shreya enough! She did the makeup for my sister (the bride), myself, my other sister, and my mam for an Indian wedding. She took the time to understand each of our styles and preferences, and the makeup looks were stunning. My sister looked gorgeous on her big day. A special mention also goes to her lovely mam, who helped us with our sarees. It made such a difference having her there to guide us and make sure everything was draped perfectly. Together, they made the whole experience feel calm, organised, and enjoyable! Thank you both for making us feel so special!",
+  },
+  {
+    id: "review-jenny",
+    name: "Jenny Cleary",
+    service: "Occasion & Party Glam",
+    category: "party",
+    location: "Delhi NCR",
+    rating: 5,
+    date: "18 weeks ago · Google Verified",
+    verified: true,
+    avatarBg: "bg-[#009688]",
+    badge: "5.0 ★ Google Review",
+    likesCount: 12,
+    googleProfileReviews: 13,
+    quote:
+      "Shreya was so lovely and friendly and made me feel very at ease. My makeup looked flawless 🤩 I was very happy with it. I would highly recommend her",
+  },
+  {
+    id: "review-megha",
+    name: "Megha Kushwaha",
+    service: "Bridal Makeup & Hair Styling",
+    category: "bridal",
+    location: "Meerut",
+    rating: 5,
+    date: "41 weeks ago · Google Verified",
+    verified: true,
+    avatarBg: "bg-[#E65100]",
+    badge: "5.0 ★ Google Review",
+    likesCount: 18,
+    googleProfileReviews: 2,
+    quote:
+      "Hi Shreya ma’am, thank you so much for giving me the prettiest look on my big day. 💖💖 I received so many compliments on my makeup, hair, and overall look. You made me feel like the most confident bride!",
   },
 ];
-
-

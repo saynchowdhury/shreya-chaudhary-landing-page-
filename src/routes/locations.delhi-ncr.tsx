@@ -10,7 +10,7 @@ import { CTASection } from "@/components/site/CTASection";
 
 const title = "Bridal Makeup Artist for Delhi NCR & Destination Weddings | Shreya Chaudhary";
 const description =
-  "Looking for an on-location luxury bridal makeup artist in Delhi NCR, Noida or Ghaziabad? Shreya Chaudhary offers bespoke 3D HD bridal glam with NARS, Huda Beauty & MAC. Book on WhatsApp.";
+  "Looking for an on-location luxury bridal makeup artist in Delhi NCR, Noida or Ghaziabad? Shreya Chaudhary offers bespoke HD bridal glam with NARS, Huda Beauty & MAC. Book on WhatsApp.";
 
 const delhiFaqs = [
   {

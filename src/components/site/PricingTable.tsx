@@ -24,8 +24,8 @@ export function PricingTable({ tone = "dark" }: { tone?: "dark" | "light" }) {
             <p
               className={
                 light
-                  ? "mt-4 font-display text-[2.6rem] leading-none text-ivory"
-                  : "mt-4 font-display text-[2.6rem] leading-none text-charcoal"
+                  ? "mt-4 font-display text-[2.4rem] tracking-tight leading-none text-ivory font-medium"
+                  : "mt-4 font-display text-[2.4rem] tracking-tight leading-none text-charcoal font-medium"
               }
             >
               {service.priceLabel}

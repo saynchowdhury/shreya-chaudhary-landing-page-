@@ -68,6 +68,11 @@ export const websiteGraph = {
         addressRegion: business.state,
         addressCountry: business.countryCode,
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "29.0125",
+        longitude: "77.7085",
+      },
       telephone: `+${business.whatsapp}`,
       logo: { "@id": ids.logo },
       image: { "@id": ids.logo },
@@ -79,7 +84,7 @@ export const websiteGraph = {
         business.justdialUrl,
       ],
       founder: { "@id": ids.person },
-      priceRange: "₹4,000–₹15,000",
+      priceRange: "₹4,000–₹18,000",
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "5.0",

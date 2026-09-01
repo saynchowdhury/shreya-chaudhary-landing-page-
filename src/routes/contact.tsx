@@ -19,7 +19,7 @@ const crumbs = [
   { name: "Contact", path: "/contact" },
 ];
 
-const contactFaqs = [homeFaqs[7]!, homeFaqs[8]!, homeFaqs[12]!, homeFaqs[6]!];
+const contactFaqs = [homeFaqs[3]!, homeFaqs[4]!, homeFaqs[0]!];
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

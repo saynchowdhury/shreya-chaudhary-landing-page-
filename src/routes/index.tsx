@@ -47,12 +47,12 @@ function Home() {
           id="services-heading"
           eyebrow="Signature Services"
           title="Curated makeup for your most special occasions"
-          intro="Transparent pricing, authentic premium products, and personalized on-location hairstyling. Click any service to view real client looks."
+          intro="Transparent pricing, authentic premium products, and personalized on-location makeup. Click any service to view real client looks."
         />
-        <ul className="mt-12 grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
+        <ul className="mt-12 space-y-8 md:space-y-10">
+          {services.map((service, index) => (
             <li key={service.slug}>
-              <ServiceCard service={service} />
+              <ServiceCard service={service} index={index} />
             </li>
           ))}
         </ul>

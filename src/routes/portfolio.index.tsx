@@ -12,7 +12,7 @@ import { ArrowRight } from "lucide-react";
 
 const title = "Real Brides & Occasion Portfolio | Shreya Chaudhary Makeup";
 const description =
-  "Browse real client transformations across Bridal (₹15,000), Engagement (₹8,000), and Party (₹4,000) makeup by Shreya Chaudhary in Meerut & Delhi NCR.";
+  "Browse real client transformations across Bridal (₹15,000–₹18,000), Engagement (₹8,000–₹10,000), and Party (₹4,000) makeup by Shreya Chaudhary in Meerut & Delhi NCR.";
 
 const crumbs = [
   { name: "Home", path: "/" },

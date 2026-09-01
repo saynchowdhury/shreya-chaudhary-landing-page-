@@ -68,8 +68,8 @@ function BookingPolicy() {
             <h2 className="font-display text-2xl text-charcoal">What is included</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Every package includes the makeup application described on its service page,
-              premium products, and hairstyling done on location. Travel is available for
-              bridal bookings and is confirmed against your venue when you enquire.
+              premium authentic products, and on-location hairstyling. Travel expenses are
+              excluded from base package fees and are calculated on actuals based on venue distance.
             </p>
           </section>
 

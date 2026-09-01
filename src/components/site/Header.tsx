@@ -37,8 +37,8 @@ export function Header() {
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
-              activeProps={{ className: "text-charcoal after:w-full font-medium" }}
-              className="relative text-[0.72rem] uppercase tracking-[0.16em] text-muted-foreground transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-blush after:transition-all after:duration-300 hover:text-charcoal hover:after:w-full"
+              activeProps={{ className: "text-charcoal after:w-full font-bold" }}
+              className="relative text-[0.75rem] uppercase tracking-[0.16em] font-semibold text-charcoal/80 transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-blush after:transition-all after:duration-300 hover:text-charcoal hover:after:w-full"
             >
               {item.label}
             </Link>
@@ -80,7 +80,7 @@ export function Header() {
               onClick={() => setOpen(false)}
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{ className: "text-charcoal font-semibold" }}
-              className="border-b border-border/50 py-3.5 text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-charcoal last:border-b-0"
+              className="border-b border-border/50 py-3.5 text-xs uppercase tracking-[0.18em] font-bold text-charcoal/80 transition-colors hover:text-charcoal last:border-b-0"
             >
               {item.label}
             </Link>

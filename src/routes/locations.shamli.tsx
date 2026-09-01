@@ -12,7 +12,7 @@ import { CTASection } from "@/components/site/CTASection";
 const city = "Shamli";
 const title = "Bridal Makeup Artist in Shamli | Shreya Chaudhary Makeup";
 const description =
-  "Top bridal makeup artist in Shamli, UP. Shreya Chaudhary provides luxury HD bridal (₹15,000), engagement (₹8,000), and party makeup with on-location hairstyling in Shamli.";
+  "Top bridal makeup artist in Shamli, UP. Shreya Chaudhary provides luxury HD bridal (₹15,000–₹18,000), engagement (₹8,000–₹10,000), and party makeup with on-location hairstyling in Shamli.";
 
 const shamliFaqs = [
   {
@@ -23,7 +23,7 @@ const shamliFaqs = [
   {
     question: "What is included in the Shamli bridal package?",
     answer:
-      "Bridal makeup (₹15,000) includes full 3D HD makeup, skincare prep, hair styling, floral/veil setting, and jewelry/dupatta draping in one sitting.",
+      "Bridal makeup (₹15,000) includes full HD makeup, skincare prep, hair styling, floral/veil setting, and jewelry/dupatta draping in one sitting.",
   },
   {
     question: "Which luxury cosmetic brands are used for Shamli brides?",

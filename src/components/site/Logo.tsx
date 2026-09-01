@@ -13,7 +13,7 @@ export function Logo({
   className?: string;
   tone?: "dark" | "light";
 }) {
-  const logoSrc = "/shreya chaudharydark logo with colorful bg.png";
+  const logoSrc = "/shreya chaudharycolorful logo with dark bg (1).png";
 
   return (
     <Link
@@ -34,11 +34,11 @@ export function Logo({
         <div className="flex items-center text-left">
           <span
             className={cn(
-              "font-display text-[1.18rem] sm:text-[1.32rem] leading-none tracking-[0.01em] font-bold",
+              "font-display text-[1.18rem] sm:text-[1.32rem] leading-none tracking-[-0.01em] font-semibold",
               tone === "light" ? "text-ivory" : "text-charcoal",
             )}
           >
-            Shreya Chaudhary <span className="text-blush font-semibold">Makeup</span>
+            Shreya Chaudhary <span className="text-blush font-medium">Makeup</span>
           </span>
         </div>
       ) : null}

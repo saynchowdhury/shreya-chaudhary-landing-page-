@@ -16,7 +16,9 @@ export default defineConfig({
     tanstackStart({
       server: { entry: "server" },
     }),
-    nitro(),
+    nitro({
+      preset: process.env.NITRO_PRESET || "cloudflare_pages",
+    }),
     viteReact(),
   ],
 });

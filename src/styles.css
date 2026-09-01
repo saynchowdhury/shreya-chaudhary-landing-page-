@@ -1,11 +1,10 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Shreya Chaudhary Makeup — design system.
+ * Shreya Chaudhary Makeup — Luxury Bridal Design System & Bold Typography Engine.
  * Palette derived from the brand monogram: deep charcoal, warm ivory,
  * muted blush, soft peach, champagne. All colors in oklch.
  */
@@ -18,6 +17,7 @@
   --radius-2xl: calc(var(--radius) + 10px);
 
   --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   --color-background: var(--background);
@@ -52,52 +52,74 @@
 :root {
   --radius: 0.125rem;
 
-  --charcoal: oklch(0.22 0.008 30);
-  --ink: oklch(0.16 0.006 30);
+  --charcoal: oklch(0.20 0.008 30);
+  --ink: oklch(0.14 0.006 30);
   --ivory: oklch(0.978 0.008 78);
-  --blush: oklch(0.76 0.075 8);
-  --peach: oklch(0.855 0.072 62);
+  --blush: oklch(0.72 0.085 8);
+  --peach: oklch(0.855 0.075 62);
   --champagne: oklch(0.925 0.026 78);
 
   --background: oklch(0.978 0.008 78);
-  --foreground: oklch(0.22 0.008 30);
+  --foreground: oklch(0.20 0.008 30);
   --card: oklch(0.992 0.004 78);
-  --card-foreground: oklch(0.22 0.008 30);
+  --card-foreground: oklch(0.20 0.008 30);
   --popover: oklch(0.992 0.004 78);
-  --popover-foreground: oklch(0.22 0.008 30);
-  --primary: oklch(0.22 0.008 30);
+  --popover-foreground: oklch(0.20 0.008 30);
+  --primary: oklch(0.20 0.008 30);
   --primary-foreground: oklch(0.978 0.008 78);
   --secondary: oklch(0.945 0.016 70);
-  --secondary-foreground: oklch(0.22 0.008 30);
+  --secondary-foreground: oklch(0.20 0.008 30);
   --muted: oklch(0.945 0.014 70);
-  --muted-foreground: oklch(0.48 0.014 40);
-  --accent: oklch(0.855 0.072 62);
-  --accent-foreground: oklch(0.22 0.008 30);
+  --muted-foreground: oklch(0.38 0.014 40);
+  --accent: oklch(0.855 0.075 62);
+  --accent-foreground: oklch(0.20 0.008 30);
   --destructive: oklch(0.55 0.19 25);
   --destructive-foreground: oklch(0.978 0.008 78);
-  --border: oklch(0.885 0.014 70);
-  --input: oklch(0.885 0.014 70);
-  --ring: oklch(0.76 0.075 8);
+  --border: oklch(0.86 0.014 70);
+  --input: oklch(0.86 0.014 70);
+  --ring: oklch(0.72 0.085 8);
 }
 
 .dark {
-  --background: oklch(0.16 0.006 30);
-  --foreground: oklch(0.97 0.008 78);
-  --card: oklch(0.22 0.008 30);
-  --card-foreground: oklch(0.97 0.008 78);
-  --popover: oklch(0.22 0.008 30);
-  --popover-foreground: oklch(0.97 0.008 78);
-  --primary: oklch(0.97 0.008 78);
-  --primary-foreground: oklch(0.16 0.006 30);
+  --background: oklch(0.14 0.006 30);
+  --foreground: oklch(0.98 0.008 78);
+  --card: oklch(0.20 0.008 30);
+  --card-foreground: oklch(0.98 0.008 78);
+  --popover: oklch(0.20 0.008 30);
+  --popover-foreground: oklch(0.98 0.008 78);
+  --primary: oklch(0.98 0.008 78);
+  --primary-foreground: oklch(0.14 0.006 30);
   --secondary: oklch(0.26 0.009 30);
-  --secondary-foreground: oklch(0.97 0.008 78);
+  --secondary-foreground: oklch(0.98 0.008 78);
   --muted: oklch(0.26 0.009 30);
-  --muted-foreground: oklch(0.74 0.014 50);
-  --accent: oklch(0.855 0.072 62);
-  --accent-foreground: oklch(0.16 0.006 30);
-  --border: oklch(1 0 0 / 14%);
-  --input: oklch(1 0 0 / 18%);
-  --ring: oklch(0.76 0.075 8);
+  --muted-foreground: oklch(0.85 0.014 50);
+  --accent: oklch(0.855 0.075 62);
+  --accent-foreground: oklch(0.14 0.006 30);
+  --border: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 22%);
+  --ring: oklch(0.72 0.085 8);
+}
+
+/* Lenis Smooth Scrolling Engine */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 @layer base {
@@ -109,14 +131,15 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-weight: 400;
-    line-height: 1.6;
+    font-weight: 450;
+    line-height: 1.62;
     letter-spacing: -0.01em;
   }
 
@@ -125,9 +148,20 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  p,
+  blockquote {
+    text-wrap: pretty;
   }
 
   ::selection {
@@ -155,12 +189,44 @@
   }
 }
 
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility font-sans {
+  font-family: var(--font-sans);
+}
+
 @utility eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 400;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+@utility tracking-editorial {
+  letter-spacing: 0.24em;
+}
+
+@utility tracking-luxury-wide {
+  letter-spacing: 0.3em;
+}
+
+@utility tracking-luxury-tight {
+  letter-spacing: -0.03em;
+}
+
+@utility quote-editorial {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
 }
 
 @utility rule-line {
@@ -205,4 +271,3 @@
     transform: translateX(-50%);
   }
 }
-

@@ -1,4 +1,4 @@
-import { ShieldCheck, HeartHandshake, Award, Palette } from "lucide-react";
+import { ShieldCheck, HeartHandshake, Award } from "lucide-react";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { track } from "@/lib/analytics";
 import { brands } from "@/data/brands";
@@ -11,10 +11,10 @@ export function WhyChooseUs() {
         {/* Section Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 border-b border-ivory/15">
           <div className="max-w-xl">
-            <p className="text-[0.65rem] uppercase tracking-[0.22em] text-peach font-semibold">
+            <p className="text-[0.65rem] uppercase tracking-[0.24em] text-peach font-medium">
               The Shreya Chaudhary Standard
             </p>
-            <h2 id="why-choose-us-heading" className="mt-2.5 font-display text-2xl leading-tight text-ivory md:text-4xl">
+            <h2 id="why-choose-us-heading" className="mt-2.5 font-display text-2xl leading-tight tracking-[-0.02em] text-ivory md:text-4xl">
               Why brides choose a personal artist over a salon
             </h2>
           </div>
@@ -23,11 +23,11 @@ export function WhyChooseUs() {
           </p>
         </div>
 
-        {/* Artistic Luxury Bento Grid - Space-Optimized */}
+        {/* Artistic Luxury Bento Grid */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-5">
           
-          {/* Bento Item 1: Large Feature (8 cols) - 1-on-1 Dedicated Suite Experience */}
-          <div className="md:col-span-12 lg:col-span-8 group relative overflow-hidden rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
+          {/* Bento Item 1: Large Feature (7 cols) - 1-on-1 Dedicated Suite Experience */}
+          <div className="md:col-span-12 lg:col-span-7 group relative overflow-hidden rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
             <div className="grid md:grid-cols-12 gap-6 items-center">
               
               <div className="md:col-span-7 flex flex-col justify-between space-y-4">
@@ -79,8 +79,8 @@ export function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Bento Item 2: Compact Star Review & Track Record (4 cols) */}
-          <div className="md:col-span-6 lg:col-span-4 flex flex-col justify-between rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
+          {/* Bento Item 2: Compact Star Review & Track Record (5 cols) */}
+          <div className="md:col-span-12 lg:col-span-5 flex flex-col justify-between rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
             <div>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-champagne/15 px-3 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-champagne">
                 <Award className="h-3 w-3 text-amber-400" />
@@ -109,79 +109,39 @@ export function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Bento Item 3: 100% Authentic Vanity Kit (5 cols) */}
-          <div className="md:col-span-6 lg:col-span-5 flex flex-col justify-between rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
+          {/* Bento Item 3: 100% Authentic Vanity Kit (Full Width 12 cols) */}
+          <div className="md:col-span-12 flex flex-col justify-between rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
             <div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-peach/15 px-3 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-peach">
-                <ShieldCheck className="h-3 w-3" />
-                100% Luxury Vanity Kit
-              </span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-peach/15 px-3 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-peach w-fit">
+                  <ShieldCheck className="h-3 w-3" />
+                  100% International Luxury Vanity
+                </span>
+                <p className="text-[0.68rem] text-peach font-medium">
+                  ✓ Sweat-Resistant Base · Zero Flashback · Ultra-Hydrated
+                </p>
+              </div>
+
               <h3 className="mt-3 font-display text-xl text-ivory font-medium">
-                World-class, skin-friendly cosmetics
+                World-class, skin-friendly cosmetics matched to your undertone
               </h3>
-              <p className="mt-2 text-xs leading-relaxed text-ivory/75 font-light">
+              <p className="mt-1.5 text-xs leading-relaxed text-ivory/75 font-light max-w-3xl">
                 Zero cheap drugstore foundations or harsh formulas. We custom-blend shades for your exact undertone using genuine international luxury products.
               </p>
 
-              {/* Brand Pills Cluster */}
-              <div className="mt-4 flex flex-wrap gap-2">
+              {/* Brand Pills Cluster with Charlotte Tilbury & Laura Mercier */}
+              <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
                 {brands.map((brand) => (
                   <div
                     key={brand.name}
-                    className="flex h-7 items-center justify-center overflow-hidden rounded bg-ivory px-2.5 shadow-sm border border-ivory/20 transition-all hover:scale-105"
+                    className="flex items-center gap-2 overflow-hidden rounded-lg bg-ivory p-2 shadow-sm border border-ivory/30 transition-all hover:scale-103"
                   >
-                    {brand.logo ? (
-                      <img src={brand.logo} alt={`${brand.name} logo`} className="h-3.5 w-auto object-contain mix-blend-multiply opacity-90" />
-                    ) : (
-                      <span className="text-[0.5rem] font-bold uppercase tracking-wider text-charcoal">
-                        {brand.name}
-                      </span>
-                    )}
+                    <img src={brand.logo} alt={`${brand.name} logo`} className="h-5 w-auto max-w-[70px] object-contain" />
+                    <span className="text-[0.6rem] font-bold uppercase tracking-wider text-charcoal/85 truncate">
+                      {brand.name}
+                    </span>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            <p className="mt-4 text-[0.65rem] text-peach font-light border-t border-ivory/10 pt-2.5">
-              ✓ 16-Hour Sweatproof · Zero Flashback · Ultra-Hydrated
-            </p>
-          </div>
-
-          {/* Bento Item 4: Free Pre-Bridal Consultation & Look Mapping (7 cols) */}
-          <div className="md:col-span-12 lg:col-span-7 group relative overflow-hidden rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
-            <div className="grid sm:grid-cols-12 gap-5 items-center">
-              <div className="sm:col-span-7 space-y-3">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-champagne/15 px-3 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-champagne">
-                  <Palette className="h-3 w-3 text-peach" />
-                  Free Pre-Bridal Consultation
-                </span>
-                <h3 className="font-display text-xl text-ivory font-medium">
-                  Bespoke look mapping before your big day
-                </h3>
-                <p className="text-xs leading-relaxed text-ivory/75 font-light">
-                  We review your outfit embroidery, jewelry metals, face structure, and lighting in advance so your wedding morning is pure joy.
-                </p>
-
-                <ul className="space-y-1 text-xs text-ivory/80 pt-1">
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-peach" />
-                    Hair styling and flower placement included
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-peach" />
-                    Dupatta pinning and jewelry setting included
-                  </li>
-                </ul>
-              </div>
-
-              <div className="sm:col-span-5 h-[260px] sm:h-[280px] rounded-lg overflow-hidden border border-ivory/15 bg-black relative">
-                <img
-                  src="/IMG_9067.PNG"
-                  alt="Client bespoke look styling and draping by Shreya Chaudhary"
-                  width={500}
-                  height={600}
-                  className="h-full w-full object-cover object-[center_12%] transition-transform duration-700 group-hover:scale-105"
-                />
               </div>
             </div>
           </div>
@@ -200,11 +160,11 @@ export function WhyChooseUs() {
           </div>
           
           <a
-            href={buildWhatsAppLink("Hi Shreya, I'd like to check your availability for my wedding date and get a free consultation.")}
+            href={buildWhatsAppLink("Hi Shreya, I'd like to check your availability for my wedding date.")}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("whatsapp_click", { source: "why_choose_us_bento_cta" })}
-            className="inline-flex shrink-0 items-center justify-center rounded bg-ivory px-6 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-charcoal shadow-md transition-all hover:bg-peach hover:scale-[1.02]"
+            className="inline-flex shrink-0 items-center justify-center rounded-full bg-ivory px-6 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-charcoal shadow-md transition-all hover:bg-peach hover:scale-[1.02]"
           >
             Check Availability on WhatsApp
           </a>

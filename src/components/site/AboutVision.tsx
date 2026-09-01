@@ -64,13 +64,13 @@ export function AboutVision() {
           <div className="lg:col-span-6 lg:pl-6">
             <div className="inline-flex items-center gap-2">
               <span className="h-px w-8 bg-blush" />
-              <span className="text-[0.68rem] uppercase tracking-[0.24em] font-medium text-blush">
+              <span className="text-[0.68rem] uppercase tracking-[0.24em] font-bold text-blush">
                 Artistry Philosophy
               </span>
             </div>
 
-            <h2 id="about-vision-heading" className="mt-4 font-display text-2xl sm:text-3xl lg:text-4xl leading-snug sm:leading-tight text-charcoal">
-              "You are not an appointment on an assembly line. You are my muse."
+            <h2 id="about-vision-heading" className="mt-4 font-serif italic text-2xl sm:text-3xl lg:text-[2.4rem] leading-snug sm:leading-[1.2] text-charcoal font-normal">
+              “You are not just an appointment. <span className="text-blush block sm:inline font-semibold">You are my muse.</span>”
             </h2>
 
             <div className="mt-6 space-y-4 text-sm sm:text-base leading-relaxed text-charcoal/80 font-light">

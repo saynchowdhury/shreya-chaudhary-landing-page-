@@ -48,8 +48,8 @@ function BrandsPage() {
 
       <Section tone="champagne">
         <AnswerBlock
-          question={homeFaqs[10]!.question}
-          answer={homeFaqs[10]!.answer}
+          question="Which products do you use in your bridal vanity?"
+          answer="We exclusively use 100% authentic international luxury products including NARS, Charlotte Tilbury, Huda Beauty, Laura Mercier, Rare Beauty, MAC, Milani, Forever 52, PAC, and Recode. Zero cheap drugstore foundations or harsh formulas."
         />
       </Section>
 

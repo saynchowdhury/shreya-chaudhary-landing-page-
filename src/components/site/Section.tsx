@@ -58,7 +58,7 @@ export function SectionHeading({
       <h2
         id={id}
         className={cn(
-          "mt-4 font-display text-[2.1rem] leading-[1.1] md:text-[3rem]",
+          "mt-4 font-display text-[2.1rem] leading-[1.08] tracking-[-0.02em] md:text-[3rem]",
           tone === "light" ? "text-ivory" : "text-charcoal",
         )}
       >
@@ -67,8 +67,8 @@ export function SectionHeading({
       {intro ? (
         <div
           className={cn(
-            "mt-5 space-y-4 text-base leading-relaxed",
-            tone === "light" ? "text-ivory/70" : "text-muted-foreground",
+            "mt-5 space-y-4 text-base leading-relaxed font-light",
+            tone === "light" ? "text-ivory/80" : "text-charcoal/80",
           )}
         >
           {typeof intro === "string" ? <p>{intro}</p> : intro}

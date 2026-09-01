@@ -23,7 +23,7 @@ const greaterNoidaFaqs = [
   {
     question: "How much does bridal makeup cost in Greater Noida?",
     answer:
-      "Bridal makeup is ₹15,000 and includes full 3D HD makeup, luxury skincare prep, hair styling, floral/veil setting, and jewelry/dupatta draping.",
+      "Bridal makeup is ₹15,000 and includes full HD makeup, luxury skincare prep, hair styling, floral/veil setting, and jewelry/dupatta draping.",
   },
   {
     question: "What products are used for Greater Noida brides?",

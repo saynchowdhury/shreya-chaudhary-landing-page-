@@ -31,7 +31,7 @@ export const portfolio: PortfolioItem[] = [
     alt: "Stunning real bride in intricate red and gold zardozi lehenga with ornate nath and emerald kundan jewelry",
     title: "Royal Crimson & Gold Couture Bride",
     category: "bridal",
-    technique: "Signature 3D HD Bridal Complexion",
+    technique: "Signature HD Bridal Complexion",
     width: 1200,
     height: 1600,
     lookDetails: {
@@ -278,7 +278,7 @@ export const portfolio: PortfolioItem[] = [
     alt: "Ethereal bride with closed eyes showing glitter cut-crease eye glam and royal red lehenga with emerald jewelry",
     title: "Ethereal Red & Gold Couture Bride",
     category: "bridal",
-    technique: "Signature 3D HD Bridal Complexion",
+    technique: "Signature HD Bridal Complexion",
     width: 1200,
     height: 1600,
     lookDetails: {
@@ -316,7 +316,7 @@ export const portfolio: PortfolioItem[] = [
     alt: "Real bride full portrait in golden bridal lehenga and heavy kundan emerald jewelry",
     title: "Heritage Gold & Emerald Royal Bridal",
     category: "bridal",
-    technique: "3D Longwear Complexion",
+    technique: "Longwear HD Complexion",
     width: 1200,
     height: 1600,
     lookDetails: {
@@ -432,7 +432,7 @@ export const portfolioCategories: {
 }[] = [
   {
     category: "bridal",
-    label: "Bridal HD & 3D Airbrush",
+    label: "Bridal HD Airbrush",
     path: "/portfolio/bridal",
     blurb: "Bespoke wedding looks personalized to each bride's undertone, jewelry, and outfit.",
   },

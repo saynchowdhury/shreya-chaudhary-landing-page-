@@ -12,7 +12,7 @@ import { CTASection } from "@/components/site/CTASection";
 
 const title = "Makeup Artist in Meerut, Uttar Pradesh | Shreya Chaudhary Makeup";
 const description =
-  "Looking for a makeup artist in Meerut? Shreya Chaudhary offers bridal (₹15,000), engagement (₹8,000) and party (₹4,000) makeup with on-location hairstyling in Meerut, Uttar Pradesh.";
+  "Looking for a makeup artist in Meerut? Shreya Chaudhary offers bridal (₹15,000–₹18,000), engagement (₹8,000–₹10,000) and party (₹4,000) makeup with on-location hairstyling in Meerut, Uttar Pradesh.";
 
 const crumbs = [
   { name: "Home", path: "/" },

@@ -10,14 +10,14 @@ import { CTASection } from "@/components/site/CTASection";
 
 const title = "Makeup Packages & Prices in Meerut | Shreya Chaudhary Makeup";
 const description =
-  "Makeup packages in Meerut: bridal ₹15,000, engagement ₹8,000, party ₹4,000 — each with premium products and on-location hairstyling. Confirm your date on WhatsApp.";
+  "Makeup packages in Meerut: bridal ₹15,000–₹18,000 (Luxury NARS kit), engagement ₹8,000–₹10,000, party ₹4,000 — with on-location hairstyling. Travel excluded. Confirm your date on WhatsApp.";
 
 const crumbs = [
   { name: "Home", path: "/" },
   { name: "Packages", path: "/packages" },
 ];
 
-const pricingFaqs = [homeFaqs[0]!, homeFaqs[1]!, homeFaqs[2]!, homeFaqs[3]!, homeFaqs[7]!];
+const pricingFaqs = [homeFaqs[0]!, homeFaqs[1]!, homeFaqs[2]!, homeFaqs[3]!];
 
 export const Route = createFileRoute("/packages")({
   head: () => ({
