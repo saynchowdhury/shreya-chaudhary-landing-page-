@@ -18,6 +18,8 @@ export default defineConfig({
     }),
     nitro({
       preset: process.env.NITRO_PRESET || "cloudflare_pages",
+      compressPublicAssets: true,
+      minify: true,
     }),
     viteReact(),
   ],
