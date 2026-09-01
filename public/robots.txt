@@ -1,9 +1,8 @@
 # Robots.txt for Shreya Chaudhary Makeup
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 
 User-agent: *
 Allow: /
-Content-Signal: ai-train=no, search=yes, ai-input=yes
-
 # AI & LLM Search Engine Crawlers (AEO)
 User-agent: GPTBot
 Allow: /
