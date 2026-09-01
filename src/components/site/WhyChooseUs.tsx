@@ -27,8 +27,8 @@ export function WhyChooseUs() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-5">
           
           {/* Bento Item 1: Large Feature (7 cols) - 1-on-1 Dedicated Suite Experience */}
-          <div className="md:col-span-12 lg:col-span-7 group relative overflow-hidden rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
-            <div className="grid md:grid-cols-12 gap-6 items-center">
+          <div className="md:col-span-12 lg:col-span-7 group relative overflow-hidden rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-5 sm:p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
+            <div className="grid md:grid-cols-12 gap-5 sm:gap-6 items-center">
               
               <div className="md:col-span-7 flex flex-col justify-between space-y-4">
                 <div>
@@ -36,7 +36,7 @@ export function WhyChooseUs() {
                     <HeartHandshake className="h-3 w-3" />
                     Dedicated 1-on-1 Personal Attention
                   </span>
-                  <h3 className="mt-3 font-display text-xl md:text-2xl text-ivory font-medium leading-snug">
+                  <h3 className="mt-3 font-display text-xl sm:text-2xl text-ivory font-medium leading-snug">
                     Zero salon rush. 100% focused suite artistry.
                   </h3>
                   <p className="mt-2.5 text-xs leading-relaxed text-ivory/75 font-light">
@@ -61,13 +61,13 @@ export function WhyChooseUs() {
               </div>
 
               {/* Visual Side with Real Bride Photo */}
-              <div className="md:col-span-5 h-[230px] md:h-[260px] relative overflow-hidden rounded-lg border border-ivory/15 bg-charcoal">
+              <div className="md:col-span-5 w-full h-[280px] sm:h-[320px] md:h-full min-h-[250px] md:min-h-[280px] relative overflow-hidden rounded-lg border border-ivory/15 bg-charcoal">
                 <img
                   src="/IMG_9056.JPEG"
                   alt="Shreya Chaudhary real bride in red lehenga with royal emerald jewelry"
                   width={500}
                   height={650}
-                  className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2.5 text-center">
                   <p className="text-[0.6rem] uppercase tracking-wider text-peach font-semibold">
