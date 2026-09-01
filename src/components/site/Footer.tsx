@@ -143,6 +143,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/blog" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                  Bridal Journal
+                </Link>
+              </li>
+              <li>
                 <Link to="/packages" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
                   Pricing &amp; Packages
                 </Link>

@@ -66,11 +66,13 @@ export function ServiceCard({
           >
             <img
               src={service.image}
-              alt={`${service.name} signature look by Shreya Chaudhary`}
+              alt={`${service.name} in Meerut & Delhi NCR - Premium signature look by Shreya Chaudhary Makeup`}
               width={800}
               height={1000}
-              loading="lazy"
-              className="h-full w-full object-cover object-center transition-transform duration-700 group-hover/img:scale-105"
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+              fetchpriority={index === 0 ? "high" : "auto"}
+              className="h-full w-full object-cover object-[center_25%] transition-transform duration-700 group-hover/img:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-charcoal/20" />
             
@@ -87,7 +89,7 @@ export function ServiceCard({
         </div>
 
         {/* Right / Bottom Content Column (7 cols on desktop, full width on mobile) */}
-        <div className="md:col-span-7 lg:col-span-7 flex flex-col justify-between p-6 sm:p-8 lg:p-10 space-y-6">
+        <div className="md:col-span-7 lg:col-span-7 flex flex-col justify-between p-7 sm:p-8 md:pl-10 lg:pl-12 lg:pr-10 lg:py-10 space-y-6">
           
           <div>
             {/* Top Row: Service Number & Price Pill */}

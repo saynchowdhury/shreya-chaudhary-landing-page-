@@ -8,7 +8,7 @@ import { PricingTable } from "@/components/site/PricingTable";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { CTASection } from "@/components/site/CTASection";
 
-const title = "Bridal Makeup Artist for Delhi NCR & Destination Weddings | Shreya Chaudhary";
+const title = "Best Bridal Makeup Artist Delhi NCR | Shreya Chaudhary";
 const description =
   "Looking for an on-location luxury bridal makeup artist in Delhi NCR, Noida or Ghaziabad? Shreya Chaudhary offers bespoke HD bridal glam with NARS, Huda Beauty & MAC. Book on WhatsApp.";
 
@@ -60,8 +60,8 @@ function DelhiNcrPage() {
     <>
       <PageHero
         eyebrow="On-Location Luxury Artistry"
-        title="Bridal Makeup Artist for Delhi NCR & Destination"
-        intro="Bespoke bridal, engagement and cocktail artistry delivered directly to your bridal suite across Delhi, Noida, Ghaziabad, and destination wedding venues."
+        title="Best Bridal Makeup Artist in Delhi NCR"
+        intro={`${business.artist} provides on-location luxury bridal makeup across Delhi NCR, Noida, Ghaziabad and Gurgaon. Winter 2026 – 2027 wedding season bookings are now open.`}
         crumbs={crumbs.slice(0, 2)}
       />
 

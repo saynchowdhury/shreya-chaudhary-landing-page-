@@ -30,9 +30,9 @@ export const services: Service[] = [
     price: 15000,
     priceLabel: "₹15,000 – ₹18,000",
     image: "/IMG_5032.JPG.jpeg",
-    tagline: "The bride's vision comes first.",
+    tagline: "HD Bridal Makeup Artist — ₹15,000 to ₹18,000",
     summary:
-      "A bespoke bridal look built around the dream makeup you envision for your wedding day. Available with Forever 52 Bridal (₹15,000) or NARS Radiant Bridal (₹18,000). Completed with hairstyling, draping, lash, and zero-powered lens.",
+      "A bespoke bridal look built around the dream makeup you envision for your wedding day. Whether you envision a glass skin bridal look, soft glam aesthetic, or a regal winter wedding finish — every bridal booking is crafted with camera-ready HD techniques. Available with Forever 52 Bridal (₹15,000) or NARS Radiant Bridal (₹18,000). Completed with hairstyling, draping, lash, and zero-powered lens. Shreya travels on-location across Meerut, Noida, Ghaziabad, Delhi NCR, and more.",
     inclusions: [
       "Forever 52 Bridal (₹15,000) / NARS Radiant Bridal (₹18,000)",
       "Full HD bridal base & custom lash styling",
@@ -49,9 +49,9 @@ export const services: Service[] = [
         "Shreya Chaudhary Makeup offers Forever 52 Bridal Makeup at ₹15,000 and NARS Radiant Bridal Makeup at ₹18,000. Packages are completed with hairstyling, draping, lash styling, and zero-powered lens. Travel expenses are excluded and calculated on actuals.",
     },
     seo: {
-      title: "Bridal Makeup Artist in Meerut | Shreya Chaudhary Makeup",
+      title: "Best Bridal Makeup in Meerut (₹15K–₹18K) | Shreya Chaudhary",
       description:
-        "Bridal makeup in Meerut by Shreya Chaudhary Makeup: Forever 52 Bridal (₹15,000) & NARS Radiant Bridal (₹18,000). Completed with hairstyling, draping, lash, and zero-powered lens. Travel excluded.",
+        "Bridal makeup in Meerut & Delhi NCR by Shreya Chaudhary Makeup: Forever 52 Bridal (₹15,000) & NARS Radiant Bridal (₹18,000). Completed with hairstyling, draping, lash, and zero-powered lens. Travel excluded.",
     },
   },
   {
@@ -62,9 +62,9 @@ export const services: Service[] = [
     price: 8000,
     priceLabel: "₹8,000 – ₹10,000",
     image: "/IMG_0537.JPG.jpeg",
-    tagline: "A luminous, camera-ready look for the ring moment.",
+    tagline: "Engagement Makeup Artist — Camera-Ready HD Glow",
     summary:
-      "Engagement makeup shaped around your outfit, venue lighting, and the radiant finish you want in high-definition photographs. Available with Forever 52 Engagement (₹8,000) or NARS Radiant Engagement (₹10,000). Completed with hairstyling, draping, lash, and zero-powered lens.",
+      "Soft glam engagement makeup crafted for ring ceremony photography. Engagement makeup shaped around your outfit, venue lighting, and the radiant finish you want in high-definition photographs. Available with Forever 52 Engagement (₹8,000) or NARS Radiant Engagement (₹10,000). Shreya provides on-location services across Meerut, Noida, Delhi NCR, Ghaziabad, Shamli, and Muzaffarnagar.",
     inclusions: [
       "Forever 52 Engagement (₹8,000) / NARS Radiant Engagement (₹10,000)",
       "Full HD engagement makeup & custom lash styling",
@@ -80,9 +80,9 @@ export const services: Service[] = [
         "Engagement makeup is ₹8,000 – ₹10,000 (Forever 52 vs NARS Radiant Kit) and includes full engagement makeup, hair styling on location, draping, lashes, and zero-powered lens.",
     },
     seo: {
-      title: "Engagement Makeup Artist in Meerut | Shreya Chaudhary Makeup",
+      title: "Engagement Makeup in Meerut (₹8K–₹10K) | Shreya Chaudhary",
       description:
-        "Engagement makeup in Meerut by Shreya Chaudhary Makeup — ₹8,000 – ₹10,000 for Forever 52 or NARS Radiant Kit, completed with hairstyling, draping, and lashes. Check your date on WhatsApp.",
+        "Engagement makeup in Meerut & Delhi NCR by Shreya Chaudhary Makeup — ₹8,000 – ₹10,000 for Forever 52 or NARS Radiant Kit, completed with hairstyling, draping, and lashes. Check your date on WhatsApp.",
     },
   },
   {
@@ -93,9 +93,9 @@ export const services: Service[] = [
     price: 4000,
     priceLabel: "₹4,000",
     image: "/IMG_4411.JPG.jpeg",
-    tagline: "Polished, occasion-ready, never overdone.",
+    tagline: "Party & Reception Makeup — Sweat-Proof All-Night Finish",
     summary:
-      "Party and wedding-guest makeup crafted for elegance and all-night wear — finished with on-location hairstyling.",
+      "Party and wedding-guest makeup crafted for elegance and all-night wear — finished with on-location hairstyling. Providing services across Meerut, Noida, Ghaziabad, and Delhi NCR.",
     inclusions: [
       "Full HD party glam",
       "Weightless sweat-resistant base",
@@ -110,9 +110,9 @@ export const services: Service[] = [
         "Party makeup is ₹4,000 and includes full party makeup with a sweat-resistant base, premium products, and on-location hair styling.",
     },
     seo: {
-      title: "Party Makeup Artist in Meerut | Shreya Chaudhary Makeup",
+      title: "Party & Reception Makeup Meerut (₹4,000) | Shreya Chaudhary",
       description:
-        "Party makeup in Meerut by Shreya Chaudhary Makeup — ₹4,000 for full party makeup with sweat-resistant base and on-location hairstyling. Check your date on WhatsApp.",
+        "Party makeup in Meerut & Delhi NCR by Shreya Chaudhary Makeup — ₹4,000 for full party makeup with sweat-resistant base and on-location hairstyling. Check your date on WhatsApp.",
     },
   },
 ];

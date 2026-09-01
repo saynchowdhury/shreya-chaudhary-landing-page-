@@ -10,7 +10,7 @@ import { AnswerBlock } from "@/components/site/AnswerBlock";
 import { CTASection } from "@/components/site/CTASection";
 
 const city = "Ghaziabad";
-const title = "Bridal Makeup Artist in Ghaziabad | Shreya Chaudhary Makeup";
+const title = "Best Bridal Makeup Artist in Ghaziabad | Shreya Chaudhary";
 const description =
   "Top rated bridal makeup artist in Ghaziabad (Indirapuram, Vaishali, Vasundhara, Raj Nagar Extension). Shreya Chaudhary offers bespoke HD bridal glam with on-location hairstyling.";
 
@@ -77,8 +77,8 @@ function GhaziabadPage() {
     <>
       <PageHero
         eyebrow={`Serving ${city} & Delhi NCR`}
-        title={`Bridal Makeup Artist in ${city}`}
-        intro={`${business.artist} brings luxury on-location bridal, engagement, and cocktail artistry directly to your suite in ${city}.`}
+        title="Best Bridal Makeup Artist in Ghaziabad"
+        intro={`${business.artist} is the premier bridal makeup artist serving ${city}, traveling to you for bespoke HD makeup. Winter 2026 wedding bookings now open.`}
         crumbs={crumbs.slice(0, 2)}
       />
 

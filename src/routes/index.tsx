@@ -16,9 +16,9 @@ import { SmartBookingInquirer } from "@/components/site/SmartBookingInquirer";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { CTASection } from "@/components/site/CTASection";
 
-const title = "Bridal Makeup Artist Meerut | Shreya Chaudhary";
+const title = "Best Bridal Makeup Artist Meerut | Shreya Chaudhary";
 const description =
-  "Exquisite bridal, engagement and party makeup in Meerut & Delhi NCR by Shreya Chaudhary. 5.0 Google Verified. Authentic luxury kits with NARS, Huda Beauty, MAC & Rare Beauty. Book Free Consultation on WhatsApp.";
+  "Exquisite bridal, engagement and party makeup in Meerut & Delhi NCR by Shreya Chaudhary. Winter wedding season 2026 bookings open. Book Free Consultation.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,6 +34,33 @@ function Home() {
     <>
       {/* 1. HERO SECTION */}
       <Hero />
+
+      {/* 1.5 WEDDING SEASON 2026 BANNER */}
+      <section className="bg-charcoal text-ivory py-6 px-6 border-y border-blush/20">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 md:gap-8 text-center md:text-left">
+          <div className="flex-1 md:border-r md:border-ivory/20 md:pr-8">
+            <p className="font-bold text-[0.75rem] uppercase tracking-widest text-peach mb-1.5">
+              November 2026 – February 2027
+            </p>
+            <p className="font-display text-2xl md:text-3xl font-bold text-ivory leading-tight">
+              Winter Wedding Season Open
+            </p>
+          </div>
+          <div className="flex-1 max-w-lg text-sm md:text-base text-ivory/90 font-medium px-2 md:px-0 leading-relaxed">
+            Shubh Muhurat dates are booking fast across Meerut &amp; Delhi NCR. Secure your venue date today.
+          </div>
+          <div className="flex-shrink-0 mt-3 md:mt-0">
+            <a
+              href={`https://wa.me/${business.whatsapp}?text=Hi Shreya, I'd like to check availability for my wedding date.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-peach text-charcoal px-8 py-3.5 text-[0.75rem] font-bold uppercase tracking-[0.15em] transition-all hover:bg-white hover:scale-105 shadow-xl shadow-peach/10"
+            >
+              Check Availability
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* 2. BRANDS WE USE LOGO TICKER */}
       <BrandMarquee />

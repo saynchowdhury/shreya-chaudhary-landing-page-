@@ -10,7 +10,7 @@ import { AnswerBlock } from "@/components/site/AnswerBlock";
 import { CTASection } from "@/components/site/CTASection";
 
 const city = "Shamli";
-const title = "Bridal Makeup Artist in Shamli | Shreya Chaudhary Makeup";
+const title = "Best Bridal Makeup Artist in Shamli | Shreya Chaudhary";
 const description =
   "Top bridal makeup artist in Shamli, UP. Shreya Chaudhary provides luxury HD bridal (₹15,000–₹18,000), engagement (₹8,000–₹10,000), and party makeup with on-location hairstyling in Shamli.";
 
@@ -77,8 +77,8 @@ function ShamliPage() {
     <>
       <PageHero
         eyebrow={`Serving ${city} & Western UP`}
-        title={`Bridal Makeup Artist in ${city}`}
-        intro={`${business.artist} provides bespoke on-location bridal, engagement, and occasion makeup across ${city} with premium international cosmetics and customized hairstyling.`}
+        title="Best Bridal Makeup Artist in Shamli"
+        intro={`${business.artist} is the premier bridal makeup artist serving ${city}, traveling to you for bespoke HD makeup. Winter 2026 wedding bookings now open.`}
         crumbs={crumbs.slice(0, 2)}
       />
 

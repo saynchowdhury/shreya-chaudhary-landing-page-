@@ -10,7 +10,7 @@ import { AnswerBlock } from "@/components/site/AnswerBlock";
 import { CTASection } from "@/components/site/CTASection";
 
 const city = "Greater Noida";
-const title = "Bridal Makeup Artist in Greater Noida | Shreya Chaudhary Makeup";
+const title = "Best Bridal Makeup Artist in Greater Noida | Shreya Chaudhary";
 const description =
   "Looking for the best bridal makeup artist in Greater Noida (Pari Chowk, Greater Noida West / Noida Extension, Knowledge Park)? Shreya Chaudhary offers bespoke HD bridal glam.";
 
@@ -77,8 +77,8 @@ function GreaterNoidaPage() {
     <>
       <PageHero
         eyebrow={`Serving ${city} & Delhi NCR`}
-        title={`Bridal Makeup Artist in ${city}`}
-        intro={`${business.artist} offers luxury on-location bridal and event makeup across ${city} and Greater Noida West (Noida Extension).`}
+        title="Best Bridal Makeup Artist in Greater Noida"
+        intro={`${business.artist} is the premier bridal makeup artist serving ${city}, traveling to you for bespoke HD makeup. Winter 2026 wedding bookings now open.`}
         crumbs={crumbs.slice(0, 2)}
       />
 

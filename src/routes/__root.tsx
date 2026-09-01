@@ -87,6 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "ICBM", content: "28.9845, 77.7064" },
     ],
     links: [
+      { rel: "alternate", hrefLang: "en-IN", href: "https://shreyachaudharymakeup.com" },
+      { rel: "alternate", type: "application/rss+xml", title: "Shreya Chaudhary Makeup Journal RSS", href: "https://shreyachaudharymakeup.com/rss.xml" },
       {
         rel: "stylesheet",
         href: appCss,

@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/site/Section";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { CTASection } from "@/components/site/CTASection";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -90,6 +91,21 @@ function BlogPost() {
             <p className="mt-6 text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground">
               By {post.author}
             </p>
+
+            {/* E-E-A-T Trust & Conversion Layer */}
+            <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 border-t border-border/60 pt-6">
+              <div className="flex flex-wrap items-center gap-2">
+                <a href={business.googleMyBusinessUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 bg-background border border-border px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold text-charcoal shadow-sm hover:border-charcoal transition-colors">
+                  <span className="text-amber-500 text-sm leading-none">★</span> 5.0 Verified
+                </a>
+                <a href={business.wedmegoodUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 bg-background border border-border px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold text-charcoal shadow-sm hover:border-charcoal transition-colors">
+                  WedMeGood
+                </a>
+              </div>
+              <WhatsAppButton source={`blog_inline_${post.slug}`} variant="green" className="text-[0.65rem] font-bold uppercase tracking-wider px-5 py-2">
+                Book Free Consultation
+              </WhatsAppButton>
+            </div>
           </div>
         </header>
 

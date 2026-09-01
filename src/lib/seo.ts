@@ -38,7 +38,7 @@ export function pageMeta({ title, description, path, type = "website", image }: 
 }
 
 export function canonical(path: string) {
-  return [{ rel: "canonical" as const, href: path }];
+  return [{ rel: "canonical" as const, href: `https://shreyachaudharymakeup.com${path}` }];
 }
 
 export function jsonLd(data: unknown) {

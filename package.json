@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && node -e \"const fs=require('fs'); fs.rmSync('.wrangler', {recursive:true, force:true}); fs.rmSync('dist/_worker.js/wrangler.json', {force:true});\"",
+    "build": "node scripts/generate-rss.js && vite build && node -e \"const fs=require('fs'); fs.rmSync('.wrangler', {recursive:true, force:true}); fs.rmSync('dist/_worker.js/wrangler.json', {force:true});\"",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=shreya-chaudhary-makeup --branch=main",

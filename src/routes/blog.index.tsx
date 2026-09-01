@@ -4,6 +4,7 @@ import { breadcrumbLd, canonical, jsonLd, pageMeta } from "@/lib/seo";
 import { PageHero } from "@/components/site/PageHero";
 import { Section, SectionHeading } from "@/components/site/Section";
 import { CTASection } from "@/components/site/CTASection";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 const title = "Bridal Makeup Journal | Shreya Chaudhary Makeup, Meerut";
 const description =
@@ -32,6 +33,18 @@ function BlogIndex() {
         intro="Practical notes on planning makeup for weddings, engagements and celebrations in Meerut."
         crumbs={crumbs}
       />
+
+      <div className="bg-charcoal text-ivory py-4 border-b border-ivory/10">
+        <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <div className="flex flex-wrap justify-center items-center gap-2 text-ivory/90">
+            <span className="flex items-center gap-1.5 bg-ivory/10 px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold"><span className="text-amber-400">★ 5.0</span> Google Verified</span>
+            <span className="flex items-center gap-1.5 bg-ivory/10 px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold">WedMeGood Certified</span>
+          </div>
+          <WhatsAppButton source="blog_index_banner" variant="green" className="text-xs font-bold uppercase tracking-wider">
+            Check Availability on WhatsApp
+          </WhatsAppButton>
+        </div>
+      </div>
 
       <Section labelledBy="posts-heading">
         <SectionHeading id="posts-heading" eyebrow="Articles" title="Latest writing" />

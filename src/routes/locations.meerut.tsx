@@ -10,9 +10,9 @@ import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { AnswerBlock } from "@/components/site/AnswerBlock";
 import { CTASection } from "@/components/site/CTASection";
 
-const title = "Makeup Artist in Meerut, Uttar Pradesh | Shreya Chaudhary Makeup";
+const title = "Best Bridal Makeup Artist in Meerut | Shreya Chaudhary";
 const description =
-  "Looking for a makeup artist in Meerut? Shreya Chaudhary offers bridal (₹15,000–₹18,000), engagement (₹8,000–₹10,000) and party (₹4,000) makeup with on-location hairstyling in Meerut, Uttar Pradesh.";
+  "Looking for the best bridal makeup artist in Meerut? Shreya Chaudhary offers bespoke HD bridal (₹15K–₹18K), engagement and party makeup. Book for Winter 2026.";
 
 const crumbs = [
   { name: "Home", path: "/" },
@@ -59,8 +59,8 @@ function MeerutPage() {
     <>
       <PageHero
         eyebrow="Serving Meerut"
-        title="Makeup artist in Meerut"
-        intro={`${business.artist} is based in ${locationLabel} and works with brides, brides-to-be and wedding guests across the city — makeup and hairstyling done where you are getting ready.`}
+        title="Best Bridal Makeup Artist in Meerut"
+        intro={`${business.artist} is the premier bridal makeup artist in ${locationLabel}, working with brides across the city. Offering HD makeup and on-location hairstyling. Winter 2026 – 2027 wedding season bookings are now open.`}
         crumbs={crumbs.slice(0, 2)}
       />
 

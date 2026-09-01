@@ -7,7 +7,7 @@ import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF6F0] via-[#FDFBF7] to-[#FAF6F0] px-5 py-8 sm:px-6 sm:py-10 md:px-10 md:py-16 lg:py-20 border-b border-charcoal/10">
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF6F0] via-[#FDFBF7] to-[#FAF6F0] px-5 pt-16 pb-8 sm:px-6 sm:pt-20 sm:pb-10 md:px-10 md:pt-24 md:pb-16 lg:pt-32 lg:pb-20 border-b border-charcoal/10">
       {/* Decorative luxury radial auras */}
       <div className="pointer-events-none absolute -left-40 top-0 h-[450px] w-[450px] rounded-full bg-peach/20 blur-[100px]" />
       <div className="pointer-events-none absolute -right-40 top-40 h-[450px] w-[450px] rounded-full bg-blush/15 blur-[100px]" />
@@ -19,10 +19,10 @@ export function Hero() {
           <div className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left">
             
             {/* Main Luxury Headline */}
-            <h1 className="font-display text-[2.4rem] leading-[1.05] tracking-[-0.03em] text-charcoal sm:text-[3.4rem] md:text-[4rem] lg:text-[4.6rem] font-bold">
-              Bridal Makeup Artist,
-              <span className="block font-serif italic text-blush font-semibold tracking-normal text-[1.9rem] sm:text-[2.6rem] md:text-[3.2rem] lg:text-[3.6rem] mt-1">
-                crafted for your special day.
+            <h1 className="font-sans text-[2.4rem] leading-[1.08] tracking-tight text-charcoal sm:text-[3.4rem] md:text-[4rem] lg:text-[4.6rem] font-extrabold">
+              Best Bridal, Engagement & Party Makeup Artist in Meerut & Delhi NCR
+              <span className="block font-sans text-charcoal/80 font-medium tracking-normal text-[1.2rem] sm:text-[1.6rem] md:text-[2rem] lg:text-[2.2rem] mt-6 lg:mt-8 leading-snug">
+                Luxury on-location HD artistry for your special moments.
               </span>
             </h1>
 
@@ -119,8 +119,8 @@ export function Hero() {
 
             {/* Punchy Value Proposition */}
             <p className="mt-5 max-w-sm sm:max-w-2xl text-sm leading-relaxed text-charcoal/90 sm:text-base md:text-[1.12rem] font-normal">
-              Bespoke bridal &amp; occasion makeup in <strong className="font-bold text-charcoal">{locationLabel} &amp; Delhi NCR</strong>. 
-              <strong className="font-bold text-charcoal"> Strictly 1 bride per slot</strong> with <strong className="font-bold text-charcoal">authentic international vanity kits</strong> — delivering a weightless, 4K camera-ready glow so you feel radiantly confident all night.
+              Bespoke bridal &amp; occasion makeup by the best makeup artist near you in <strong className="font-bold text-charcoal">{locationLabel} &amp; Delhi NCR</strong>. 
+              <strong className="font-bold text-charcoal"> Strictly 1 bride per slot</strong> with <strong className="font-bold text-charcoal">authentic international vanity kits</strong> — delivering a weightless, 4K camera-ready bridal look so you feel radiantly confident all night.
             </p>
 
             {/* High-Converting Action Boxes Group */}
