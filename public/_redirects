@@ -1,0 +1,2 @@
+# www to non-www redirect (301 permanent) — fixes duplicate content issue
+https://www.shreyachaudharymakeup.com/* https://shreyachaudharymakeup.com/:splat 301

@@ -20,9 +20,9 @@ export function Hero() {
             
             {/* Main Luxury Headline */}
             <h1 className="font-display text-[2.4rem] leading-[1.05] tracking-[-0.03em] text-charcoal sm:text-[3.4rem] md:text-[4rem] lg:text-[4.6rem] font-bold">
-              Your vision,
+              Bridal Makeup Artist,
               <span className="block font-serif italic text-blush font-semibold tracking-normal text-[1.9rem] sm:text-[2.6rem] md:text-[3.2rem] lg:text-[3.6rem] mt-1">
-                crafted into timeless beauty.
+                crafted for your special day.
               </span>
             </h1>
 
