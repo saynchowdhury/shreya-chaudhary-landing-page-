@@ -77,6 +77,24 @@ export const websiteGraph = {
       logo: { "@id": ids.logo },
       image: { "@id": ids.logo },
       hasMap: business.googleMyBusinessUrl,
+      potentialAction: [
+        {
+          "@type": "ReserveAction",
+          name: "Book Makeup Services on WhatsApp",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `https://wa.me/${business.whatsapp}?text=Hi%20Shreya%2C%20I%27d%20like%20to%20check%20your%20availability%20for%20a%20makeup%20booking.`,
+            actionPlatform: [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          },
+          result: {
+            "@type": "Reservation",
+            name: "Makeup Service Booking"
+          }
+        }
+      ],
       sameAs: [
         business.googleMyBusinessUrl,
         business.instagramUrl,

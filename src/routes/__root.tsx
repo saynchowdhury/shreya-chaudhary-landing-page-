@@ -89,6 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "alternate", hrefLang: "en-IN", href: "https://shreyachaudharymakeup.com" },
       { rel: "alternate", type: "application/rss+xml", title: "Shreya Chaudhary Makeup Journal RSS", href: "https://shreyachaudharymakeup.com/rss.xml" },
+      { rel: "alternate", type: "text/markdown", title: "Shreya Chaudhary Makeup Content for AI Agents", href: "https://shreyachaudharymakeup.com/llms-full.txt" },
       {
         rel: "stylesheet",
         href: appCss,
