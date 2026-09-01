@@ -1,14 +1,11 @@
-import { defineEventHandler, getRequestHeader, setResponseHeader } from "h3";
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { defineEventHandler, getRequestHeader, setResponseHeader, send } from "h3";
 
 /**
  * Markdown for Agents — Content Negotiation Middleware
  *
- * When an AI agent sends `Accept: text/markdown`, this middleware intercepts
- * the request and returns the llms.txt content as markdown instead of the
- * HTML page. This keeps the markdown in the codebase pipeline (publicly
- * available) so agents automatically discover and consume it.
+ * Intercepts requests carrying `Accept: text/markdown` BEFORE TanStack Start
+ * router executes, returning 200 OK with `Content-Type: text/markdown` and
+ * `x-markdown-tokens` header.
  *
  * References:
  * - https://llmstxt.org/
@@ -16,33 +13,7 @@ import { resolve } from "node:path";
  * - https://isitagentready.com/.well-known/agent-skills/markdown-negotiation/SKILL.md
  */
 
-// Pre-load llms.txt content at build time
-let llmsTxtContent: string | null = null;
-
-function getLlmsTxt(): string {
-  if (llmsTxtContent) return llmsTxtContent;
-  try {
-    // In Cloudflare Pages, public assets are in the dist root
-    // Try multiple possible locations
-    const paths = [
-      resolve("public/llms.txt"),
-      resolve("dist/llms.txt"),
-      resolve("llms.txt"),
-    ];
-    for (const p of paths) {
-      try {
-        llmsTxtContent = readFileSync(p, "utf-8");
-        return llmsTxtContent;
-      } catch {
-        // Try next path
-      }
-    }
-  } catch {
-    // Fallback
-  }
-
-  // Inline fallback content if file reads fail (Cloudflare Workers can't read fs)
-  return `# Shreya Chaudhary Makeup
+const LLMS_MARKDOWN = `# Shreya Chaudhary Makeup
 
 > Shreya Chaudhary Makeup is a luxury bridal and occasion makeup artist based in Meerut, Uttar Pradesh, serving clients across Meerut, Noida, Greater Noida, Ghaziabad, Muzaffarnagar, Shamli, Delhi NCR, and destination weddings.
 
@@ -54,6 +25,12 @@ function getLlmsTxt(): string {
 - **Direct WhatsApp Booking:** +91 70037 81618 (https://wa.me/917003781618)
 - **Instagram:** [@shreyachaudharymakeup](https://www.instagram.com/shreyachaudharymakeup/)
 - **Website:** https://shreyachaudharymakeup.com
+
+## Philosophy & Standard
+- **1-on-1 Dedicated Focus:** Strictly 1 bride per time slot. Zero rushed salon conveyor-belt appointments.
+- **On-Location Suite Artistry:** Calm, punctual getting-ready sessions directly in the client's venue or home.
+- **100% Authentic Luxury Vanity:** Uses exclusively genuine international cosmetics (MAC, NARS, Huda Beauty, Charlotte Tilbury, Estée Lauder, Rare Beauty, Laura Mercier). Zero cheap drugstore foundations.
+- **Zero Flashback & 16-Hour Wear:** Custom skin-prep and undertone matching that looks natural in person and photographs flawlessly in 4K.
 
 ## Services & Transparent Pricing
 
@@ -77,23 +54,20 @@ function getLlmsTxt(): string {
 - **Muzaffarnagar:** https://shreyachaudharymakeup.com/locations/muzaffarnagar
 - **Shamli:** https://shreyachaudharymakeup.com/locations/shamli
 - **Delhi NCR:** https://shreyachaudharymakeup.com/locations/delhi-ncr
+- **Destination Weddings:** Travel available across India upon advance booking.
 
 ## Contact & Inquiries
 - **WhatsApp:** +91 70037 81618
 - **Hours:** Monday – Sunday, 10:00 AM – 9:00 PM IST
 `;
-}
+
+const TOKEN_COUNT = Math.ceil(LLMS_MARKDOWN.length / 4);
 
 export default defineEventHandler((event) => {
   const accept = getRequestHeader(event, "accept") || "";
 
-  // Only intercept if the agent explicitly wants markdown
   if (accept.includes("text/markdown")) {
-    const markdown = getLlmsTxt();
-    const tokenCount = Math.ceil(markdown.length / 4); // Rough token estimate
-
-    setResponseHeader(event, "Content-Type", "text/markdown; charset=utf-8");
-    setResponseHeader(event, "x-markdown-tokens", String(tokenCount));
+    setResponseHeader(event, "x-markdown-tokens", String(TOKEN_COUNT));
     setResponseHeader(event, "Vary", "Accept");
     setResponseHeader(
       event,
@@ -101,9 +75,6 @@ export default defineEventHandler((event) => {
       "public, max-age=86400, stale-while-revalidate=3600"
     );
 
-    return markdown;
+    return send(event, LLMS_MARKDOWN, "text/markdown; charset=utf-8");
   }
-
-  // For all other requests, continue to the normal handler
-  // (do nothing — next middleware/handler runs)
 });

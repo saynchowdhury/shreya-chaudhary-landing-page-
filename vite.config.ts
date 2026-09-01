@@ -27,13 +27,6 @@ export default defineConfig({
           },
         },
       },
-      serverHandlers: [
-        {
-          route: "/**",
-          middleware: true,
-          handler: "~/server/middleware/markdown-for-agents.ts",
-        },
-      ],
     }),
     viteReact(),
   ],

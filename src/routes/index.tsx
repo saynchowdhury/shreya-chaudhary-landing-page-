@@ -16,7 +16,7 @@ import { SmartBookingInquirer } from "@/components/site/SmartBookingInquirer";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { CTASection } from "@/components/site/CTASection";
 
-const title = "Bridal Makeup Artist in Meerut & Delhi NCR | Shreya Chaudhary";
+const title = "Bridal Makeup Artist Meerut | Shreya Chaudhary";
 const description =
   "Exquisite bridal, engagement and party makeup in Meerut & Delhi NCR by Shreya Chaudhary. 5.0 Google Verified. Authentic luxury kits with NARS, Huda Beauty, MAC & Rare Beauty. Book Free Consultation on WhatsApp.";
 
