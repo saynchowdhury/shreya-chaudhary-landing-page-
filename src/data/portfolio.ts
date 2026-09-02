@@ -18,6 +18,7 @@ export interface PortfolioItem {
     draping: string;
   };
   meta?: { event?: string; location?: string };
+  lastmod?: string;
 }
 
 /**
@@ -44,6 +45,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Royal Sheer Red Embroidered Veil with Kundan Matha Patti",
     },
     meta: { event: "Main Wedding Day", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 2. Engagement Signature
@@ -64,6 +66,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Modern Scalloped Shoulder Dupatta Setting",
     },
     meta: { event: "Ring Ceremony", location: "Delhi NCR" },
+    lastmod: "2026-09-02",
   },
 
   // 3. Party & Sangeet Signature
@@ -84,6 +87,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Contemporary Net Dupatta Pinning",
     },
     meta: { event: "Sangeet & Cocktail Party", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 4. Bridal High-Fashion Monochrome Veil
@@ -104,6 +108,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Zari Lace Scalloped Veil Overhead Draping",
     },
     meta: { event: "Cinematic Bridal", location: "Delhi NCR" },
+    lastmod: "2026-09-02",
   },
 
   // 5. Engagement Cocktail & Evening
@@ -124,6 +129,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Modern Pre-Pleated Shoulder Draping",
     },
     meta: { event: "Engagement Gala", location: "Delhi NCR" },
+    lastmod: "2026-09-02",
   },
 
   // 6. Party Blushing Rose
@@ -144,6 +150,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Pleated Dupatta & Saree Pinning",
     },
     meta: { event: "Sangeet Night", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 7. Bridal Couture with Shreya
@@ -164,6 +171,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Double Dupatta Setting with Kundan Matha Patti",
     },
     meta: { event: "Wedding Ceremony", location: "Meerut Cantt" },
+    lastmod: "2026-09-02",
   },
 
   // 8. Engagement Sunset Vermilion
@@ -184,6 +192,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "One-Side Flowing Dupatta Pinning",
     },
     meta: { event: "Ring Ceremony", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 9. Party Silk Saree & Festive
@@ -204,6 +213,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Pleated Silk Saree Draping",
     },
     meta: { event: "Reception Party", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 10. Bridal Retro Finger Waves
@@ -224,6 +234,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Handcrafted Emerald Choker & Nath Placement",
     },
     meta: { event: "Bridal Reveal", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 11. Destination Suite Touchup
@@ -244,6 +255,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Contemporary Cape Draping",
     },
     meta: { event: "Destination Wedding", location: "Delhi NCR / Outstation" },
+    lastmod: "2026-09-02",
   },
 
   // 12. Bridal Ivory & Emerald
@@ -264,6 +276,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Hand-Embroidered Ivory Net Veil Draping",
     },
     meta: { event: "Day Wedding", location: "Delhi NCR" },
+    lastmod: "2026-09-02",
   },
 
   // 13. Bridal Joyful Crimson Heritage
@@ -284,6 +297,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Double Net Dupatta with Scalloped Border Pinning",
     },
     meta: { event: "Traditional Wedding", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 14. Bridal Ethereal Cut-Crease Shimmer
@@ -304,6 +318,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Royal Sheer Red Embroidered Veil with Kundan Matha Patti",
     },
     meta: { event: "Main Wedding Day", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 15. Bridal Dhoop Ceremony
@@ -324,6 +339,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Deep Crimson Zardozi Lehenga Dupatta Pinning",
     },
     meta: { event: "Ceremonial Pheras", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 16. Bridal Heritage Gold & Emerald
@@ -344,6 +360,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Regal Gold Zardozi Dupatta Pinning",
     },
     meta: { event: "Hindu Wedding", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 17. Bridal Timeless Crimson Velvet
@@ -364,6 +381,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Traditional Dual Velvet Dupatta Draping",
     },
     meta: { event: "Wedding Ceremony", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 18. Bridal Vintage Emerald Editorial
@@ -384,6 +402,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Heritage Zari Border Dupatta Setting",
     },
     meta: { event: "Editorial Bridal", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 19. Bridal Royal North-Indian
@@ -404,6 +423,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Deep Red Banarasi Dupatta Draping",
     },
     meta: { event: "Traditional Wedding", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 
   // 20. Bridal Skin Texture & Precision Eye Glam
@@ -424,6 +444,7 @@ export const portfolio: PortfolioItem[] = [
       draping: "Delicate Net Veil Pinning",
     },
     meta: { event: "Bridal Portrait", location: "Meerut" },
+    lastmod: "2026-09-02",
   },
 ];
 

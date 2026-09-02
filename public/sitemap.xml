@@ -151,6 +151,13 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://shreyachaudharymakeup.com/locations</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Geographic / Regional Location Hubs -->
   <url>
     <loc>https://shreyachaudharymakeup.com/locations/meerut</loc>
@@ -422,6 +429,8 @@
       <image:caption>Macro close-up of bridal makeup showcasing flawless skin texture, rose eye glam and kundan jewelry</image:caption>
     </image:image>
   </url>
+
+
 
 
 

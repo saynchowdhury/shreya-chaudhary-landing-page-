@@ -8,7 +8,16 @@ async function generateImageSitemaps() {
   try {
     const portfolioModule = await import('../src/data/portfolio.ts');
     const portfolio = portfolioModule.portfolio;
-    const today = new Date().toISOString().split('T')[0];
+
+    // Retrieve per-look actual modification date where available.
+    // When no accurate modification date exists, omit lastmod rather than using today's generation date.
+    const getLookLastmod = (look) => {
+      const candidate = look.lastmod || look.dateModified || look.meta?.date;
+      if (typeof candidate === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(candidate.trim())) {
+        return candidate.trim();
+      }
+      return null;
+    };
 
     // 1. Generate standalone sitemap-images.xml (for Google Images)
     let imagesXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -22,10 +31,11 @@ async function generateImageSitemaps() {
       const cleanTitle = escapeXml(`${look.title} - Bridal Makeup Meerut | Shreya Chaudhary`);
       const cleanCaption = escapeXml(look.alt);
       const location = escapeXml(look.meta?.location ? `${look.meta.location}, Uttar Pradesh, India` : 'Meerut, Uttar Pradesh, India');
+      const lookLastmod = getLookLastmod(look);
+      const lastmodTag = lookLastmod ? `\n    <lastmod>${lookLastmod}</lastmod>` : '';
 
       imagesXml += `  <url>
-    <loc>${pageLoc}</loc>
-    <lastmod>${today}</lastmod>
+    <loc>${pageLoc}</loc>${lastmodTag}
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -50,11 +60,11 @@ async function generateImageSitemaps() {
     if (!mainXml.includes('<loc>https://shreyachaudharymakeup.com/locations</loc>')) {
       const locationsBlock = `  <url>
     <loc>https://shreyachaudharymakeup.com/locations</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>\n\n`;
-      mainXml = mainXml.replace('  <!-- Location Specific Landing Pages', locationsBlock + '  <!-- Location Specific Landing Pages');
+      mainXml = mainXml.replace('  <!-- Geographic / Regional Location Hubs -->', locationsBlock + '  <!-- Geographic / Regional Location Hubs -->');
     }
 
     // Replace or append looks block
@@ -65,10 +75,11 @@ async function generateImageSitemaps() {
       const imageLoc = `${domain}${look.src}`;
       const cleanTitle = escapeXml(`${look.title} - Bridal Makeup Meerut`);
       const cleanCaption = escapeXml(look.alt);
+      const lookLastmod = getLookLastmod(look);
+      const lastmodTag = lookLastmod ? `\n    <lastmod>${lookLastmod}</lastmod>` : '';
 
       looksBlock += `  <url>
-    <loc>${pageLoc}</loc>
-    <lastmod>${today}</lastmod>
+    <loc>${pageLoc}</loc>${lastmodTag}
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
