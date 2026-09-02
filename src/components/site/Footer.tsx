@@ -261,6 +261,59 @@ export function Footer() {
             </Link>
           </nav>
         </div>
+
+        {/* Machine-Readable Protocols & AI Transparency Bar */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-ivory/10 pt-4 text-[0.68rem] text-ivory/50">
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span>AI-Ready &amp; Verified Search Architecture</span>
+          </div>
+          <nav
+            aria-label="Machine Readable Protocols"
+            className="flex flex-wrap items-center gap-4"
+          >
+            <a
+              href="/llms.txt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono transition-colors hover:text-peach"
+            >
+              /llms.txt
+            </a>
+            <a
+              href="/llms-full.txt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono transition-colors hover:text-peach"
+            >
+              /llms-full.txt
+            </a>
+            <a
+              href="/sitemap.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono transition-colors hover:text-peach"
+            >
+              /sitemap.xml
+            </a>
+            <a
+              href="/robots.txt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono transition-colors hover:text-peach"
+            >
+              /robots.txt
+            </a>
+            <a
+              href="/rss.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono transition-colors hover:text-peach"
+            >
+              /rss.xml
+            </a>
+          </nav>
+        </div>
       </div>
     </footer>
   );
