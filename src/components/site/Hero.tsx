@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { FileText, ArrowUpRight } from "lucide-react";
+import { Download, ArrowUpRight } from "lucide-react";
 import { business, locationLabel } from "@/data/business";
 import { portfolio } from "@/data/portfolio";
 import { track } from "@/lib/analytics";
@@ -145,13 +145,14 @@ export function Hero() {
               {/* Box 3: PDF Bridal Catalog Box Component */}
               <a
                 href="/shreya-chaudhary-makeup-catalog.pdf"
+                download="Shreya-Chaudhary-Bridal-Catalog-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => track("brochure_open", { source: "hero_cta_button" })}
+                onClick={() => track("brochure_download", { source: "hero_cta_button" })}
                 className="group flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/25 bg-card px-5 py-3.5 text-[0.7rem] uppercase tracking-[0.14em] text-charcoal transition-all hover:bg-charcoal hover:text-ivory font-bold text-center shadow-2xs hover:shadow-md active:scale-[0.98] min-w-[190px]"
               >
-                <FileText className="h-3.5 w-3.5 text-blush group-hover:text-peach transition-colors shrink-0" />
-                <span>Open Bridal Catalog (PDF)</span>
+                <Download className="h-3.5 w-3.5 text-blush group-hover:text-peach transition-colors shrink-0 group-hover:translate-y-0.5" />
+                <span>Download Bridal Catalog (PDF)</span>
               </a>
             </div>
 
@@ -211,21 +212,22 @@ export function Hero() {
               {/* Floating Brochure Access Badge (Top Right) */}
               <a
                 href="/shreya-chaudhary-makeup-catalog.pdf"
+                download="Shreya-Chaudhary-Bridal-Catalog-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => track("brochure_open", { source: "hero_floating_badge" })}
+                onClick={() => track("brochure_download", { source: "hero_floating_badge" })}
                 className="group absolute -top-4 -right-4 rounded-xl bg-ivory/95 backdrop-blur-md border border-charcoal/15 p-3.5 shadow-xl transition-all hover:border-charcoal hover:scale-[1.03]"
               >
                 <div className="flex items-center gap-2.5">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-peach/20 text-charcoal group-hover:bg-charcoal group-hover:text-ivory transition-colors">
-                    <FileText className="h-4 w-4" />
+                    <Download className="h-4 w-4 text-charcoal group-hover:text-ivory transition-colors" />
                   </div>
                   <div className="text-left">
                     <p className="text-[0.68rem] uppercase tracking-[0.16em] text-charcoal font-bold flex items-center gap-1">
                       Bridal Catalog <ArrowUpRight className="h-3 w-3 text-blush inline group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </p>
                     <p className="text-[0.62rem] text-charcoal/70 font-semibold">
-                      Open PDF Brochure (2026)
+                      Download PDF (2026 Edition)
                     </p>
                   </div>
                 </div>

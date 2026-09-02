@@ -157,6 +157,16 @@ export function Footer() {
                   Contact Studio
                 </Link>
               </li>
+              <li>
+                <a
+                  href="/shreya-chaudhary-makeup-catalog.pdf"
+                  download="Shreya-Chaudhary-Bridal-Catalog-2026.pdf"
+                  className="transition-colors hover:text-peach inline-flex items-center gap-1.5 hover:translate-x-0.5 transition-transform font-semibold text-peach"
+                >
+                  <span>Download Catalog</span>
+                  <span className="text-[0.62rem] uppercase tracking-wider text-charcoal bg-peach font-extrabold px-1.5 py-0.2 rounded">PDF</span>
+                </a>
+              </li>
             </ul>
           </nav>
 
