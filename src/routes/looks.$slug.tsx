@@ -126,7 +126,7 @@ function LookShowcasePage() {
                 <div className="absolute bottom-4 right-4">
                   <a
                     href={look.src}
-                    download={`${look.slug}.jpg`}
+                    download={`${look.slug}.${look.src.split(".").pop()?.toLowerCase() ?? "jpg"}`}
                     className="inline-flex items-center gap-1.5 rounded-full bg-charcoal/85 backdrop-blur-md px-3 py-1.5 text-xs text-ivory border border-ivory/20 hover:bg-charcoal transition-colors shadow-md"
                     title="Save Look Reference"
                   >

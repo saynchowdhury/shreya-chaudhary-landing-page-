@@ -22,7 +22,7 @@ async function optimizeImages() {
 
     if ((isJpeg || isPng) && stat.size > 800 * 1024) {
       try {
-        const pipeline = sharp(filePath).resize(1600, 1600, {
+        const pipeline = sharp(filePath).rotate().resize(1600, 1600, {
           fit: 'inside',
           withoutEnlargement: true,
         });
