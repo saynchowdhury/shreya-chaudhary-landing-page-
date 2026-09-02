@@ -1,6 +1,7 @@
 import { business, locationLabel } from "@/data/business";
 import { services, whyShreya } from "@/data/services";
 import { homeFaqs } from "@/data/faqs";
+import { getLookBySlug } from "@/data/portfolio";
 
 export function getMarkdownForRoute(rawPath: string): string {
   const pathname = rawPath.split("?")[0].replace(/\/$/, "") || "/";
@@ -65,6 +66,35 @@ ${services.map((s) => `| **${s.name}** | ${s.priceLabel} | ${s.inclusions.slice(
 ## Direct WhatsApp Date Verification:
 [Check ${cityName} Date Availability on WhatsApp](https://wa.me/${business.whatsapp}?text=${encodeURIComponent(`Hi Shreya, I'd like to check your availability for an on-location makeup booking in ${cityName}.`)})
 `;
+  }
+
+  if (pathname.startsWith("/looks")) {
+    const slug = pathname.replace("/looks/", "").replace("/looks", "");
+    const look = getLookBySlug(slug);
+
+    if (look) {
+      return `# ${look.title} — Shreya Chaudhary Makeup
+
+> ${look.alt}
+
+## Look Specifications & Artistry Breakdown:
+- **Look Title:** ${look.title}
+- **Category:** ${look.category.toUpperCase()} Artistry
+- **Technique:** ${look.technique ?? "Signature HD Complexion"}
+- **Skin Finish:** ${look.lookDetails?.skinFinish ?? "Velvet Glass Glow"}
+- **Eye Style:** ${look.lookDetails?.eyeStyle ?? "Custom Lashes & Blend"}
+- **Hairstyling:** ${look.lookDetails?.hairStyling ?? "Included on location"}
+- **Draping:** ${look.lookDetails?.draping ?? "Jewelry and veil pinning included"}
+- **Location:** ${look.meta?.location ?? "Meerut & Delhi NCR"}
+- **Event:** ${look.meta?.event ?? "Wedding"}
+
+## High-Resolution Image:
+https://shreyachaudharymakeup.com${look.src}
+
+## Direct WhatsApp Booking Action:
+[Check Availability for this Look (WhatsApp: +91 70037 81618)](https://wa.me/${business.whatsapp}?text=${encodeURIComponent(`Hi Shreya, I found your "${look.title}" look on Google and want to check your availability for my wedding date on [Date].`)})
+`;
+    }
   }
 
   if (pathname === "/why-shreya") {

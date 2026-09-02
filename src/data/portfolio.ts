@@ -1,6 +1,7 @@
 import type { PortfolioCategory } from "./services";
 
 export interface PortfolioItem {
+  slug: string;
   src: string;
   alt: string;
   title: string;
@@ -27,6 +28,7 @@ export interface PortfolioItem {
 export const portfolio: PortfolioItem[] = [
   // 1. Bridal Signature
   {
+    slug: "royal-crimson-and-gold-couture-bride",
     src: "/IMG_5032.JPG.jpeg",
     alt: "Stunning real bride in intricate red and gold zardozi lehenga with ornate nath and emerald kundan jewelry",
     title: "Royal Crimson & Gold Couture Bride",
@@ -46,6 +48,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 2. Engagement Signature
   {
+    slug: "antique-gold-and-ruby-editorial-engagement",
     src: "/IMG_0537.JPG.jpeg",
     alt: "Editorial portrait of a client in an intricate antique gold and ruby embroidered lehenga with elegant diamond-ruby necklace and maang tikka",
     title: "Antique Gold & Ruby Editorial Engagement",
@@ -65,6 +68,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 3. Party & Sangeet Signature
   {
+    slug: "rose-gold-shimmer-sangeet-and-cocktail-glam",
     src: "/IMG_4411.JPG.jpeg",
     alt: "Stunning wedding guest in blush rose gold mirror-work lehenga with fresh rose hair styling and glowing makeup",
     title: "Rose Gold Shimmer Sangeet & Cocktail Glam",
@@ -84,6 +88,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 4. Bridal High-Fashion Monochrome Veil
   {
+    slug: "cinematic-monochrome-bridal-veil",
     src: "/IMG_8969.JPG.jpeg",
     alt: "Dramatic high-contrast black and white cinematic bridal portrait under embroidered lace veil",
     title: "Cinematic Monochrome Bridal Veil",
@@ -103,6 +108,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 5. Engagement Cocktail & Evening
   {
+    slug: "twilight-rose-gold-and-silver-cocktail-glam",
     src: "/IMG_6560.PNG",
     alt: "Bride in ethereal pastel silver and rose-gold lehenga with open wavy hairstyle",
     title: "Twilight Rose Gold & Silver Cocktail Glam",
@@ -122,6 +128,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 6. Party Blushing Rose
   {
+    slug: "blushing-rose-and-gold-sangeet-glam",
     src: "/IMG_7994.JPG.jpeg",
     alt: "Radiant smiling client in a pink and gold embroidered lehenga with glowing soft makeup and natural wavy hair",
     title: "Blushing Rose & Gold Sangeet Glam",
@@ -141,6 +148,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 7. Bridal Couture with Shreya
   {
+    slug: "royal-gold-zardozi-couture-bride",
     src: "/IMG_0398.JPEG",
     alt: "Artist Shreya Chaudhary with a real bride in a royal handcrafted gold zardozi lehenga",
     title: "Royal Gold Zardozi Couture Bride",
@@ -160,6 +168,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 8. Engagement Sunset Vermilion
   {
+    slug: "sunset-vermilion-ring-ceremony-glam",
     src: "/IMG_0120.PNG",
     alt: "Bride in vibrant sunset orange and vermilion outfit for ring ceremony",
     title: "Sunset Vermilion Ring Ceremony Glam",
@@ -179,6 +188,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 9. Party Silk Saree & Festive
   {
+    slug: "sophisticated-saree-and-sangeet-party-glam",
     src: "/IMG_9067.PNG",
     alt: "Elegant lady in festive silk saree with refined makeup and open hair",
     title: "Sophisticated Saree & Sangeet Party Glam",
@@ -198,6 +208,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 10. Bridal Retro Finger Waves
   {
+    slug: "retro-finger-waves-and-emerald-kundan-glam",
     src: "/IMG_9056.JPEG",
     alt: "Close-up of bridal face showing retro finger waves, emerald kundan jewelry and glass skin finish",
     title: "Retro Finger Waves & Emerald Kundan Glam",
@@ -217,6 +228,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 11. Destination Suite Touchup
   {
+    slug: "destination-bridal-suite-glam-session",
     src: "/IMG_7352.JPG.jpeg",
     alt: "Destination bride getting ready with luxury makeup brushes in bridal vanity suite",
     title: "Destination Bridal Suite Glam Session",
@@ -236,6 +248,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 12. Bridal Ivory & Emerald
   {
+    slug: "ivory-and-emerald-contemporary-bridal",
     src: "/IMG_0894.JPG.jpeg",
     alt: "Artist Shreya Chaudhary with bride dressed in an ivory and emerald bridal lehenga with embroidered veil",
     title: "Ivory & Emerald Contemporary Bridal",
@@ -255,6 +268,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 13. Bridal Joyful Crimson Heritage
   {
+    slug: "joyful-crimson-and-gold-heritage-bride",
     src: "/IMG_9093.JPEG",
     alt: "Radiant smiling bride in red and gold embroidered lehenga with delicate temple jewellery",
     title: "Joyful Crimson & Gold Heritage Bride",
@@ -274,6 +288,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 14. Bridal Ethereal Cut-Crease Shimmer
   {
+    slug: "ethereal-red-and-gold-couture-bride",
     src: "/IMG_5031.JPG.jpeg",
     alt: "Ethereal bride with closed eyes showing glitter cut-crease eye glam and royal red lehenga with emerald jewelry",
     title: "Ethereal Red & Gold Couture Bride",
@@ -293,6 +308,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 15. Bridal Dhoop Ceremony
   {
+    slug: "regal-dhoop-ceremony-royal-bridal",
     src: "/IMG_7690.JPG.jpeg",
     alt: "Ceremonial bridal portrait with traditional incense dhoop and deep crimson zardozi lehenga",
     title: "Regal Dhoop Ceremony Royal Bridal",
@@ -312,6 +328,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 16. Bridal Heritage Gold & Emerald
   {
+    slug: "heritage-gold-and-emerald-royal-bridal",
     src: "/IMG_0396.JPEG",
     alt: "Real bride full portrait in golden bridal lehenga and heavy kundan emerald jewelry",
     title: "Heritage Gold & Emerald Royal Bridal",
@@ -331,6 +348,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 17. Bridal Timeless Crimson Velvet
   {
+    slug: "timeless-crimson-red-heritage-bridal",
     src: "/IMG_5944.PNG",
     alt: "Bride in traditional crimson red lehenga with royal kundan choker, bridal makeup by Shreya Chaudhary",
     title: "Timeless Crimson Red Heritage Bridal",
@@ -350,6 +368,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 18. Bridal Vintage Emerald Editorial
   {
+    slug: "vintage-emerald-and-royal-red-editorial",
     src: "/IMG_9054.JPEG",
     alt: "Editorial bride in heavy red zardozi lehenga wearing emerald jewellery and gold nath",
     title: "Vintage Emerald & Royal Red Editorial",
@@ -369,6 +388,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 19. Bridal Royal North-Indian
   {
+    slug: "royal-north-indian-heritage-bridal",
     src: "/IMG_6597.PNG",
     alt: "Traditional bride with ornate gold nath and emerald choker in deep red lehenga",
     title: "Royal North-Indian Heritage Bridal",
@@ -388,6 +408,7 @@ export const portfolio: PortfolioItem[] = [
 
   // 20. Bridal Skin Texture & Precision Eye Glam
   {
+    slug: "editorial-skin-texture-and-precision-eye-glam",
     src: "/IMG_0391.JPEG",
     alt: "Macro close-up of bridal makeup showcasing flawless skin texture, rose eye glam and kundan jewelry",
     title: "Editorial Skin Texture & Precision Eye Glam",
@@ -449,3 +470,11 @@ export const portfolioCategories: {
     blurb: "Weightless, elegant makeup for sangeets, cocktail nights, and family celebrations.",
   },
 ];
+
+export const getLookBySlug = (slug: string): PortfolioItem | undefined =>
+  portfolio.find((item) => item.slug === slug);
+
+export const getRelatedLooks = (currentSlug: string, category: PortfolioCategory, limit = 3): PortfolioItem[] =>
+  portfolio
+    .filter((item) => item.slug !== currentSlug && item.category === category)
+    .slice(0, limit);

@@ -82,3 +82,4 @@ Disallow: /
 # SITEMAP DISCOVERY
 # ------------------------------------------------------------------------------
 Sitemap: https://shreyachaudharymakeup.com/sitemap.xml
+Sitemap: https://shreyachaudharymakeup.com/sitemap-images.xml

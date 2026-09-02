@@ -28,6 +28,7 @@ import { Route as LocationsMeerutRouteImport } from './routes/locations.meerut'
 import { Route as LocationsMuzaffarnagarRouteImport } from './routes/locations.muzaffarnagar'
 import { Route as LocationsNoidaRouteImport } from './routes/locations.noida'
 import { Route as LocationsShamliRouteImport } from './routes/locations.shamli'
+import { Route as LooksSlugRouteImport } from './routes/looks.$slug'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
 import { Route as PortfolioBridalRouteImport } from './routes/portfolio.bridal'
 import { Route as PortfolioEngagementRouteImport } from './routes/portfolio.engagement'
@@ -130,6 +131,11 @@ const LocationsShamliRoute = LocationsShamliRouteImport.update({
   path: '/locations/shamli',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LooksSlugRoute = LooksSlugRouteImport.update({
+  id: '/looks/$slug',
+  path: '/looks/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
   id: '/portfolio/',
   path: '/portfolio/',
@@ -179,6 +185,7 @@ export interface FileRoutesByFullPath {
   '/locations/muzaffarnagar': typeof LocationsMuzaffarnagarRoute
   '/locations/noida': typeof LocationsNoidaRoute
   '/locations/shamli': typeof LocationsShamliRoute
+  '/looks/$slug': typeof LooksSlugRoute
   '/portfolio/bridal': typeof PortfolioBridalRoute
   '/portfolio/engagement': typeof PortfolioEngagementRoute
   '/portfolio/party': typeof PortfolioPartyRoute
@@ -206,6 +213,7 @@ export interface FileRoutesByTo {
   '/locations/muzaffarnagar': typeof LocationsMuzaffarnagarRoute
   '/locations/noida': typeof LocationsNoidaRoute
   '/locations/shamli': typeof LocationsShamliRoute
+  '/looks/$slug': typeof LooksSlugRoute
   '/portfolio/bridal': typeof PortfolioBridalRoute
   '/portfolio/engagement': typeof PortfolioEngagementRoute
   '/portfolio/party': typeof PortfolioPartyRoute
@@ -234,6 +242,7 @@ export interface FileRoutesById {
   '/locations/muzaffarnagar': typeof LocationsMuzaffarnagarRoute
   '/locations/noida': typeof LocationsNoidaRoute
   '/locations/shamli': typeof LocationsShamliRoute
+  '/looks/$slug': typeof LooksSlugRoute
   '/portfolio/bridal': typeof PortfolioBridalRoute
   '/portfolio/engagement': typeof PortfolioEngagementRoute
   '/portfolio/party': typeof PortfolioPartyRoute
@@ -263,6 +272,7 @@ export interface FileRouteTypes {
     | '/locations/muzaffarnagar'
     | '/locations/noida'
     | '/locations/shamli'
+    | '/looks/$slug'
     | '/portfolio/bridal'
     | '/portfolio/engagement'
     | '/portfolio/party'
@@ -290,6 +300,7 @@ export interface FileRouteTypes {
     | '/locations/muzaffarnagar'
     | '/locations/noida'
     | '/locations/shamli'
+    | '/looks/$slug'
     | '/portfolio/bridal'
     | '/portfolio/engagement'
     | '/portfolio/party'
@@ -317,6 +328,7 @@ export interface FileRouteTypes {
     | '/locations/muzaffarnagar'
     | '/locations/noida'
     | '/locations/shamli'
+    | '/looks/$slug'
     | '/portfolio/bridal'
     | '/portfolio/engagement'
     | '/portfolio/party'
@@ -345,6 +357,7 @@ export interface RootRouteChildren {
   LocationsMuzaffarnagarRoute: typeof LocationsMuzaffarnagarRoute
   LocationsNoidaRoute: typeof LocationsNoidaRoute
   LocationsShamliRoute: typeof LocationsShamliRoute
+  LooksSlugRoute: typeof LooksSlugRoute
   PortfolioBridalRoute: typeof PortfolioBridalRoute
   PortfolioEngagementRoute: typeof PortfolioEngagementRoute
   PortfolioPartyRoute: typeof PortfolioPartyRoute
@@ -490,6 +503,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocationsShamliRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/looks/$slug': {
+      id: '/looks/$slug'
+      path: '/looks/$slug'
+      fullPath: '/looks/$slug'
+      preLoaderRoute: typeof LooksSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portfolio/': {
       id: '/portfolio/'
       path: '/portfolio'
@@ -553,6 +573,7 @@ const rootRouteChildren: RootRouteChildren = {
   LocationsMuzaffarnagarRoute: LocationsMuzaffarnagarRoute,
   LocationsNoidaRoute: LocationsNoidaRoute,
   LocationsShamliRoute: LocationsShamliRoute,
+  LooksSlugRoute: LooksSlugRoute,
   PortfolioBridalRoute: PortfolioBridalRoute,
   PortfolioEngagementRoute: PortfolioEngagementRoute,
   PortfolioPartyRoute: PortfolioPartyRoute,

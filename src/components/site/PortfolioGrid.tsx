@@ -263,11 +263,16 @@ export function PortfolioGrid({ items, showFilters = true }: PortfolioGridProps)
                   <span>Inquire for {currentService.name} on WhatsApp</span>
                 </a>
 
-                <div className="flex items-center justify-between text-[0.7rem] text-muted-foreground pt-1">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="h-3 w-3 text-blush" />
-                    <span>Serving {current.meta?.location ?? "Meerut & Delhi NCR"}</span>
-                  </span>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[0.7rem] text-muted-foreground pt-2 border-t border-charcoal/10">
+                  <Link
+                    to="/looks/$slug"
+                    params={{ slug: current.slug }}
+                    onClick={close}
+                    className="font-bold text-blush hover:text-charcoal hover:underline transition-colors inline-flex items-center gap-1"
+                  >
+                    <span>View Look Page &amp; Specs</span>
+                    <ArrowUpRight className="h-3 w-3" />
+                  </Link>
                   <Link
                     to="/services/$slug"
                     params={{ slug: currentService.slug }}
