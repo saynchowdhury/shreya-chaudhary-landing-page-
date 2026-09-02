@@ -144,7 +144,7 @@ export function Hero() {
 
               {/* Box 3: PDF Bridal Catalog Box Component */}
               <a
-                href="/Shreya%20Chaudhary%20Makeup%20Catalog.pdf"
+                href="/shreya-chaudhary-makeup-catalog.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("brochure_open", { source: "hero_cta_button" })}
@@ -210,7 +210,7 @@ export function Hero() {
 
               {/* Floating Brochure Access Badge (Top Right) */}
               <a
-                href="/Shreya%20Chaudhary%20Makeup%20Catalog.pdf"
+                href="/shreya-chaudhary-makeup-catalog.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("brochure_open", { source: "hero_floating_badge" })}

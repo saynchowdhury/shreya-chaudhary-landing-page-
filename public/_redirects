@@ -1,2 +1,6 @@
 # www to non-www redirect (301 permanent) — fixes duplicate content issue
 https://www.shreyachaudharymakeup.com/* https://shreyachaudharymakeup.com/:splat 301
+
+# Bridal Catalog redirects
+/Shreya%20Chaudhary%20Makeup%20Catalog.pdf /shreya-chaudhary-makeup-catalog.pdf 301
+/Shreya*Makeup*Catalog* /shreya-chaudhary-makeup-catalog.pdf 301
