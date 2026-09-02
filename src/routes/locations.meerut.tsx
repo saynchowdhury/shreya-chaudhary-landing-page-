@@ -82,19 +82,17 @@ function MeerutPage() {
               ))}
             </ul>
             <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Travel is available for bridal bookings. Share your venue on WhatsApp and it can
-              be confirmed against your date.
+              Travel is available for bridal bookings. Share your venue on WhatsApp and it can be
+              confirmed against your date.
             </p>
           </div>
 
           <aside className="h-fit border border-border bg-card p-8">
             <p className="eyebrow text-blush">Local enquiries</p>
-            <p className="mt-4 font-display text-2xl text-charcoal">
-              {business.whatsappDisplay}
-            </p>
+            <p className="mt-4 font-display text-2xl text-charcoal">{business.whatsappDisplay}</p>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              WhatsApp is the fastest way to check a {business.city} date. Send your occasion,
-              date and the area you are getting ready in.
+              WhatsApp is the fastest way to check a {business.city} date. Send your occasion, date
+              and the area you are getting ready in.
             </p>
             <ul className="mt-7 space-y-3 text-sm">
               {services.map((service) => (
@@ -154,10 +152,7 @@ function MeerutPage() {
         </div>
       </Section>
 
-      <CTASection
-        source="meerut_final_cta"
-        title={`Getting married in ${business.city}?`}
-      />
+      <CTASection source="meerut_final_cta" title={`Getting married in ${business.city}?`} />
     </>
   );
 }

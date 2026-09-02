@@ -23,7 +23,10 @@ export function BrandMarquee() {
   const doubled = [...brands, ...brands];
 
   return (
-    <section aria-label="Premium Brands We Use" className="relative overflow-hidden border-y border-charcoal/10 bg-champagne/30 py-8 sm:py-10">
+    <section
+      aria-label="Premium Brands We Use"
+      className="relative overflow-hidden border-y border-charcoal/10 bg-champagne/30 py-8 sm:py-10"
+    >
       <div className="mx-auto max-w-7xl px-5 text-center mb-6">
         <p className="text-[0.72rem] uppercase tracking-[0.24em] font-bold text-charcoal/90">
           100% Authentic International Vanity Brands We Use
@@ -36,15 +39,24 @@ export function BrandMarquee() {
           {doubled.map((brand, idx) => (
             <div key={`${brand.name}-${idx}`} className="flex items-center gap-8 sm:gap-12">
               <BrandCard brand={brand} />
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-blush/60" aria-hidden="true" />
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full bg-blush/60"
+                aria-hidden="true"
+              />
             </div>
           ))}
         </div>
-        <div aria-hidden="true" className="flex shrink-0 animate-marquee items-center gap-8 sm:gap-12 py-2">
+        <div
+          aria-hidden="true"
+          className="flex shrink-0 animate-marquee items-center gap-8 sm:gap-12 py-2"
+        >
           {doubled.map((brand, idx) => (
             <div key={`repeat-${brand.name}-${idx}`} className="flex items-center gap-8 sm:gap-12">
               <BrandCard brand={brand} />
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-blush/60" aria-hidden="true" />
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full bg-blush/60"
+                aria-hidden="true"
+              />
             </div>
           ))}
         </div>

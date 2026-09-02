@@ -93,10 +93,13 @@ function MuzaffarnagarPage() {
             />
             <div className="mt-8 space-y-4 text-sm text-charcoal/85 leading-relaxed">
               <p>
-                Whether celebrating at luxury resorts along the highway, ancestral homes, or grand banquet lawns in Muzaffarnagar, Shreya provides 1-on-1 dedicated bridal makeup crafted for long-lasting, 16-hour sweatproof wear.
+                Whether celebrating at luxury resorts along the highway, ancestral homes, or grand
+                banquet lawns in Muzaffarnagar, Shreya provides 1-on-1 dedicated bridal makeup
+                crafted for long-lasting, 16-hour sweatproof wear.
               </p>
               <p>
-                Hairstyling, floral attachment, jewelry placement, and dupatta draping are all integrated seamlessly into your booking.
+                Hairstyling, floral attachment, jewelry placement, and dupatta draping are all
+                integrated seamlessly into your booking.
               </p>
             </div>
             <ul className="mt-8 grid grid-cols-2 gap-3 text-xs font-medium text-charcoal">
@@ -127,7 +130,8 @@ function MuzaffarnagarPage() {
               {business.whatsappDisplay}
             </p>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              Send your date, wedding location, and required looks on WhatsApp for instant confirmation.
+              Send your date, wedding location, and required looks on WhatsApp for instant
+              confirmation.
             </p>
             <ul className="mt-6 space-y-3 text-xs border-t border-charcoal/10 pt-4">
               {services.map((service) => (

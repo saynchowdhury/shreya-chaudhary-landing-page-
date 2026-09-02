@@ -482,7 +482,8 @@ export const portfolioCategories: {
     category: "engagement",
     label: "Engagement Makeup",
     path: "/portfolio/engagement",
-    blurb: "Soft, luminous camera-ready glam for ring ceremonies, cocktail celebrations, and pre-wedding functions.",
+    blurb:
+      "Soft, luminous camera-ready glam for ring ceremonies, cocktail celebrations, and pre-wedding functions.",
   },
   {
     category: "party",
@@ -495,7 +496,11 @@ export const portfolioCategories: {
 export const getLookBySlug = (slug: string): PortfolioItem | undefined =>
   portfolio.find((item) => item.slug === slug);
 
-export const getRelatedLooks = (currentSlug: string, category: PortfolioCategory, limit = 3): PortfolioItem[] =>
+export const getRelatedLooks = (
+  currentSlug: string,
+  category: PortfolioCategory,
+  limit = 3,
+): PortfolioItem[] =>
   portfolio
     .filter((item) => item.slug !== currentSlug && item.category === category)
     .slice(0, limit);

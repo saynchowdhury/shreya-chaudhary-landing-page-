@@ -1,8 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Clock, Sparkles, CheckCircle2, ArrowRight, MessageCircle } from "lucide-react";
 import { business } from "@/data/business";
 import { getPost } from "@/data/posts";
 import { getService } from "@/data/services";
-import { breadcrumbLd, canonical, faqLd, ids, jsonLd, pageMeta } from "@/lib/seo";
+import { getLookBySlug } from "@/data/portfolio";
+import { breadcrumbLd, canonical, CANONICAL_DOMAIN, ids, jsonLd, pageMeta } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { Section, SectionHeading } from "@/components/site/Section";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
@@ -23,26 +25,39 @@ export const Route = createFileRoute("/blog/$slug")({
     }
     const { post } = loaderData;
     const path = `/blog/${params.slug}`;
+    const imageUrl = post.image ? `${CANONICAL_DOMAIN}${post.image}` : undefined;
+
     return {
       meta: pageMeta({
         title: `${post.title} | Shreya Chaudhary Makeup`,
         description: post.excerpt,
         path,
         type: "article",
-        image: post.image,
+        image: imageUrl,
       }),
       links: canonical(path),
       scripts: [
         jsonLd({
           "@context": "https://schema.org",
-          "@type": "Article",
+          "@type": "BlogPosting",
           headline: post.title,
           description: post.excerpt,
           datePublished: post.date,
-          author: { "@id": ids.person },
-          publisher: { "@id": ids.business },
-          mainEntityOfPage: path,
-          ...(post.image ? { image: post.image } : {}),
+          dateModified: post.dateModified || post.date,
+          author: {
+            "@type": "Person",
+            name: post.author,
+            jobTitle: post.authorRole || "Principal Luxury Bridal Makeup Artist",
+            url: `${CANONICAL_DOMAIN}/about`,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: business.name,
+            url: CANONICAL_DOMAIN,
+            logo: `${CANONICAL_DOMAIN}/shreya-chaudhary-logo.png`,
+          },
+          mainEntityOfPage: `${CANONICAL_DOMAIN}${path}`,
+          ...(imageUrl ? { image: imageUrl } : {}),
         }),
         jsonLd(
           breadcrumbLd([
@@ -51,7 +66,22 @@ export const Route = createFileRoute("/blog/$slug")({
             { name: post.title, path },
           ]),
         ),
-        ...(post.faqs?.length ? [jsonLd(faqLd(post.faqs))] : []),
+        ...(post.faqs?.length
+          ? [
+              jsonLd({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: post.faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: f.answer,
+                  },
+                })),
+              }),
+            ]
+          : []),
       ],
     };
   },
@@ -63,7 +93,7 @@ function BlogPost() {
 
   return (
     <>
-      <article>
+      <article className="bg-background text-foreground">
         <header className="border-b border-border bg-[oklch(0.955_0.018_74)] px-5 pb-16 pt-10 md:px-10 md:pb-20 md:pt-14">
           <div className="mx-auto w-full max-w-3xl">
             <Breadcrumbs
@@ -73,103 +103,264 @@ function BlogPost() {
                 { name: post.title, path: `/blog/${post.slug}` },
               ]}
             />
-            <p className="eyebrow mt-10 text-blush">
-              <time dateTime={post.date}>
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              <time
+                dateTime={post.date}
+                className="font-semibold text-blush uppercase tracking-wider text-[0.68rem]"
+              >
                 {new Date(post.date).toLocaleDateString("en-IN", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
                 })}
               </time>
-            </p>
-            <h1 className="mt-4 font-display text-[2.4rem] leading-[1.05] text-charcoal md:text-[3.5rem]">
+              {post.readingTimeMinutes && (
+                <>
+                  <span>·</span>
+                  <span className="inline-flex items-center gap-1 font-medium">
+                    <Clock className="h-3 w-3" />
+                    <span>{post.readingTimeMinutes} min read</span>
+                  </span>
+                </>
+              )}
+              {post.dateModified && post.dateModified !== post.date && (
+                <>
+                  <span>·</span>
+                  <span className="text-[0.65rem] italic">Updated: {post.dateModified}</span>
+                </>
+              )}
+            </div>
+
+            <h1 className="mt-4 font-display text-[2.2rem] leading-[1.08] text-charcoal md:text-[3.2rem]">
               {post.title}
             </h1>
             <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
               {post.excerpt}
             </p>
-            <p className="mt-6 text-[0.7rem] uppercase tracking-[0.16em] text-muted-foreground">
-              By {post.author}
+            <p className="mt-4 text-[0.7rem] uppercase tracking-[0.16em] font-semibold text-charcoal/80">
+              By {post.author} {post.authorRole ? `— ${post.authorRole}` : ""}
             </p>
 
             {/* E-E-A-T Trust & Conversion Layer */}
             <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 border-t border-border/60 pt-6">
               <div className="flex flex-wrap items-center gap-2">
-                <a href={business.googleMyBusinessUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 bg-background border border-border px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold text-charcoal shadow-sm hover:border-charcoal transition-colors">
-                  <span className="text-amber-500 text-sm leading-none">★</span> 5.0 Verified
+                <a
+                  href={business.googleMyBusinessUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-background border border-border px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold text-charcoal shadow-sm hover:border-charcoal transition-colors"
+                >
+                  <span className="text-amber-500 text-sm leading-none">★</span> 5.0 Google Verified
                 </a>
-                <a href={business.wedmegoodUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 bg-background border border-border px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold text-charcoal shadow-sm hover:border-charcoal transition-colors">
-                  WedMeGood
-                </a>
+                <span className="bg-background border border-border px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-semibold text-charcoal/80 shadow-sm">
+                  1-on-1 Vanity Suite
+                </span>
               </div>
-              <WhatsAppButton source={`blog_inline_${post.slug}`} variant="green" className="text-[0.65rem] font-bold uppercase tracking-wider px-5 py-2">
-                Book Free Consultation
+              <WhatsAppButton
+                source={`blog_inline_${post.slug}`}
+                variant="green"
+                className="text-[0.65rem] font-bold uppercase tracking-wider px-5 py-2 shadow-sm"
+              >
+                Check Date Availability on WhatsApp
               </WhatsAppButton>
             </div>
           </div>
         </header>
 
         {post.image ? (
-          <figure className="bg-background px-5 pt-14 md:px-10">
+          <figure className="bg-background px-5 pt-10 md:px-10">
             <img
               src={post.image}
               alt={post.imageAlt ?? post.title}
-              className="mx-auto w-full max-w-4xl object-cover"
+              className="mx-auto w-full max-w-4xl rounded-2xl object-cover shadow-md border border-charcoal/10 max-h-[550px]"
               loading="eager"
               decoding="async"
             />
+            {post.imageAlt && (
+              <figcaption className="mt-3 text-center text-xs text-muted-foreground italic">
+                {post.imageAlt}
+              </figcaption>
+            )}
           </figure>
         ) : null}
 
         <Section>
           <div className="mx-auto max-w-3xl space-y-6">
+            {/* Google AI Overview & Snippet-Ready Key Takeaways */}
+            {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+              <div className="rounded-2xl border border-peach/50 bg-gradient-to-br from-champagne/30 to-card p-6 shadow-sm mb-10">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-blush">
+                  <Sparkles className="h-4 w-4" />
+                  <span>Key Takeaways for Brides</span>
+                </div>
+                <ul className="mt-4 space-y-2.5">
+                  {post.keyTakeaways.map((takeaway, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-2.5 text-xs sm:text-sm text-charcoal/90 leading-snug"
+                    >
+                      <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <span>{takeaway}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Article Content Blocks */}
             {post.body.map((block, index) => {
               if (block.type === "heading") {
                 return (
                   <h2
                     key={index}
-                    className="pt-6 font-display text-2xl text-charcoal md:text-3xl"
+                    className="pt-6 font-display text-2xl text-charcoal md:text-3xl leading-snug"
                   >
                     {block.text}
                   </h2>
+                );
+              }
+              if (block.type === "subheading") {
+                return (
+                  <h3 key={index} className="pt-4 font-display text-xl text-charcoal/90">
+                    {block.text}
+                  </h3>
+                );
+              }
+              if (block.type === "callout") {
+                return (
+                  <div
+                    key={index}
+                    className="my-6 rounded-xl border border-charcoal/20 bg-card p-5 shadow-xs"
+                  >
+                    <h4 className="font-display text-base font-bold text-charcoal">
+                      {block.title}
+                    </h4>
+                    <p className="mt-1 text-sm text-charcoal/80 leading-relaxed">{block.text}</p>
+                  </div>
                 );
               }
               if (block.type === "list") {
                 return (
                   <ul key={index} className="space-y-3">
                     {block.items.map((item) => (
-                      <li key={item} className="flex gap-3 text-base text-muted-foreground">
-                        <span aria-hidden className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-blush" />
-                        {item}
+                      <li
+                        key={item}
+                        className="flex gap-3 text-base text-muted-foreground leading-relaxed"
+                      >
+                        <span
+                          aria-hidden
+                          className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blush"
+                        />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 );
               }
               return (
-                <p key={index} className="text-base leading-relaxed text-muted-foreground">
+                <p key={index} className="text-base leading-relaxed text-charcoal/85">
                   {block.text}
                 </p>
               );
             })}
+
+            {/* In-Article WhatsApp Card */}
+            <div className="my-12 rounded-2xl border border-charcoal/15 bg-ivory/80 p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <h4 className="font-display text-lg font-bold text-charcoal">
+                  Planning Your Wedding for 2026–2027?
+                </h4>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Peak dates book months in advance. Inquire directly with Shreya for on-location
+                  suite artistry.
+                </p>
+              </div>
+              <a
+                href={`https://wa.me/${business.whatsapp}?text=${encodeURIComponent(`Hi Shreya, I read your article "${post.title}" and would like to check your availability for my wedding date on [Date].`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] hover:bg-emerald-500 px-5 py-3 text-xs font-bold uppercase tracking-wider text-charcoal shadow-md shrink-0 transition-transform active:scale-95"
+              >
+                <MessageCircle className="h-4 w-4 fill-current" />
+                <span>Message on WhatsApp</span>
+              </a>
+            </div>
           </div>
 
+          {/* Featured Related Looks from Portfolio */}
+          {post.relatedLooks && post.relatedLooks.length > 0 && (
+            <div className="mx-auto mt-14 max-w-3xl border-t border-border pt-10">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <p className="eyebrow text-blush">Real Client Portfolio</p>
+                  <h3 className="font-display text-xl font-bold text-charcoal mt-1">
+                    Featured Looks from this Guide
+                  </h3>
+                </div>
+                <Link
+                  to="/portfolio"
+                  className="text-xs font-bold text-charcoal underline underline-offset-4 hover:text-blush inline-flex items-center gap-1"
+                >
+                  <span>All 20 Looks</span>
+                  <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {post.relatedLooks.map((slug) => {
+                  const look = getLookBySlug(slug);
+                  if (!look) return null;
+                  return (
+                    <Link
+                      key={look.slug}
+                      to="/looks/$slug"
+                      params={{ slug: look.slug }}
+                      className="group flex items-center gap-3.5 rounded-2xl border border-charcoal/15 bg-card p-3 shadow-xs hover:shadow-md transition-all"
+                    >
+                      <img
+                        src={look.src}
+                        alt={look.alt}
+                        width={64}
+                        height={64}
+                        className="h-16 w-16 rounded-xl object-cover shrink-0 border border-charcoal/10"
+                      />
+                      <div className="min-w-0">
+                        <span className="text-[0.62rem] uppercase tracking-wider font-bold text-peach">
+                          {look.category}
+                        </span>
+                        <h4 className="font-display text-sm font-bold text-charcoal truncate group-hover:text-blush transition-colors">
+                          {look.title}
+                        </h4>
+                        <p className="text-[0.65rem] text-muted-foreground truncate mt-0.5">
+                          {look.technique ?? "Signature HD Complexion"}
+                        </p>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Related Services */}
           {post.relatedServices?.length ? (
-            <div className="mx-auto mt-16 max-w-3xl border-t border-border pt-10">
-              <p className="eyebrow text-blush">Related services</p>
-              <ul className="mt-5 space-y-3">
+            <div className="mx-auto mt-12 max-w-3xl border-t border-border pt-8">
+              <p className="eyebrow text-blush">Related Services</p>
+              <ul className="mt-4 space-y-2.5">
                 {post.relatedServices.map((slug) => {
                   const service = getService(slug);
                   return (
-                    <li key={slug} className="flex justify-between gap-4">
+                    <li key={slug} className="flex justify-between items-center text-sm">
                       <Link
                         to="/services/$slug"
                         params={{ slug }}
-                        className="text-charcoal underline decoration-blush decoration-1 underline-offset-4"
+                        className="text-charcoal underline decoration-blush decoration-1 underline-offset-4 font-medium hover:text-blush transition-colors"
                       >
                         {service.name}
                       </Link>
-                      <span className="text-muted-foreground">{service.priceLabel}</span>
+                      <span className="text-xs font-semibold text-muted-foreground">
+                        {service.priceLabel}
+                      </span>
                     </li>
                   );
                 })}
@@ -178,13 +369,15 @@ function BlogPost() {
           ) : null}
         </Section>
 
+        {/* FAQ Accordion Section */}
         {post.faqs?.length ? (
           <Section tone="champagne" labelledBy="post-faq-heading">
             <div className="mx-auto max-w-3xl">
               <SectionHeading
                 id="post-faq-heading"
-                eyebrow="Questions"
-                title="Related questions"
+                eyebrow="Bridal FAQ"
+                title="Frequently Asked Questions"
+                intro="Everything you need to know before locking in your bridal reservation."
               />
               <div className="mt-8">
                 <FaqAccordion faqs={post.faqs} />

@@ -13,11 +13,7 @@ export function AnswerBlock({
 }) {
   return (
     <div
-      className={
-        tone === "dark"
-          ? "border-l border-peach/60 pl-6"
-          : "border-l border-blush pl-6"
-      }
+      className={tone === "dark" ? "border-l border-peach/60 pl-6" : "border-l border-blush pl-6"}
     >
       <h2
         className={

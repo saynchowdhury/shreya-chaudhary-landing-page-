@@ -10,7 +10,8 @@ const base =
 
 const variants: Record<Variant, string> = {
   solid: "bg-charcoal text-ivory hover:bg-[#25D366] hover:text-charcoal shadow-sm",
-  outline: "border border-charcoal/30 text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-ivory",
+  outline:
+    "border border-charcoal/30 text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-ivory",
   light: "bg-ivory text-charcoal hover:bg-champagne",
   green: "bg-[#25D366] text-charcoal hover:bg-emerald-400 font-semibold shadow-md",
 };

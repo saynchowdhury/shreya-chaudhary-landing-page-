@@ -51,9 +51,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow ? (
-        <p className={cn("eyebrow", tone === "light" ? "text-peach" : "text-blush")}>
-          {eyebrow}
-        </p>
+        <p className={cn("eyebrow", tone === "light" ? "text-peach" : "text-blush")}>{eyebrow}</p>
       ) : null}
       <h2
         id={id}

@@ -26,7 +26,9 @@ export function PageHero({
         <Breadcrumbs items={crumbs} />
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
           <div className="max-w-3xl">
-            {eyebrow ? <p className="eyebrow text-blush tracking-[0.24em] font-medium">{eyebrow}</p> : null}
+            {eyebrow ? (
+              <p className="eyebrow text-blush tracking-[0.24em] font-medium">{eyebrow}</p>
+            ) : null}
             <h1 className="mt-4 font-display text-[2.5rem] leading-[1.05] tracking-[-0.025em] text-charcoal md:text-[4rem]">
               {title}
             </h1>
@@ -38,7 +40,9 @@ export function PageHero({
           </div>
           <div className="lg:text-right">
             {price ? (
-              <p className="font-display text-[2.5rem] leading-none tracking-tight text-charcoal font-medium">{price}</p>
+              <p className="font-display text-[2.5rem] leading-none tracking-tight text-charcoal font-medium">
+                {price}
+              </p>
             ) : null}
             <div className="mt-6 flex flex-wrap gap-3 lg:justify-end">
               <WhatsAppButton

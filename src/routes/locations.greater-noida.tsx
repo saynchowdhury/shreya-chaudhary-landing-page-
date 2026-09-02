@@ -16,7 +16,8 @@ const description =
 
 const greaterNoidaFaqs = [
   {
-    question: "Does Shreya Chaudhary travel to Greater Noida and Greater Noida West (Noida Extension)?",
+    question:
+      "Does Shreya Chaudhary travel to Greater Noida and Greater Noida West (Noida Extension)?",
     answer:
       "Yes. Shreya provides complete on-location bridal makeup services across Greater Noida, Pari Chowk resorts, Greater Noida West / Noida Extension, and Knowledge Park luxury hotels.",
   },
@@ -93,10 +94,13 @@ function GreaterNoidaPage() {
             />
             <div className="mt-8 space-y-4 text-sm text-charcoal/85 leading-relaxed">
               <p>
-                From wedding resorts around Pari Chowk and Jaypee Greens to banquet hubs in Greater Noida West (Noida Extension) and Knowledge Park, Shreya creates weightless, high-definition makeup engineered for 4K wedding photography.
+                From wedding resorts around Pari Chowk and Jaypee Greens to banquet hubs in Greater
+                Noida West (Noida Extension) and Knowledge Park, Shreya creates weightless,
+                high-definition makeup engineered for 4K wedding photography.
               </p>
               <p>
-                Each booking is personalized 1-on-1 with zero assembly-line rushing, ensuring you look breathtaking for all ceremonies.
+                Each booking is personalized 1-on-1 with zero assembly-line rushing, ensuring you
+                look breathtaking for all ceremonies.
               </p>
             </div>
             <ul className="mt-8 grid grid-cols-2 gap-3 text-xs font-medium text-charcoal">
@@ -127,7 +131,8 @@ function GreaterNoidaPage() {
               {business.whatsappDisplay}
             </p>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              WhatsApp Shreya directly with your wedding date, venue, and required looks for quick availability confirmation.
+              WhatsApp Shreya directly with your wedding date, venue, and required looks for quick
+              availability confirmation.
             </p>
             <ul className="mt-6 space-y-3 text-xs border-t border-charcoal/10 pt-4">
               {services.map((service) => (

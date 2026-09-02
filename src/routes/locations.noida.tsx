@@ -98,10 +98,13 @@ function NoidaPage() {
             />
             <div className="mt-8 space-y-4 text-sm text-charcoal/85 leading-relaxed">
               <p>
-                From luxury banquets on Noida Expressway to grand celebrations across Sector 18 and Sector 50, Shreya Chaudhary creates weightless, sweatproof, and camera-ready HD finishes tailored to high-definition wedding cinematography.
+                From luxury banquets on Noida Expressway to grand celebrations across Sector 18 and
+                Sector 50, Shreya Chaudhary creates weightless, sweatproof, and camera-ready HD
+                finishes tailored to high-definition wedding cinematography.
               </p>
               <p>
-                Every booking includes skincare prep, custom undertone color matching, and full hair styling in one sitting.
+                Every booking includes skincare prep, custom undertone color matching, and full hair
+                styling in one sitting.
               </p>
             </div>
             <ul className="mt-8 grid grid-cols-2 gap-3 text-xs font-medium text-charcoal">
@@ -132,7 +135,8 @@ function NoidaPage() {
               {business.whatsappDisplay}
             </p>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              WhatsApp is the fastest way to confirm {city} dates. Share your date, venue, and number of required looks for an instant response.
+              WhatsApp is the fastest way to confirm {city} dates. Share your date, venue, and
+              number of required looks for an instant response.
             </p>
             <ul className="mt-6 space-y-3 text-xs border-t border-charcoal/10 pt-4">
               {services.map((service) => (

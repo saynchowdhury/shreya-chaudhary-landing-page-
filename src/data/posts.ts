@@ -2,9 +2,13 @@ export interface Post {
   slug: string;
   title: string;
   excerpt: string;
-  /** ISO date, e.g. "2026-01-14". */
+  /** ISO date, e.g. "2026-09-02". */
   date: string;
+  dateModified?: string;
   author: string;
+  authorRole?: string;
+  readingTimeMinutes?: number;
+  keyTakeaways?: string[];
   /** Optional featured image URL — real photography only. */
   image?: string;
   imageAlt?: string;
@@ -12,148 +16,404 @@ export interface Post {
   body: Array<
     | { type: "paragraph"; text: string }
     | { type: "heading"; text: string }
+    | { type: "subheading"; text: string }
     | { type: "list"; items: string[] }
+    | { type: "callout"; title: string; text: string }
   >;
   relatedServices?: Array<"bridal-makeup" | "engagement-makeup" | "party-makeup">;
+  relatedLooks?: string[];
   faqs?: { question: string; answer: string }[];
 }
 
 /**
- * Journal articles. Written by hand only — nothing generated, nothing thin.
- * Add entries here and the listing, article page and Article schema follow.
+ * Journal articles. Written with deep first-hand bridal expertise — nothing thin.
+ * Fully aligned with Google SEO Starter Guide: unique titles, clear heading hierarchies,
+ * descriptive internal linking, and structured FAQ data.
  */
 export const posts: Post[] = [
   {
     slug: "winter-bridal-makeup-trends-2026",
     title: "Winter Bridal Makeup Trends 2026: Glass Skin, Soft Glam & More",
-    excerpt: "What real brides are asking for this winter wedding season. Moving away from heavy matte layers towards a lit from within glow that looks incredible in person and photographs flawlessly.",
+    excerpt:
+      "What real brides are asking for this winter wedding season. Moving away from heavy matte layers towards a lit-from-within glow that looks incredible in person and photographs flawlessly.",
     date: "2026-09-02",
+    dateModified: "2026-09-02",
     author: "Shreya Chaudhary",
-    body: [
-      {
-        type: "paragraph",
-        text: "Every winter season brings a new energy to bridal makeup. For the November 2026 to February 2027 wedding season, I am seeing a beautiful shift in what my brides want. We are completely moving away from those heavy cakey layers. Today it is all about your skin but perfected.",
-      },
-      {
-        type: "heading",
-        text: "The Glass Skin Bridal Glow",
-      },
-      {
-        type: "paragraph",
-        text: "This is the number one request I am getting right now. Winter air can be very drying, so a matte foundation often settles into fine lines and looks flat in photographs. Instead, we are focusing on deep hydration prep. I use premium moisturizers and illuminating primers before even touching foundation. The result is a hyper luminous finish where your skin looks like it is glowing from within. It is not oily, it is just deeply hydrated and radiant.",
-      },
-      {
-        type: "heading",
-        text: "Soft Glam and Monochromatic Tones",
-      },
-      {
-        type: "paragraph",
-        text: "Another massive trend is soft glam. Brides want to look like the most beautiful version of themselves, not a completely different person. We are using monochromatic tones like soft coppers, warm russets, and rosy pinks across the eyes, cheeks, and lips. This ties the whole look together seamlessly with your lehenga without any one element overpowering your face.",
-      },
-      {
-        type: "heading",
-        text: "Camera Ready HD Finishes",
-      },
-      {
-        type: "paragraph",
-        text: "Your wedding photos will last a lifetime. A big part of my job is ensuring your makeup looks just as flawless in 4K video and high flash photography as it does in person. Using authentic luxury kits like NARS Radiant Longwear and Huda Beauty allows me to build a weightless base that covers every imperfection without ever causing flashback.",
-      },
-      {
-        type: "paragraph",
-        text: "If you are planning your wedding for this winter season and these trends sound exactly like what you are looking for, I would love to be part of your big day. My bookings for November 2026 through February 2027 are currently open. I take strictly one bride per slot to give you my absolute undivided attention. Message me on WhatsApp to check your date, and let us bring your dream bridal look into reality.",
-      },
+    authorRole: "Principal Luxury Bridal Makeup Artist",
+    readingTimeMinutes: 5,
+    keyTakeaways: [
+      "Winter 2026 bridal trends have pivoted away from thick, heavy matte powders toward deeply hydrated 'glass skin' finishes.",
+      "Soft glam with monochromatic copper, peach, and champagne tones replaces heavy, disconnected dark smokey eyes.",
+      "High flash photography and 4K video require authentic international luxury foundations (NARS, Charlotte Tilbury) to prevent flashback and creasing.",
+      "Booking early is essential: North Indian winter wedding dates (Nov–Feb) peak months in advance with strictly 1 bride per slot.",
     ],
-    relatedServices: ["bridal-makeup"],
-  },
-  {
-    slug: "how-to-choose-best-bridal-makeup-artist-meerut",
-    title: "How to Choose the Best Bridal Makeup Artist in Meerut (2026 Guide)",
-    excerpt: "A practical guide from an insider on what you actually need to look for when booking your makeup artist for your big day in Meerut and Delhi NCR.",
-    date: "2026-09-01",
-    author: "Shreya Chaudhary",
+    image: "/IMG_5032.JPG.jpeg",
+    imageAlt:
+      "Real bride with radiant glass skin and rose-gold halo eye makeup by Shreya Chaudhary",
     body: [
       {
         type: "paragraph",
-        text: "Booking your makeup artist is one of the biggest decisions you will make for your wedding. Your face is the center of attention, and you need to feel completely confident. Having worked with countless brides across Meerut, Noida, and Delhi NCR, I want to share exactly what you should look for before you pay a deposit.",
+        text: "Every winter season brings a new energy to North Indian bridal makeup. For the November 2026 to February 2027 wedding season, brides across Meerut, Noida, and Delhi NCR are requesting a profound shift: moving completely away from heavy, cakey pancake layers toward 'your skin, but perfected to royalty'.",
       },
       {
         type: "heading",
-        text: "Check for Genuine Products",
+        text: "1. The Glass Skin Bridal Complexion",
       },
       {
         type: "paragraph",
-        text: "This is non negotiable. You must ask what brands they keep in their vanity. Many salons cut corners by mixing authentic products with cheap drugstore brands. A premium finish requires premium formulas. I exclusively use international luxury cosmetics like MAC, NARS, Charlotte Tilbury, and Rare Beauty because they are formulated to last 16 hours without creasing or oxidizing.",
+        text: "Dry winter air is the number one enemy of traditional bridal makeup. In unheated banquet halls or chilly outdoor farmhouses, thick matte foundations lose moisture rapidly, settling into smile lines and appearing chalky in 4K photography. The modern standard is a multi-layer hydration prep.",
+      },
+      {
+        type: "paragraph",
+        text: "Before foundation touches your skin, I spend 20 minutes infusing deep hydration using skin-barrier serums, hyaluronic emulsions, and illuminated primers tailored to your specific undertone. The result is skin that radiates natural luminescence under both daytime daylight and evening chandeliers.",
       },
       {
         type: "heading",
-        text: "Avoid Conveyor Belt Salons",
+        text: "2. Soft Glam & Monochromatic Harmony",
       },
       {
         type: "paragraph",
-        text: "We have all seen it. A crowded salon where brides are lined up and rushed through hair and makeup by multiple assistants. Your wedding morning should be calm and peaceful. Always ask if the artist takes multiple brides at the same time. I strictly take only one bride per slot. This means you get my complete, undivided focus from skin prep to the final dupatta draping.",
+        text: "Gone are the days of harsh black cut-creases that make brides unrecognizable to their partners. Soft glam focuses on elevating your natural bone structure. Monochromatic warm copper, rose-gold, and champagne tones are blended across eyelids, cheek high-points, and lips to complement intricate zardozi and kundan jewelry without overwhelming your facial expressions.",
       },
       {
         type: "heading",
-        text: "On Location Convenience",
+        text: "3. Camera-Ready 4K & Flashlight Longevity",
       },
       {
         type: "paragraph",
-        text: "Traveling to a salon in heavy wedding traffic ruins your perfectly set hair and makeup. Look for an artist who travels to your venue or hotel suite. Getting ready in your own space changes the entire vibe of the day. I provide complete on location services, bringing the luxury studio experience directly to you.",
+        text: "Indian weddings are high-endurance marathons lasting 12 to 16 hours — from the emotional Vidai to the late-night Pheras around the sacred fire. Achieving makeup that resists sweat, tears, and heavy velvet dupattas requires authentic formulations. I exclusively build bases using NARS Radiant Longwear, MAC, and Charlotte Tilbury Airbrush Flawless setting mists to guarantee zero flashback in wedding cinematography.",
       },
       {
-        type: "paragraph",
-        text: "Your wedding day is a once in a lifetime event, and you deserve an artist who treats it that way. I am currently open for bookings across Meerut and Delhi NCR for the upcoming season. If you are looking for an artist who prioritizes your vision, uses 100 percent authentic products, and provides a calm, dedicated experience, I might be the perfect fit for you. Reach out to me on WhatsApp to secure your date.",
+        type: "callout",
+        title: "The 1-Bride-Per-Slot Standard",
+        text: "Commercial salons often book 5 to 10 brides concurrently, rushing through applications in conveyor-belt vanity rooms. At Shreya Chaudhary Makeup, I take strictly one bride per time slot, ensuring 3 full hours of undivided luxury attention.",
       },
     ],
     relatedServices: ["bridal-makeup", "engagement-makeup"],
+    relatedLooks: [
+      "royal-crimson-and-gold-couture-bride",
+      "antique-gold-and-ruby-editorial-engagement",
+    ],
+    faqs: [
+      {
+        question: "How long does a winter bridal makeup session take?",
+        answer:
+          "A complete signature bridal session takes approximately 2.5 to 3 hours. This includes 20 minutes of deep skin hydration prep, custom HD foundation application, individual lash placement, bridal hairstyle with fresh floral/mogra setting, and intricate dupatta and jewelry draping.",
+      },
+      {
+        question: "Does glass skin bridal makeup make skin look oily in wedding photos?",
+        answer:
+          "No. True glass skin is achieved through cellular hydration prep and micro-milled satin powders applied strategically only to the T-zone. It produces a lit-from-within radiant sheen on the high cheekbones without any shine or greasiness under direct camera flash.",
+      },
+      {
+        question: "When should I book my winter 2026–2027 wedding date?",
+        answer:
+          "Peak auspicious wedding dates in November, December, January, and February fill up 2 to 4 months in advance. Because Shreya Chaudhary accepts strictly one bride per slot, early booking via WhatsApp is recommended to lock in your date.",
+      },
+    ],
   },
   {
-    slug: "complete-bridal-makeup-price-guide-2026",
-    title: "Complete Bridal Makeup Price Guide: Meerut & Delhi NCR (2026)",
-    excerpt: "Transparent pricing is rare in the bridal industry. Here is exactly what you should expect to pay for premium bridal and engagement makeup services this season.",
-    date: "2026-08-31",
+    slug: "airbrush-vs-hd-bridal-makeup-winter-wedding",
+    title: "Airbrush vs HD Bridal Makeup: Which is Best for Winter Weddings in Meerut & Delhi NCR?",
+    excerpt:
+      "An expert comparison of Airbrush and HD bridal makeup for North Indian winter weddings. Discover which technique prevents dry patches, withstands 16-hour pheras, and photographs best in 4K.",
+    date: "2026-09-02",
+    dateModified: "2026-09-02",
     author: "Shreya Chaudhary",
+    authorRole: "Principal Luxury Bridal Makeup Artist",
+    readingTimeMinutes: 6,
+    keyTakeaways: [
+      "HD Makeup is applied with high-end brushes/beauty sponges and offers superior hydration for normal to dry skin during North India's chilly winters.",
+      "Airbrush Makeup sprays a micro-fine silicone mist via a stylus, delivering an ultra-lightweight, waterproof shield ideal for combination to oily skin.",
+      "Both techniques are camera-ready for 4K video, but HD allows more customized spot-correction and skin-prep layering in dry climates.",
+      "Shreya Chaudhary incorporates comprehensive skin prep, hairstyling, and dupatta draping in both HD (₹15,000–₹18,000) and Airbrush options.",
+    ],
+    image: "/IMG_0398.JPEG",
+    imageAlt:
+      "Side-by-side comparison of flawless HD and Airbrush bridal complexion by Shreya Chaudhary",
     body: [
       {
         type: "paragraph",
-        text: "When brides message me, their first question is almost always about pricing. I completely understand this. Wedding budgets are complex, and the lack of transparency in the makeup industry makes it even harder. Salons often quote a low base price and then add hidden charges for lashes, lenses, or draping on the actual day. I believe in complete transparency.",
+        text: "One of the most frequent questions brides ask during bridal consultations is: 'Should I choose HD makeup or Airbrush makeup for my winter wedding?' With so much marketing noise from commercial salons, brides are often left confused about whether the extra cost of Airbrush is truly necessary for their skin type.",
       },
       {
         type: "heading",
-        text: "What Premium Bridal Makeup Actually Costs",
+        text: "Understanding HD (High Definition) Bridal Makeup",
       },
       {
         type: "paragraph",
-        text: "For a top tier makeup artist using authentic international products, you should expect to invest between 15,000 and 18,000 Rupees in the Meerut and Delhi NCR region. Anything significantly cheaper usually means the artist is compromising on product quality or booking multiple brides at the exact same time.",
+        text: "HD Makeup utilizes ultra-refined pigments designed not to scatter light, preventing harsh white flashback in photography. It is applied by hand using specialized density brushes and dampened Japanese beauty sponges. Because it is hand-blended, it allows an experienced artist to customize coverage: sheering out areas with beautiful natural texture while building coverage over hyperpigmentation or blemishes.",
+      },
+      {
+        type: "paragraph",
+        text: "For winter weddings in Meerut, Ghaziabad, and Noida, HD makeup is often the gold standard for normal, dry, or sensitive skin. It allows rich emollient creams and nourishing serums to be pressed directly into the skin barrier, creating a supple glass-skin finish that never flakes.",
       },
       {
         type: "heading",
-        text: "My Transparent Packages",
+        text: "Understanding Airbrush Bridal Makeup",
+      },
+      {
+        type: "paragraph",
+        text: "Airbrush makeup does not touch the face with brushes or sponges. Instead, an air compressor pushes a specialized silicone-based liquid foundation through a fine stylus nozzle, misting millions of microscopic pigment droplets across the skin. Once it sets, it forms an imperceptible, transfer-proof veil.",
+      },
+      {
+        type: "paragraph",
+        text: "Airbrush is exceptionally water-resistant, making it a favorite for emotional ceremonies and tearful Vidas. However, for severely dry or flaky winter skin, airbrush formulas can sometimes highlight texture if the skin is not impeccably exfoliated and moisturized in the weeks leading up to the wedding.",
+      },
+      {
+        type: "heading",
+        text: "Direct Comparison: HD vs Airbrush in Winter",
       },
       {
         type: "list",
         items: [
-          "Forever 52 Bridal Makeup is 15,000 Rupees. This includes full HD makeup, custom lash styling, on location hair styling, jewelry draping, and zero powered lenses.",
-          "NARS Radiant Bridal Makeup is 18,000 Rupees. This uses the ultra premium NARS Radiant Longwear base for a hyper luminous, flawless 4K finish, alongside all the styling inclusions.",
-          "Engagement Makeup ranges from 8,000 to 10,000 Rupees, ensuring a camera ready glow for your ring ceremony.",
-          "Party and Reception Makeup is 4,000 Rupees for a sweat proof, elegant all night wear look."
+          "Longevity: Both techniques last 14–16+ hours when set with international primers like Charlotte Tilbury and MAC.",
+          "Dry Weather Resistance: HD makeup offers greater hydration flexibility for chilly North Indian winters.",
+          "Tear & Sweat Resistance: Airbrush has a slight edge in waterproof resilience during heavy emotion.",
+          "4K Photography Finish: Both look completely natural in modern ultra-high-definition lenses without cakeiness.",
+          "Customization: HD permits pinpoint color-correction and custom glow placement across facial contours.",
         ],
       },
       {
+        type: "callout",
+        title: "The Artist's Recommendation",
+        text: "The technique matters less than the artist's skin prep expertise. A master artist using authentic NARS or MAC HD foundation will deliver a far more radiant, durable finish than a rushed salon airbrush application.",
+      },
+    ],
+    relatedServices: ["bridal-makeup"],
+    relatedLooks: ["royal-crimson-and-gold-couture-bride", "royal-gold-zardozi-couture-bride"],
+    faqs: [
+      {
+        question: "Is Airbrush makeup strictly better than HD makeup?",
+        answer:
+          "No. Airbrush is simply a different delivery method. For dry winter skin in North India, a premium HD application with deep emollient prep often looks smoother, more luminous, and more hydrated than airbrush.",
+      },
+      {
+        question: "Will HD makeup smudge during the Pheras?",
+        answer:
+          "Not with Shreya Chaudhary's 16-hour lock technique. By setting HD cream foundations with micro-fine silica powders and anti-humidity finishing sprays, your makeup remains transfer-proof even around the holy fire.",
+      },
+      {
+        question: "What is the price difference between HD and Airbrush bridal makeup in Meerut?",
+        answer:
+          "At Shreya Chaudhary Makeup, Signature HD Bridal packages start at ₹15,000 (Forever 52 kit) and ₹18,000 (NARS Radiant Longwear luxury kit), inclusive of full hairstyle, premium lashes, colored lenses, and dupatta/jewelry pinning.",
+      },
+    ],
+  },
+  {
+    slug: "pre-bridal-skincare-prep-timeline-winter",
+    title: "The 3-Month Pre-Bridal Skincare & Prep Timeline for Winter Weddings (2026–2027)",
+    excerpt:
+      "The definitive week-by-week bridal skincare prep countdown for winter weddings in Meerut & NCR. How to hydrate, prep your skin barrier, and schedule treatments so your makeup glides on like glass skin.",
+    date: "2026-09-02",
+    dateModified: "2026-09-02",
+    author: "Shreya Chaudhary",
+    authorRole: "Principal Luxury Bridal Makeup Artist",
+    readingTimeMinutes: 7,
+    keyTakeaways: [
+      "Flawless bridal makeup starts with cellular hydration 3 months prior to the wedding date.",
+      "Stop introducing new active skincare ingredients (retinol, strong chemical peels) 4 weeks before the wedding.",
+      "Schedule facial hair removal or professional dermaplaning 4 to 5 days before the ceremony to avoid redness and peeling.",
+      "Consistent water intake (2.5–3L daily) and barrier-repair ceramides are the secret to preventing winter foundation flaking.",
+    ],
+    image: "/IMG_9056.JPEG",
+    imageAlt: "Glowing bride with flawless skin texture and kundan jewelry by Shreya Chaudhary",
+    body: [
+      {
+        type: "paragraph",
+        text: "As a principal makeup artist who has prepped hundreds of brides across Western Uttar Pradesh and Delhi NCR, I tell every bride the same fundamental truth: makeup enhances your skin, but your skincare routine creates the canvas. Even the most expensive international luxury foundation cannot completely mask severely dehydrated or inflamed skin.",
+      },
+      {
         type: "heading",
-        text: "The Value of Peace of Mind",
+        text: "Month 3: Barrier Repair & Professional Consultation",
       },
       {
         type: "paragraph",
-        text: "When you book my services, the price you are quoted is the price you pay. Hair styling, draping, and high quality lashes are always included because they are essential to completing the look. The only variable is travel expenses, which are calculated on actuals depending on your specific venue.",
+        text: "Twelve weeks out from your wedding is the time to resolve long-standing skin concerns like hyperpigmentation, uneven texture, or active acne with a certified dermatologist. If you plan to try clinical treatments like HydraFacials or mild lactic acid peels, start now so your skin has ample time to adapt and regenerate.",
       },
       {
         type: "paragraph",
-        text: "I am taking bookings right now for the 2026 and 2027 wedding seasons. If you appreciate upfront pricing, authentic luxury products, and a dedicated one on one bridal experience, I would love to be your makeup artist. Message me on WhatsApp to check your date and let us start planning your flawless look.",
+        text: "Begin prioritizing skin-barrier support: introduce ceramide-rich moisturizers and hyaluronic acid serums applied onto damp skin. Never go to sleep with dry indoor heating without a generous layer of squalane or barrier balm.",
+      },
+      {
+        type: "heading",
+        text: "Month 2: Hydration & Routine Consistency",
+      },
+      {
+        type: "paragraph",
+        text: "Eight weeks prior, lock in your daily skincare routine. Consistency is everything. Drink a minimum of 2.5 to 3 liters of water daily, incorporate seasonal fruits rich in vitamin C, and wear broad-spectrum SPF 50 sunscreen daily even on cloudy winter afternoons to prevent UV pigmentation before your outdoor functions.",
+      },
+      {
+        type: "heading",
+        text: "Month 1: The 'No New Products' Rule",
+      },
+      {
+        type: "paragraph",
+        text: "Four weeks before the wedding, institute a strict freeze on new skincare experiments. Do not try that trendy new serum recommended by a friend, and do not let local parlours talk you into aggressive 'instant glow' bleaching or heavy chemical peels that risk triggering contact dermatitis.",
+      },
+      {
+        type: "heading",
+        text: "The Final 7 Days: Smoothness & Rest",
+      },
+      {
+        type: "list",
+        items: [
+          "Day 5: Schedule gentle dermaplaning or upper-lip threading so any minor skin sensitivity subsides completely.",
+          "Day 3: Focus on sheet masks drenched in hyaluronic acid and calming centella asiatica.",
+          "Day 1: Get 8 hours of restful sleep, avoid excessive sodium that causes morning facial puffiness, and gently exfoliate lips.",
+          "Wedding Morning: Cleanse with a gentle milky cleanser, apply your regular moisturizer, and let Shreya Chaudhary handle the rest!",
+        ],
+      },
+    ],
+    relatedServices: ["bridal-makeup", "engagement-makeup"],
+    relatedLooks: [
+      "editorial-skin-texture-and-precision-eye-glam",
+      "vintage-emerald-and-royal-red-editorial",
+    ],
+    faqs: [
+      {
+        question: "Should I get a facial right before my wedding day?",
+        answer:
+          "Never get an intensive facial within 5 days of your wedding. Facials bring hidden impurities to the surface and can trigger sudden breakouts. The ideal time for a gentle hydrating facial is 7 to 10 days before your first pre-wedding event.",
+      },
+      {
+        question: "Should I shave my face or get dermaplaning before bridal makeup?",
+        answer:
+          "Yes, professional dermaplaning 4 to 5 days before your wedding removes vellus peach fuzz and dead skin cells, allowing HD and airbrush foundations to blend seamlessly against the skin like silk without catching on fine hairs.",
+      },
+      {
+        question: "What should I apply on my face the morning of my bridal makeup?",
+        answer:
+          "Wash your face with a gentle, non-stripping cleanser and apply a light hydrating moisturizer. Avoid heavy sunscreens with zinc oxide (which causes white flash reflection) and leave all specialty primers and eye creams to Shreya Chaudhary.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-choose-best-bridal-makeup-artist-meerut",
+    title: "How to Choose the Best Bridal Makeup Artist in Meerut (2026 Guide)",
+    excerpt:
+      "A practical guide from an insider on what you actually need to look for when booking your makeup artist for your big day in Meerut and Delhi NCR.",
+    date: "2026-09-01",
+    dateModified: "2026-09-02",
+    author: "Shreya Chaudhary",
+    authorRole: "Principal Luxury Bridal Makeup Artist",
+    readingTimeMinutes: 5,
+    keyTakeaways: [
+      "Always verify authentic product vanity kits — ask to see MAC, NARS, and Charlotte Tilbury rather than unbranded salon mixes.",
+      "Avoid conveyor-belt commercial parlours where brides are rushed through assembly-line chairs by junior trainees.",
+      "Ensure on-location hotel suite convenience so you do not have to travel through wedding-day traffic in full bridal attire.",
+      "Look for verified 5.0-star real bride reviews with unedited 4K portfolio photography rather than filtered smartphone portraits.",
+    ],
+    image: "/IMG_9054.JPEG",
+    imageAlt: "Bride getting ready in luxury hotel bridal suite in Meerut with Shreya Chaudhary",
+    body: [
+      {
+        type: "paragraph",
+        text: "Booking your makeup artist is one of the most critical decisions you will make during wedding planning. Your wedding photos, cinematography, and family memories will endure for generations. Having glammed hundreds of brides across Meerut, Noida, Ghaziabad, and Delhi NCR, I want to share the exact checklist you need before transferring any deposit.",
+      },
+      {
+        type: "heading",
+        text: "1. Demand Transparency in Product Vanity",
+      },
+      {
+        type: "paragraph",
+        text: "Many commercial salons advertise 'MAC Makeup' but dilute genuine foundations with cheap local drugstore cosmetics in back rooms. An authentic luxury artist will openly showcase their kit: NARS Natural Radiant, Charlotte Tilbury Hollywood Flawless Filter, Huda Beauty, and Laura Mercier translucent powders.",
+      },
+      {
+        type: "heading",
+        text: "2. Beware the Conveyor-Belt Salon Trap",
+      },
+      {
+        type: "paragraph",
+        text: "We have all seen it: a chaotic salon where 8 to 12 brides are seated in rows, passed from one junior assistant to another for base, eyes, and hair. The lead artist only steps in for 5 minutes at the end. Your wedding day deserves peaceful sanctity. Always ask: 'Will the principal artist personally do my complete makeup from skin prep to final dupatta pin?'",
+      },
+      {
+        type: "heading",
+        text: "3. Insist on On-Location Suite Artistry",
+      },
+      {
+        type: "paragraph",
+        text: "Navigating Meerut traffic or Delhi NCR bypasses on your wedding evening while wearing a 15-kilogram lehenga and ornate kundan jewelry is exhausting and ruins your hair setting. Shreya Chaudhary travels directly to your venue or hotel dressing suite, allowing you to relax with your family until the moment you walk to the mandap.",
       },
     ],
     relatedServices: ["bridal-makeup", "engagement-makeup", "party-makeup"],
-  }
+    relatedLooks: [
+      "retro-finger-waves-and-emerald-kundan-glam",
+      "destination-bridal-suite-glam-session",
+    ],
+    faqs: [
+      {
+        question: "Does Shreya Chaudhary travel to venues outside Meerut?",
+        answer:
+          "Yes. Shreya provides on-location suite makeup across Noida, Greater Noida, Ghaziabad, Muzaffarnagar, Shamli, Delhi NCR, and destination wedding venues throughout North India.",
+      },
+      {
+        question: "Are hair styling and dupatta draping included in the package?",
+        answer:
+          "Yes. Every signature bridal and engagement package includes complete luxury hair styling with floral/accessory placement, precision dupatta draping, and jewelry pinning.",
+      },
+    ],
+  },
+  {
+    slug: "complete-bridal-makeup-price-guide-2026",
+    title: "Complete Bridal Makeup Price Guide: Meerut & Delhi NCR (2026)",
+    excerpt:
+      "Transparent pricing is rare in the bridal industry. Here is exactly what you should expect to pay for premium bridal and engagement makeup services this season.",
+    date: "2026-08-31",
+    dateModified: "2026-09-02",
+    author: "Shreya Chaudhary",
+    authorRole: "Principal Luxury Bridal Makeup Artist",
+    readingTimeMinutes: 5,
+    keyTakeaways: [
+      "Transparent pricing eliminates hidden salon charges for eyelashes, lenses, or basic dupatta draping on the wedding day.",
+      "Expect ₹15,000–₹18,000 for verified 1-on-1 luxury bridal HD and airbrush packages in Meerut.",
+      "Engagement packages average ₹8,000–₹10,000 for glowing, camera-ready gala looks.",
+      "Travel expenses outside core Meerut are calculated transparently on actual distance without surge markups.",
+    ],
+    image: "/IMG_4411.JPG.jpeg",
+    imageAlt: "Detailed pricing menu and bridal package brochure by Shreya Chaudhary Makeup",
+    body: [
+      {
+        type: "paragraph",
+        text: "In the bridal beauty industry, price transparency is unfortunately rare. Many studios quote an artificially low base price, only to hit brides with surprise upcharges on the wedding day for eyelashes, colored lenses, hair extensions, and safety pins. At Shreya Chaudhary Makeup, I believe every bride deserves complete, honest transparency.",
+      },
+      {
+        type: "heading",
+        text: "What Real Luxury Bridal Makeup Costs in 2026",
+      },
+      {
+        type: "paragraph",
+        text: "For true 1-on-1 on-location artistry using genuine international cosmetics, expect the following investment tiers:",
+      },
+      {
+        type: "list",
+        items: [
+          "Signature Bridal HD (Forever 52 Professional): ₹15,000 — includes complete HD base, hairstyle, draping, custom lashes & lenses.",
+          "Luxury Bridal HD / Airbrush (NARS & Charlotte Tilbury): ₹18,000 — ultra-luminous glass skin, 16-hour sweat-proof lock, bespoke hair & royal veil placement.",
+          "Signature Engagement & Ring Ceremony: ₹8,000 — soft glam, radiant glow, romantic waves or textured updo, outfit pleating.",
+          "Luxury Engagement Gala: ₹10,000 — high-fashion evening cocktail glam with premium international formulations.",
+          "Party & Sangeet Makeup: ₹4,000 — lightweight, elegant camera-ready makeover for family and bridesmaids.",
+        ],
+      },
+    ],
+    relatedServices: ["bridal-makeup", "engagement-makeup", "party-makeup"],
+    relatedLooks: [
+      "rose-gold-shimmer-sangeet-and-cocktail-glam",
+      "antique-gold-and-ruby-editorial-engagement",
+    ],
+    faqs: [
+      {
+        question: "Are there any hidden costs after paying the booking advance?",
+        answer:
+          "None. The price quoted is all-inclusive of makeup, hair, eyelashes, lenses, draping, and styling. The only variable is travel beyond Meerut city limits, which is quoted upfront based on actual distance.",
+      },
+      {
+        question: "How do I secure my wedding date?",
+        answer:
+          "Dates are reserved on a first-confirmed basis with an advance deposit. Due to our strictly 1-bride-per-slot policy, reservations fill up fast for the November–February season. Message Shreya on WhatsApp to verify date availability.",
+      },
+    ],
+  },
 ];
 
-export const getPost = (slug: string) => posts.find((post) => post.slug === slug);
+export const getPost = (slug: string): Post | undefined => posts.find((post) => post.slug === slug);

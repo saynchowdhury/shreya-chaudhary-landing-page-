@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { jsonLd, websiteGraph } from "@/lib/seo";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -87,9 +86,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "ICBM", content: "28.9845, 77.7064" },
     ],
     links: [
-      { rel: "describedby", type: "text/plain", href: "https://shreyachaudharymakeup.com/llms.txt" },
-      { rel: "alternate", type: "application/rss+xml", title: "Shreya Chaudhary Makeup Journal RSS", href: "https://shreyachaudharymakeup.com/rss.xml" },
-      { rel: "alternate", type: "text/markdown", title: "Shreya Chaudhary Makeup Content for AI Agents", href: "https://shreyachaudharymakeup.com/llms-full.txt" },
+      {
+        rel: "describedby",
+        type: "text/plain",
+        href: "https://shreyachaudharymakeup.com/llms.txt",
+      },
+      {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: "Shreya Chaudhary Makeup Journal RSS",
+        href: "https://shreyachaudharymakeup.com/rss.xml",
+      },
+      {
+        rel: "alternate",
+        type: "text/markdown",
+        title: "Shreya Chaudhary Makeup Content for AI Agents",
+        href: "https://shreyachaudharymakeup.com/llms-full.txt",
+      },
       {
         rel: "stylesheet",
         href: appCss,

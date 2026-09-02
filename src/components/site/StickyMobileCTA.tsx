@@ -15,7 +15,9 @@ export function StickyMobileCTA() {
         </Link>
 
         <a
-          href={buildWhatsAppLink("Hi Shreya, I would like to check availability and book a consultation for my wedding/event.")}
+          href={buildWhatsAppLink(
+            "Hi Shreya, I would like to check availability and book a consultation for my wedding/event.",
+          )}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("whatsapp_click", { source: "sticky_mobile" })}

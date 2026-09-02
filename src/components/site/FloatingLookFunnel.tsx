@@ -93,7 +93,9 @@ export function FloatingLookFunnel({ look }: FloatingLookFunnelProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => track("look_funnel_whatsapp_click", { look: look.slug, title: look.title })}
+          onClick={() =>
+            track("look_funnel_whatsapp_click", { look: look.slug, title: look.title })
+          }
           className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-emerald-500 px-4 py-3 text-xs font-bold uppercase tracking-wider text-charcoal shadow-md transition-all active:scale-[0.98]"
         >
           <MessageCircle className="h-4 w-4 fill-current" />

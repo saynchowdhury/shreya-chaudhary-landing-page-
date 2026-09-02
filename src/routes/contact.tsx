@@ -84,9 +84,7 @@ function ContactPage() {
               ))}
               <li className="flex flex-wrap items-center justify-between gap-5 border border-border bg-card p-6">
                 <div>
-                  <h3 className="font-display text-xl text-charcoal">
-                    Something else in mind
-                  </h3>
+                  <h3 className="font-display text-xl text-charcoal">Something else in mind</h3>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Multiple dates, a group booking or a question about a look.
                   </p>

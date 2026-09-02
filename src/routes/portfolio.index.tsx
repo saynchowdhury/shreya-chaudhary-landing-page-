@@ -51,7 +51,10 @@ function PortfolioPage() {
             const count = portfolio.filter((p) => p.category === collection.category).length;
 
             return (
-              <li key={collection.category} className="group flex flex-col overflow-hidden rounded-2xl border border-charcoal/15 bg-card shadow-sm transition-all duration-300 hover:shadow-xl hover:border-charcoal/35">
+              <li
+                key={collection.category}
+                className="group flex flex-col overflow-hidden rounded-2xl border border-charcoal/15 bg-card shadow-sm transition-all duration-300 hover:shadow-xl hover:border-charcoal/35"
+              >
                 <Link to={collection.path} className="block overflow-hidden relative">
                   <PortfolioPreview
                     category={collection.category}

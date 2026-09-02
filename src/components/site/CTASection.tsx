@@ -27,12 +27,7 @@ export function CTASection({
           tone="light"
         />
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <WhatsAppButton
-            source={source}
-            message={message}
-            service={service}
-            variant="light"
-          />
+          <WhatsAppButton source={source} message={message} service={service} variant="light" />
           <Link
             to="/portfolio"
             className="inline-flex items-center border border-ivory/30 px-7 py-4 text-[0.7rem] uppercase tracking-[0.18em] text-ivory transition-colors hover:border-peach hover:text-peach"

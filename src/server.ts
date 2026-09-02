@@ -60,7 +60,7 @@ export default {
             "content-type": "text/markdown; charset=utf-8",
             "x-markdown-tokens": String(tokenCount),
             "cache-control": "public, max-age=86400, stale-while-revalidate=3600",
-            "vary": "Accept",
+            vary: "Accept",
           },
         });
       }

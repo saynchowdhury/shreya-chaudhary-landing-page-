@@ -93,10 +93,13 @@ function GhaziabadPage() {
             />
             <div className="mt-8 space-y-4 text-sm text-charcoal/85 leading-relaxed">
               <p>
-                From upscale banquets in Indirapuram and Vaishali to grand wedding resorts along Raj Nagar Extension and NH-24, Shreya creates luminous, sweatproof, and camera-ready bridal looks.
+                From upscale banquets in Indirapuram and Vaishali to grand wedding resorts along Raj
+                Nagar Extension and NH-24, Shreya creates luminous, sweatproof, and camera-ready
+                bridal looks.
               </p>
               <p>
-                All bookings feature authentic international products (NARS, Huda Beauty, Rare Beauty, MAC, Milani, Forever 52, PAC, Recode) paired with customized hair styling.
+                All bookings feature authentic international products (NARS, Huda Beauty, Rare
+                Beauty, MAC, Milani, Forever 52, PAC, Recode) paired with customized hair styling.
               </p>
             </div>
             <ul className="mt-8 grid grid-cols-2 gap-3 text-xs font-medium text-charcoal">
@@ -127,7 +130,8 @@ function GhaziabadPage() {
               {business.whatsappDisplay}
             </p>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              WhatsApp Shreya directly with your wedding date, venue, and required looks for rapid availability confirmation.
+              WhatsApp Shreya directly with your wedding date, venue, and required looks for rapid
+              availability confirmation.
             </p>
             <ul className="mt-6 space-y-3 text-xs border-t border-charcoal/10 pt-4">
               {services.map((service) => (

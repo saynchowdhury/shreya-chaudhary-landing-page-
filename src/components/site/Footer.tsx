@@ -9,7 +9,6 @@ export function Footer() {
     <footer className="bg-charcoal text-ivory pt-16 pb-28 lg:pt-20 lg:pb-16 border-t border-charcoal/30">
       <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-8 md:px-10 lg:px-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 items-start">
-          
           {/* Column 1: Brand & Verified Profile Links */}
           <div className="flex flex-col space-y-4">
             <div className="flex items-center gap-3.5">
@@ -33,7 +32,8 @@ export function Footer() {
             </div>
 
             <p className="text-sm leading-relaxed text-ivory/85 font-normal">
-              Luxury personalized bridal, engagement, and party artistry with 100% authentic international vanity kits. Strictly one bride per slot.
+              Luxury personalized bridal, engagement, and party artistry with 100% authentic
+              international vanity kits. Strictly one bride per slot.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-ivory/90 pt-1">
@@ -83,7 +83,9 @@ export function Footer() {
                     className="group inline-flex items-center text-sm font-medium text-ivory/90 transition-colors hover:text-peach"
                   >
                     <span>{service.name}</span>
-                    <span className="ml-2 font-bold text-peach text-xs">({service.priceLabel})</span>
+                    <span className="ml-2 font-bold text-peach text-xs">
+                      ({service.priceLabel})
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -91,27 +93,47 @@ export function Footer() {
 
             <div className="pt-4 border-t border-ivory/15">
               <div className="flex items-center justify-between mb-2.5">
-                <Link to="/locations" className="text-[0.68rem] uppercase tracking-[0.18em] text-peach font-bold hover:underline inline-flex items-center gap-1">
+                <Link
+                  to="/locations"
+                  className="text-[0.68rem] uppercase tracking-[0.18em] text-peach font-bold hover:underline inline-flex items-center gap-1"
+                >
                   Areas Served:
                 </Link>
-                <Link to="/locations" className="text-[0.65rem] text-ivory/60 hover:text-peach transition-colors">
+                <Link
+                  to="/locations"
+                  className="text-[0.65rem] text-ivory/60 hover:text-peach transition-colors"
+                >
                   All Hubs →
                 </Link>
               </div>
               <div className="flex flex-wrap gap-x-2.5 gap-y-1.5 text-xs font-medium text-ivory/80">
-                <Link to="/locations/meerut" className="hover:text-peach transition-colors">Meerut</Link>
+                <Link to="/locations/meerut" className="hover:text-peach transition-colors">
+                  Meerut
+                </Link>
                 <span className="text-ivory/30">·</span>
-                <Link to="/locations/noida" className="hover:text-peach transition-colors">Noida</Link>
+                <Link to="/locations/noida" className="hover:text-peach transition-colors">
+                  Noida
+                </Link>
                 <span className="text-ivory/30">·</span>
-                <Link to="/locations/muzaffarnagar" className="hover:text-peach transition-colors">Muzaffarnagar</Link>
+                <Link to="/locations/muzaffarnagar" className="hover:text-peach transition-colors">
+                  Muzaffarnagar
+                </Link>
                 <span className="text-ivory/30">·</span>
-                <Link to="/locations/ghaziabad" className="hover:text-peach transition-colors">Ghaziabad</Link>
+                <Link to="/locations/ghaziabad" className="hover:text-peach transition-colors">
+                  Ghaziabad
+                </Link>
                 <span className="text-ivory/30">·</span>
-                <Link to="/locations/greater-noida" className="hover:text-peach transition-colors">Greater Noida</Link>
+                <Link to="/locations/greater-noida" className="hover:text-peach transition-colors">
+                  Greater Noida
+                </Link>
                 <span className="text-ivory/30">·</span>
-                <Link to="/locations/shamli" className="hover:text-peach transition-colors">Shamli</Link>
+                <Link to="/locations/shamli" className="hover:text-peach transition-colors">
+                  Shamli
+                </Link>
                 <span className="text-ivory/30">·</span>
-                <Link to="/locations/delhi-ncr" className="hover:text-peach transition-colors">Delhi NCR</Link>
+                <Link to="/locations/delhi-ncr" className="hover:text-peach transition-colors">
+                  Delhi NCR
+                </Link>
               </div>
             </div>
           </nav>
@@ -123,42 +145,66 @@ export function Footer() {
             </h2>
             <ul className="space-y-3 text-sm font-medium text-ivory/90">
               <li>
-                <Link to="/portfolio" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/portfolio"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   Lookbook &amp; Portfolio
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/about"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   About Shreya
                 </Link>
               </li>
               <li>
-                <Link to="/why-shreya" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/why-shreya"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   The Shreya Standard
                 </Link>
               </li>
               <li>
-                <Link to="/brands" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/brands"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   Luxury Vanity Kit
                 </Link>
               </li>
               <li>
-                <Link to="/testimonials" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/testimonials"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   Client Reviews
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/blog"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   Bridal Journal
                 </Link>
               </li>
               <li>
-                <Link to="/packages" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/packages"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   Pricing &amp; Packages
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform">
+                <Link
+                  to="/contact"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
                   Contact Studio
                 </Link>
               </li>
@@ -169,7 +215,9 @@ export function Footer() {
                   className="transition-colors hover:text-peach inline-flex items-center gap-1.5 hover:translate-x-0.5 transition-transform font-semibold text-peach"
                 >
                   <span>Download Catalog</span>
-                  <span className="text-[0.62rem] uppercase tracking-wider text-charcoal bg-peach font-extrabold px-1.5 py-0.2 rounded">PDF</span>
+                  <span className="text-[0.62rem] uppercase tracking-wider text-charcoal bg-peach font-extrabold px-1.5 py-0.2 rounded">
+                    PDF
+                  </span>
                 </a>
               </li>
             </ul>
@@ -181,10 +229,15 @@ export function Footer() {
               Reserve Your Date
             </h2>
             <p className="text-sm leading-relaxed text-ivory/85 font-normal">
-              Send your wedding date, occasion, and location to check availability and book your free consultation.
+              Send your wedding date, occasion, and location to check availability and book your
+              free consultation.
             </p>
             <div className="pt-2">
-              <WhatsAppButton source="footer" variant="green" className="w-full justify-center py-4 text-xs font-bold uppercase tracking-wider">
+              <WhatsAppButton
+                source="footer"
+                variant="green"
+                className="w-full justify-center py-4 text-xs font-bold uppercase tracking-wider"
+              >
                 Chat on WhatsApp
               </WhatsAppButton>
             </div>

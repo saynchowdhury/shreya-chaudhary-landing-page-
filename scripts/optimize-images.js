@@ -1,11 +1,11 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import sharp from 'sharp';
+import fs from "node:fs";
+import path from "node:path";
+import sharp from "sharp";
 
 // Disable Sharp cache so Windows releases file handles immediately
 sharp.cache(false);
 
-const publicDir = path.resolve('public');
+const publicDir = path.resolve("public");
 
 async function optimizeImages() {
   const files = fs.readdirSync(publicDir);
@@ -23,7 +23,7 @@ async function optimizeImages() {
     if ((isJpeg || isPng) && stat.size > 800 * 1024) {
       try {
         const pipeline = sharp(filePath).rotate().resize(1600, 1600, {
-          fit: 'inside',
+          fit: "inside",
           withoutEnlargement: true,
         });
 
@@ -35,9 +35,11 @@ async function optimizeImages() {
         }
 
         if (buffer.length < stat.size) {
-          totalSavedBytes += (stat.size - buffer.length);
+          totalSavedBytes += stat.size - buffer.length;
           fs.writeFileSync(filePath, buffer);
-          console.log(`✓ ${file}: ${(stat.size / 1024 / 1024).toFixed(2)}MB -> ${(buffer.length / 1024).toFixed(1)}KB`);
+          console.log(
+            `✓ ${file}: ${(stat.size / 1024 / 1024).toFixed(2)}MB -> ${(buffer.length / 1024).toFixed(1)}KB`,
+          );
           optimizedCount++;
         }
       } catch (err) {
@@ -46,7 +48,9 @@ async function optimizeImages() {
     }
   }
 
-  console.log(`\n🎉 Optimized ${optimizedCount} images. Saved ${(totalSavedBytes / 1024 / 1024).toFixed(1)} MB!`);
+  console.log(
+    `\n🎉 Optimized ${optimizedCount} images. Saved ${(totalSavedBytes / 1024 / 1024).toFixed(1)} MB!`,
+  );
 }
 
 optimizeImages();

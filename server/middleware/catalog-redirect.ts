@@ -18,4 +18,5 @@ export default defineEventHandler((event) => {
   ) {
     return sendRedirect(event, "/shreya-chaudhary-makeup-catalog.pdf", 301);
   }
+  return;
 });

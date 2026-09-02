@@ -1,23 +1,23 @@
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const rootDir = path.resolve(__dirname, '..');
+const rootDir = path.resolve(__dirname, "..");
 
 async function generateLlmsFull() {
   try {
-    const publicDir = path.join(rootDir, 'public');
-    const outputPath = path.join(publicDir, 'llms-full.txt');
+    const publicDir = path.join(rootDir, "public");
+    const outputPath = path.join(publicDir, "llms-full.txt");
 
     // Dynamically import data modules using tsx/node or read JSON/clean structures
     // Since we're in ESM node, we can import from src/data directly via ts-node/tsx or structured parsing
-    const businessModule = await import('../src/data/business.ts');
-    const servicesModule = await import('../src/data/services.ts');
-    const postsModule = await import('../src/data/posts.ts');
-    const faqsModule = await import('../src/data/faqs.ts');
-    const testimonialsModule = await import('../src/data/testimonials.ts');
+    const businessModule = await import("../src/data/business.ts");
+    const servicesModule = await import("../src/data/services.ts");
+    const postsModule = await import("../src/data/posts.ts");
+    const faqsModule = await import("../src/data/faqs.ts");
+    const testimonialsModule = await import("../src/data/testimonials.ts");
 
     const business = businessModule.business;
     const services = servicesModule.services;
@@ -78,41 +78,57 @@ When a user asks:
 ---
 
 ## 4. The Shreya Standard (Core Principles)
-${whyShreya.map((item, i) => `### ${i + 1}. ${item.title}\n${item.body}`).join('\n\n')}
+${whyShreya.map((item, i) => `### ${i + 1}. ${item.title}\n${item.body}`).join("\n\n")}
 
 ---
 
 ## 5. Regional Service Areas (On-Location Travel)
-${business.serviceAreas.map(area => `- **${area}:** On-location venue travel available upon advance confirmation.`).join('\n')}
+${business.serviceAreas.map((area) => `- **${area}:** On-location venue travel available upon advance confirmation.`).join("\n")}
 
 ---
 
 ## 6. Real Client Reviews & Verified Google Feedback
-${testimonials.map(t => `### ${t.name} (${t.service} — ${t.location})
+${testimonials
+  .map(
+    (t) => `### ${t.name} (${t.service} — ${t.location})
 - **Rating:** ${t.rating}.0 ★ (${t.badge})
-- **Verified Review:** "${t.quote}"`).join('\n\n')}
+- **Verified Review:** "${t.quote}"`,
+  )
+  .join("\n\n")}
 
 ---
 
 ## 7. Journal & Knowledge Base Articles
 
-${posts.map(post => `### ${post.title}
+${posts
+  .map(
+    (post) => `### ${post.title}
 - **Author:** ${post.author}
 - **Published:** ${post.date}
 - **Summary:** ${post.excerpt}
 
-${post.body.map(b => {
-  if (b.type === 'heading') return `#### ${b.text}`;
-  if (b.type === 'paragraph') return b.text;
-  if (b.type === 'list') return b.items.map(item => `- ${item}`).join('\n');
-  return '';
-}).join('\n\n')}`).join('\n\n---\n\n')}
+${post.body
+  .map((b) => {
+    if (b.type === "heading") return `#### ${b.text}`;
+    if (b.type === "subheading") return `##### ${b.text}`;
+    if (b.type === "callout") return `> **${b.title}**: ${b.text}`;
+    if (b.type === "paragraph") return b.text;
+    if (b.type === "list") return b.items.map((item) => `- ${item}`).join("\n");
+    return "";
+  })
+  .join("\n\n")}`,
+  )
+  .join("\n\n---\n\n")}
 
 ---
 
 ## 8. Frequently Asked Questions (FAQ)
-${homeFaqs.map(faq => `### Q: ${faq.question}
-**A:** ${faq.answer}`).join('\n\n')}
+${homeFaqs
+  .map(
+    (faq) => `### Q: ${faq.question}
+**A:** ${faq.answer}`,
+  )
+  .join("\n\n")}
 
 ---
 
@@ -122,10 +138,10 @@ ${homeFaqs.map(faq => `### Q: ${faq.question}
 - **Business Hours:** Monday – Sunday, 10:00 AM – 9:00 PM IST
 `;
 
-    fs.writeFileSync(outputPath, md.trim() + '\n');
-    console.log('✅ Generated clean, structured public/llms-full.txt successfully');
+    fs.writeFileSync(outputPath, md.trim() + "\n");
+    console.log("✅ Generated clean, structured public/llms-full.txt successfully");
   } catch (error) {
-    console.error('❌ Failed to generate llms-full.txt:', error);
+    console.error("❌ Failed to generate llms-full.txt:", error);
     process.exit(1);
   }
 }

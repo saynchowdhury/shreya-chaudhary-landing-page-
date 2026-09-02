@@ -17,13 +17,13 @@ export default defineConfig({
       server: { entry: "server" },
     }),
     nitro({
-      preset: process.env.NITRO_PRESET || "cloudflare_pages",
+      preset: process.env["NITRO_PRESET"] || "cloudflare_pages",
       compressPublicAssets: true,
       minify: true,
       routeRules: {
         "/**": {
           headers: {
-            "Link": '</llms.txt>; rel="describedby"; type="text/plain", </.well-known/llms.txt>; rel="describedby"; type="text/plain", </sitemap.xml>; rel="sitemap"; type="application/xml"',
+            Link: '</llms.txt>; rel="describedby"; type="text/plain", </.well-known/llms.txt>; rel="describedby"; type="text/plain", </sitemap.xml>; rel="sitemap"; type="application/xml"',
           },
         },
         "/Shreya%20Chaudhary%20Makeup%20Catalog.pdf": {
@@ -64,7 +64,9 @@ export default defineConfig({
           const accept = req.headers.accept || "";
           if (accept.includes("text/markdown")) {
             try {
-              const { getMarkdownForRoute } = await server.ssrLoadModule("./src/lib/agent-markdown.ts");
+              const { getMarkdownForRoute } = await server.ssrLoadModule(
+                "./src/lib/agent-markdown.ts",
+              );
               const md = getMarkdownForRoute(req.url || "/");
               const tokenCount = Math.ceil(md.length / 4);
               res.setHeader("Content-Type", "text/markdown; charset=utf-8");
@@ -82,5 +84,3 @@ export default defineConfig({
     },
   ],
 });
-
-

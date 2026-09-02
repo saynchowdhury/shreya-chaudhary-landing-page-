@@ -77,7 +77,8 @@ function DelhiNcrPage() {
             <ul className="mt-8 space-y-3.5 text-sm text-charcoal/90">
               <li className="flex items-center gap-3 border-b border-border pb-3">
                 <span className="h-1.5 w-1.5 rounded-full bg-blush" />
-                <strong>Delhi &amp; South Delhi:</strong> Luxury venues, farmhouses &amp; 5-star hotels.
+                <strong>Delhi &amp; South Delhi:</strong> Luxury venues, farmhouses &amp; 5-star
+                hotels.
               </li>
               <li className="flex items-center gap-3 border-b border-border pb-3">
                 <span className="h-1.5 w-1.5 rounded-full bg-blush" />
@@ -89,7 +90,8 @@ function DelhiNcrPage() {
               </li>
               <li className="flex items-center gap-3 border-b border-border pb-3">
                 <span className="h-1.5 w-1.5 rounded-full bg-blush" />
-                <strong>Destination Weddings:</strong> Jim Corbett, Jaipur, Udaipur, and outstation resorts.
+                <strong>Destination Weddings:</strong> Jim Corbett, Jaipur, Udaipur, and outstation
+                resorts.
               </li>
             </ul>
           </div>
@@ -102,7 +104,8 @@ function DelhiNcrPage() {
               {business.whatsappDisplay}
             </p>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              WhatsApp is the fastest way to check date availability and receive a custom package for Delhi NCR &amp; Destination weddings.
+              WhatsApp is the fastest way to check date availability and receive a custom package
+              for Delhi NCR &amp; Destination weddings.
             </p>
             <div className="mt-6 border-t border-charcoal/10 pt-4">
               <Link

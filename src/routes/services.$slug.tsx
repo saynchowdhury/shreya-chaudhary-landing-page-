@@ -1,20 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { business, locationLabel } from "@/data/business";
-import {
-  experienceSteps,
-  services,
-  type ServiceSlug,
-} from "@/data/services";
+import { experienceSteps, services, type ServiceSlug } from "@/data/services";
 import { bridalFaqs, engagementFaqs, partyFaqs, type Faq } from "@/data/faqs";
 import { portfolioByCategory } from "@/data/portfolio";
-import {
-  breadcrumbLd,
-  canonical,
-  faqLd,
-  jsonLd,
-  pageMeta,
-  serviceLd,
-} from "@/lib/seo";
+import { breadcrumbLd, canonical, faqLd, jsonLd, pageMeta, serviceLd } from "@/lib/seo";
 import { PageHero } from "@/components/site/PageHero";
 import { Section, SectionHeading } from "@/components/site/Section";
 import { PortfolioGrid } from "@/components/site/PortfolioGrid";
@@ -126,10 +115,13 @@ function ServiceDetail() {
                 <p className="text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-blush">
                   Hold Your Date
                 </p>
-                <p className="font-display text-2xl font-semibold text-charcoal">{service.priceLabel}</p>
+                <p className="font-display text-2xl font-semibold text-charcoal">
+                  {service.priceLabel}
+                </p>
               </div>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Message Shreya directly on WhatsApp with your wedding date, venue, and required looks.
+                Message Shreya directly on WhatsApp with your wedding date, venue, and required
+                looks.
               </p>
               <div className="mt-5 flex flex-col gap-2.5">
                 <WhatsAppButton
@@ -192,9 +184,7 @@ function ServiceDetail() {
                 <h3 className="font-display text-2xl text-charcoal">{other.name}</h3>
                 <p className="font-display text-2xl text-charcoal">{other.priceLabel}</p>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                {other.summary}
-              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{other.summary}</p>
               <Link
                 to="/services/$slug"
                 params={{ slug: other.slug }}

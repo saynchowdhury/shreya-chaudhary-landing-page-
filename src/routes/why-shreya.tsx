@@ -50,9 +50,7 @@ function WhyShreyaPage() {
                     <span className="font-display text-2xl font-bold text-blush">0{index + 1}</span>
                     <h3 className="font-display text-xl font-medium text-charcoal">{item.title}</h3>
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-charcoal/80 pl-10">
-                    {item.body}
-                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal/80 pl-10">{item.body}</p>
                 </li>
               ))}
             </ul>
@@ -68,8 +66,12 @@ function WhyShreyaPage() {
                 className="aspect-[4/5] w-full object-cover object-top"
               />
               <div className="p-4 bg-card border-t border-charcoal/10">
-                <p className="font-display text-sm font-semibold text-charcoal">Real Bride &amp; Shreya</p>
-                <p className="text-xs text-muted-foreground">Flawless HD glow &amp; personalized suite attention</p>
+                <p className="font-display text-sm font-semibold text-charcoal">
+                  Real Bride &amp; Shreya
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Flawless HD glow &amp; personalized suite attention
+                </p>
               </div>
             </div>
           </div>
@@ -86,8 +88,13 @@ function WhyShreyaPage() {
         />
         <ul className="mt-14 grid gap-6 md:grid-cols-3">
           {services.map((service) => (
-            <li key={service.slug} className="flex flex-col border border-ivory/20 bg-charcoal/60 p-7 rounded">
-              <p className="text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-peach">{service.shortName}</p>
+            <li
+              key={service.slug}
+              className="flex flex-col border border-ivory/20 bg-charcoal/60 p-7 rounded"
+            >
+              <p className="text-[0.65rem] uppercase tracking-[0.2em] font-semibold text-peach">
+                {service.shortName}
+              </p>
               <p className="mt-4 font-display text-[2.5rem] leading-none text-ivory font-medium">
                 {service.priceLabel}
               </p>
@@ -127,91 +134,107 @@ function WhyShreyaPage() {
               </thead>
               <tbody className="divide-y divide-charcoal/10 text-charcoal/90">
                 <tr className="hover:bg-charcoal/[0.02] transition-colors">
-                  <td className="p-5 font-bold text-charcoal">
-                    Bride Attention &amp; Focus
-                  </td>
+                  <td className="p-5 font-bold text-charcoal">Bride Attention &amp; Focus</td>
                   <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
                     <div className="flex items-start gap-2.5">
                       <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span><strong>Strictly 1 Bride per slot:</strong> 100% undivided focus from skin prep to final dupatta draping.</span>
+                      <span>
+                        <strong>Strictly 1 Bride per slot:</strong> 100% undivided focus from skin
+                        prep to final dupatta draping.
+                      </span>
                     </div>
                   </td>
                   <td className="p-5 text-charcoal/70">
                     <div className="flex items-start gap-2.5">
                       <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
-                      <span>8 to 12 brides booked simultaneously in rushed conveyor-belt slots.</span>
+                      <span>
+                        8 to 12 brides booked simultaneously in rushed conveyor-belt slots.
+                      </span>
                     </div>
                   </td>
                 </tr>
 
                 <tr className="hover:bg-charcoal/[0.02] transition-colors">
-                  <td className="p-5 font-bold text-charcoal">
-                    Vanity Kit Authenticity
-                  </td>
+                  <td className="p-5 font-bold text-charcoal">Vanity Kit Authenticity</td>
                   <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
                     <div className="flex items-start gap-2.5">
                       <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span><strong>100% Genuine International Luxury:</strong> NARS Radiant, Charlotte Tilbury, MAC, Huda Beauty.</span>
+                      <span>
+                        <strong>100% Genuine International Luxury:</strong> NARS Radiant, Charlotte
+                        Tilbury, MAC, Huda Beauty.
+                      </span>
                     </div>
                   </td>
                   <td className="p-5 text-charcoal/70">
                     <div className="flex items-start gap-2.5">
                       <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
-                      <span>Often mixed with bulk commercial or unbranded drugstore duplicates.</span>
+                      <span>
+                        Often mixed with bulk commercial or unbranded drugstore duplicates.
+                      </span>
                     </div>
                   </td>
                 </tr>
 
                 <tr className="hover:bg-charcoal/[0.02] transition-colors">
-                  <td className="p-5 font-bold text-charcoal">
-                    Getting Ready Location
-                  </td>
+                  <td className="p-5 font-bold text-charcoal">Getting Ready Location</td>
                   <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
                     <div className="flex items-start gap-2.5">
                       <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span><strong>On-Location Hotel Suite / Venue:</strong> Shreya travels to you. Zero morning traffic stress.</span>
+                      <span>
+                        <strong>On-Location Hotel Suite / Venue:</strong> Shreya travels to you.
+                        Zero morning traffic stress.
+                      </span>
                     </div>
                   </td>
                   <td className="p-5 text-charcoal/70">
                     <div className="flex items-start gap-2.5">
                       <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
-                      <span>Bride must travel to crowded salon and navigate wedding traffic in heavy lehenga.</span>
+                      <span>
+                        Bride must travel to crowded salon and navigate wedding traffic in heavy
+                        lehenga.
+                      </span>
                     </div>
                   </td>
                 </tr>
 
                 <tr className="hover:bg-charcoal/[0.02] transition-colors">
-                  <td className="p-5 font-bold text-charcoal">
-                    Pricing Transparency
-                  </td>
+                  <td className="p-5 font-bold text-charcoal">Pricing Transparency</td>
                   <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
                     <div className="flex items-start gap-2.5">
                       <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span><strong>All-Inclusive Upfront:</strong> Hair styling, floral setting, draping &amp; lashes are always included.</span>
+                      <span>
+                        <strong>All-Inclusive Upfront:</strong> Hair styling, floral setting,
+                        draping &amp; lashes are always included.
+                      </span>
                     </div>
                   </td>
                   <td className="p-5 text-charcoal/70">
                     <div className="flex items-start gap-2.5">
                       <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
-                      <span>Hidden add-on fees for lashes, draping, and senior artist presence.</span>
+                      <span>
+                        Hidden add-on fees for lashes, draping, and senior artist presence.
+                      </span>
                     </div>
                   </td>
                 </tr>
 
                 <tr className="hover:bg-charcoal/[0.02] transition-colors">
-                  <td className="p-5 font-bold text-charcoal">
-                    Longevity &amp; 4K Camera Finish
-                  </td>
+                  <td className="p-5 font-bold text-charcoal">Longevity &amp; 4K Camera Finish</td>
                   <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
                     <div className="flex items-start gap-2.5">
                       <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span><strong>16-Hour Sweat-Proof &amp; Flashback-Free:</strong> Formulated for high-definition 4K photography.</span>
+                      <span>
+                        <strong>16-Hour Sweat-Proof &amp; Flashback-Free:</strong> Formulated for
+                        high-definition 4K photography.
+                      </span>
                     </div>
                   </td>
                   <td className="p-5 text-charcoal/70">
                     <div className="flex items-start gap-2.5">
                       <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
-                      <span>Heavy matte pancake layers prone to oxidizing, flashback, and creasing.</span>
+                      <span>
+                        Heavy matte pancake layers prone to oxidizing, flashback, and creasing.
+                      </span>
                     </div>
                   </td>
                 </tr>

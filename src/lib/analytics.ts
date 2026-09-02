@@ -19,9 +19,7 @@ export type AnalyticsEvent =
   | "testimonial_modal_open"
   | (string & {});
 
-export const measurementId = import.meta.env["VITE_GA4_MEASUREMENT_ID"] as
-  | string
-  | undefined;
+export const measurementId = import.meta.env["VITE_GA4_MEASUREMENT_ID"] as string | undefined;
 
 type DataLayerWindow = typeof window & {
   dataLayer?: unknown[];

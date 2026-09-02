@@ -48,7 +48,8 @@ function Home() {
             </p>
           </div>
           <div className="flex-1 max-w-lg text-sm md:text-base text-ivory/90 font-medium px-2 md:px-0 leading-relaxed">
-            Shubh Muhurat dates are booking fast across Meerut &amp; Delhi NCR. Secure your venue date today.
+            Shubh Muhurat dates are booking fast across Meerut &amp; Delhi NCR. Secure your venue
+            date today.
           </div>
           <div className="flex-shrink-0 mt-3 md:mt-0">
             <a

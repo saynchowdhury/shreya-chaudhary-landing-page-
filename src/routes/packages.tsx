@@ -58,18 +58,14 @@ function PackagesPage() {
             Booking more than one occasion?
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            {business.engagementBenefitNote} Share all of your dates in one WhatsApp message
-            and they can be checked together.
+            {business.engagementBenefitNote} Share all of your dates in one WhatsApp message and
+            they can be checked together.
           </p>
         </div>
       </Section>
 
       <Section labelledBy="packages-faq-heading">
-        <SectionHeading
-          id="packages-faq-heading"
-          eyebrow="Questions"
-          title="Pricing questions"
-        />
+        <SectionHeading id="packages-faq-heading" eyebrow="Questions" title="Pricing questions" />
         <div className="mt-10">
           <FaqAccordion faqs={pricingFaqs} />
         </div>

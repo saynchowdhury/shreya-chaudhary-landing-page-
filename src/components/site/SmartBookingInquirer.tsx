@@ -14,11 +14,13 @@ export function SmartBookingInquirer() {
   const currentServiceObj = services.find((s) => s.slug === selectedService) || services[0]!;
 
   const handleWhatsAppInquiry = () => {
-    const formattedDate = eventDate ? new Date(eventDate).toLocaleDateString("en-IN", {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    }) : "Date to be confirmed";
+    const formattedDate = eventDate
+      ? new Date(eventDate).toLocaleDateString("en-IN", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        })
+      : "Date to be confirmed";
 
     const message = `Hello Shreya,%0A%0AI would like to check your availability and get a consultation for my upcoming event:%0A%0A*Service:* ${currentServiceObj.name}%0A*Event Date:* ${formattedDate}%0A*Location:* ${location}%0A*Members:* ${guestCount}${customNotes ? `%0A*Notes:* ${encodeURIComponent(customNotes)}` : ""}%0A%0APlease let me know your availability and package details. Thank you!`;
 
@@ -79,7 +81,10 @@ export function SmartBookingInquirer() {
         {/* Date and Location Inputs */}
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="event-date" className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2">
+            <label
+              htmlFor="event-date"
+              className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2"
+            >
               2. Wedding / Event Date
             </label>
             <div className="relative">
@@ -95,7 +100,10 @@ export function SmartBookingInquirer() {
           </div>
 
           <div>
-            <label htmlFor="event-location" className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2">
+            <label
+              htmlFor="event-location"
+              className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2"
+            >
               3. Event City / Venue
             </label>
             <div className="relative">
@@ -121,7 +129,10 @@ export function SmartBookingInquirer() {
         {/* Guest count & Custom notes */}
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="guest-count" className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2">
+            <label
+              htmlFor="guest-count"
+              className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2"
+            >
               4. Number of People for Makeup
             </label>
             <select
@@ -138,7 +149,10 @@ export function SmartBookingInquirer() {
           </div>
 
           <div>
-            <label htmlFor="custom-notes" className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2">
+            <label
+              htmlFor="custom-notes"
+              className="block text-xs uppercase tracking-[0.14em] text-charcoal font-semibold mb-2"
+            >
               5. Special Requests / Outfit Details (Optional)
             </label>
             <input

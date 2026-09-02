@@ -1,19 +1,19 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
-const domain = 'https://shreyachaudharymakeup.com';
-const publicDir = path.resolve('public');
+const domain = "https://shreyachaudharymakeup.com";
+const publicDir = path.resolve("public");
 
 async function generateImageSitemaps() {
   try {
-    const portfolioModule = await import('../src/data/portfolio.ts');
+    const portfolioModule = await import("../src/data/portfolio.ts");
     const portfolio = portfolioModule.portfolio;
 
     // Retrieve per-look actual modification date where available.
     // When no accurate modification date exists, omit lastmod rather than using today's generation date.
     const getLookLastmod = (look) => {
       const candidate = look.lastmod || look.dateModified || look.meta?.date;
-      if (typeof candidate === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(candidate.trim())) {
+      if (typeof candidate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(candidate.trim())) {
         return candidate.trim();
       }
       return null;
@@ -30,9 +30,13 @@ async function generateImageSitemaps() {
       const imageLoc = `${domain}${look.src}`;
       const cleanTitle = escapeXml(`${look.title} - Bridal Makeup Meerut | Shreya Chaudhary`);
       const cleanCaption = escapeXml(look.alt);
-      const location = escapeXml(look.meta?.location ? `${look.meta.location}, Uttar Pradesh, India` : 'Meerut, Uttar Pradesh, India');
+      const location = escapeXml(
+        look.meta?.location
+          ? `${look.meta.location}, Uttar Pradesh, India`
+          : "Meerut, Uttar Pradesh, India",
+      );
       const lookLastmod = getLookLastmod(look);
-      const lastmodTag = lookLastmod ? `\n    <lastmod>${lookLastmod}</lastmod>` : '';
+      const lastmodTag = lookLastmod ? `\n    <lastmod>${lookLastmod}</lastmod>` : "";
 
       imagesXml += `  <url>
     <loc>${pageLoc}</loc>${lastmodTag}
@@ -49,26 +53,72 @@ async function generateImageSitemaps() {
     }
 
     imagesXml += `</urlset>\n`;
-    fs.writeFileSync(path.join(publicDir, 'sitemap-images.xml'), imagesXml);
+    fs.writeFileSync(path.join(publicDir, "sitemap-images.xml"), imagesXml);
     console.log(`✅ Generated public/sitemap-images.xml with ${portfolio.length} images`);
 
-    // 2. Update main sitemap.xml to include /locations and all /looks/$slug
-    const sitemapPath = path.join(publicDir, 'sitemap.xml');
-    let mainXml = fs.readFileSync(sitemapPath, 'utf8');
+    // 2. Update main sitemap.xml to include all 8 /locations routes and all /looks/$slug
+    const sitemapPath = path.join(publicDir, "sitemap.xml");
+    let mainXml = fs.readFileSync(sitemapPath, "utf8");
 
-    // Add /locations hub if missing
-    if (!mainXml.includes('<loc>https://shreyachaudharymakeup.com/locations</loc>')) {
-      const locationsBlock = `  <url>
-    <loc>https://shreyachaudharymakeup.com/locations</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    const looksMarker = "  <!-- Bridal & Occasion Look Showcase Pages -->";
+    const locationsMarker = "  <!-- Geographic / Regional Location Hubs -->";
+
+    const locationRoutes = [
+      { path: "/locations", priority: "0.85", changefreq: "weekly", lastmod: "2026-09-02" },
+      { path: "/locations/meerut", priority: "0.9", changefreq: "weekly", lastmod: "2026-09-02" },
+      { path: "/locations/noida", priority: "0.85", changefreq: "weekly", lastmod: "2026-09-02" },
+      {
+        path: "/locations/greater-noida",
+        priority: "0.8",
+        changefreq: "weekly",
+        lastmod: "2026-09-02",
+      },
+      {
+        path: "/locations/ghaziabad",
+        priority: "0.85",
+        changefreq: "weekly",
+        lastmod: "2026-09-02",
+      },
+      {
+        path: "/locations/muzaffarnagar",
+        priority: "0.8",
+        changefreq: "weekly",
+        lastmod: "2026-09-02",
+      },
+      { path: "/locations/shamli", priority: "0.8", changefreq: "weekly", lastmod: "2026-09-02" },
+      {
+        path: "/locations/delhi-ncr",
+        priority: "0.85",
+        changefreq: "weekly",
+        lastmod: "2026-09-02",
+      },
+    ];
+
+    let locationsBlock = `${locationsMarker}\n`;
+    for (const loc of locationRoutes) {
+      locationsBlock += `  <url>
+    <loc>${domain}${loc.path}</loc>
+    <lastmod>${loc.lastmod}</lastmod>
+    <changefreq>${loc.changefreq}</changefreq>
+    <priority>${loc.priority}</priority>
   </url>\n\n`;
-      mainXml = mainXml.replace('  <!-- Geographic / Regional Location Hubs -->', locationsBlock + '  <!-- Geographic / Regional Location Hubs -->');
+    }
+
+    if (mainXml.includes(locationsMarker)) {
+      const locRegex = new RegExp(
+        `${locationsMarker}[\\s\\S]*?(?=\\s*${looksMarker}|\\s*<!-- Policy Pages|\\s*</urlset>)`,
+      );
+      mainXml = mainXml.replace(locRegex, locationsBlock);
+    } else if (mainXml.includes(looksMarker)) {
+      mainXml = mainXml.replace(looksMarker, locationsBlock + looksMarker);
+    } else {
+      mainXml = mainXml.replace(
+        "  <!-- Policy Pages -->",
+        locationsBlock + "  <!-- Policy Pages -->",
+      );
     }
 
     // Replace or append looks block
-    const looksMarker = '  <!-- Bridal & Occasion Look Showcase Pages -->';
     let looksBlock = `${looksMarker}\n`;
     for (const look of portfolio) {
       const pageLoc = `${domain}/looks/${look.slug}`;
@@ -76,7 +126,7 @@ async function generateImageSitemaps() {
       const cleanTitle = escapeXml(`${look.title} - Bridal Makeup Meerut`);
       const cleanCaption = escapeXml(look.alt);
       const lookLastmod = getLookLastmod(look);
-      const lastmodTag = lookLastmod ? `\n    <lastmod>${lookLastmod}</lastmod>` : '';
+      const lastmodTag = lookLastmod ? `\n    <lastmod>${lookLastmod}</lastmod>` : "";
 
       looksBlock += `  <url>
     <loc>${pageLoc}</loc>${lastmodTag}
@@ -94,24 +144,27 @@ async function generateImageSitemaps() {
       const regex = new RegExp(`${looksMarker}[\\s\\S]*?(?=\\s*<!-- Policy Pages|\\s*</urlset>)`);
       mainXml = mainXml.replace(regex, looksBlock);
     } else {
-      mainXml = mainXml.replace('  <!-- Policy Pages -->', looksBlock + '\n  <!-- Policy Pages -->');
+      mainXml = mainXml.replace(
+        "  <!-- Policy Pages -->",
+        looksBlock + "\n  <!-- Policy Pages -->",
+      );
     }
 
     fs.writeFileSync(sitemapPath, mainXml);
-    console.log('✅ Synchronized public/sitemap.xml with /locations and /looks/*');
+    console.log("✅ Synchronized public/sitemap.xml with /locations and /looks/*");
   } catch (error) {
-    console.error('❌ Failed to generate sitemaps:', error);
+    console.error("❌ Failed to generate sitemaps:", error);
     process.exit(1);
   }
 }
 
 function escapeXml(unsafe) {
   return unsafe
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }
 
 generateImageSitemaps();

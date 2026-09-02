@@ -117,8 +117,7 @@ export const services: Service[] = [
   },
 ];
 
-export const getService = (slug: ServiceSlug) =>
-  services.find((service) => service.slug === slug)!;
+export const getService = (slug: ServiceSlug) => services.find((service) => service.slug === slug)!;
 
 export const serviceByCategory = (category: PortfolioCategory) =>
   services.find((service) => service.category === category)!;

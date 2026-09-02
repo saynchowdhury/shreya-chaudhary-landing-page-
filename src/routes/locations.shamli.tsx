@@ -93,10 +93,13 @@ function ShamliPage() {
             />
             <div className="mt-8 space-y-4 text-sm text-charcoal/85 leading-relaxed">
               <p>
-                Shreya Chaudhary creates weightless, sweatproof, and camera-ready HD bridal makeup that looks radiant both under bright mandap lighting and in high-definition wedding cinematography.
+                Shreya Chaudhary creates weightless, sweatproof, and camera-ready HD bridal makeup
+                that looks radiant both under bright mandap lighting and in high-definition wedding
+                cinematography.
               </p>
               <p>
-                All bookings include customized hair styling, dupatta draping, and jewelry placement in one smooth, unhurried sitting.
+                All bookings include customized hair styling, dupatta draping, and jewelry placement
+                in one smooth, unhurried sitting.
               </p>
             </div>
             <ul className="mt-8 grid grid-cols-2 gap-3 text-xs font-medium text-charcoal">
@@ -127,7 +130,8 @@ function ShamliPage() {
               {business.whatsappDisplay}
             </p>
             <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-              WhatsApp Shreya directly with your wedding date, venue in {city}, and required looks for instant availability check.
+              WhatsApp Shreya directly with your wedding date, venue in {city}, and required looks
+              for instant availability check.
             </p>
             <ul className="mt-6 space-y-3 text-xs border-t border-charcoal/10 pt-4">
               {services.map((service) => (
@@ -177,11 +181,7 @@ function ShamliPage() {
       </Section>
 
       <Section labelledBy="shamli-faq-heading">
-        <SectionHeading
-          id="shamli-faq-heading"
-          eyebrow="FAQ"
-          title={`${city} Makeup Questions`}
-        />
+        <SectionHeading id="shamli-faq-heading" eyebrow="FAQ" title={`${city} Makeup Questions`} />
         <div className="mt-10">
           <FaqAccordion faqs={shamliFaqs} />
         </div>

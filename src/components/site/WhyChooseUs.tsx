@@ -5,31 +5,35 @@ import { brands } from "@/data/brands";
 
 export function WhyChooseUs() {
   return (
-    <section aria-labelledby="why-choose-us-heading" className="bg-[#181616] px-5 py-12 text-ivory md:px-10 md:py-16">
+    <section
+      aria-labelledby="why-choose-us-heading"
+      className="bg-[#181616] px-5 py-12 text-ivory md:px-10 md:py-16"
+    >
       <div className="mx-auto max-w-[1300px]">
-        
         {/* Section Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 border-b border-ivory/15">
           <div className="max-w-xl">
             <p className="text-[0.65rem] uppercase tracking-[0.24em] text-peach font-medium">
               The Shreya Chaudhary Standard
             </p>
-            <h2 id="why-choose-us-heading" className="mt-2.5 font-display text-2xl leading-tight tracking-[-0.02em] text-ivory md:text-4xl">
+            <h2
+              id="why-choose-us-heading"
+              className="mt-2.5 font-display text-2xl leading-tight tracking-[-0.02em] text-ivory md:text-4xl"
+            >
               Why brides choose a personal artist over a salon
             </h2>
           </div>
           <p className="max-w-sm text-xs text-ivory/70 font-light leading-relaxed">
-            Quiet luxury, punctual professionalism, and dedicated 1-on-1 care directly in your bridal suite.
+            Quiet luxury, punctual professionalism, and dedicated 1-on-1 care directly in your
+            bridal suite.
           </p>
         </div>
 
         {/* Artistic Luxury Bento Grid */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-12 gap-5">
-          
           {/* Bento Item 1: Large Feature (7 cols) - 1-on-1 Dedicated Suite Experience */}
           <div className="md:col-span-12 lg:col-span-7 group relative overflow-hidden rounded-xl border border-ivory/15 bg-gradient-to-br from-[#242121] to-[#1C1A1A] p-5 sm:p-6 md:p-7 shadow-lg transition-all duration-300 hover:border-ivory/30">
             <div className="grid md:grid-cols-12 gap-5 sm:gap-6 items-center">
-              
               <div className="md:col-span-7 flex flex-col justify-between space-y-4">
                 <div>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-peach/15 px-3 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-peach">
@@ -40,7 +44,9 @@ export function WhyChooseUs() {
                     Zero salon rush. 100% focused suite artistry.
                   </h3>
                   <p className="mt-2.5 text-xs leading-relaxed text-ivory/75 font-light">
-                    Unlike commercial salons that rush multiple brides simultaneously, Shreya accepts <strong>strictly 1 bride per time slot</strong>. You receive calm, unhurried attention in your private suite.
+                    Unlike commercial salons that rush multiple brides simultaneously, Shreya
+                    accepts <strong>strictly 1 bride per time slot</strong>. You receive calm,
+                    unhurried attention in your private suite.
                   </p>
                 </div>
 
@@ -75,7 +81,6 @@ export function WhyChooseUs() {
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -86,7 +91,7 @@ export function WhyChooseUs() {
                 <Award className="h-3 w-3 text-amber-400" />
                 6+ Years Bridal Mastery
               </span>
-              
+
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="font-display text-4xl font-semibold text-ivory">5.0</span>
                 <span className="text-amber-400 text-xl tracking-wider">★★★★★</span>
@@ -96,7 +101,8 @@ export function WhyChooseUs() {
               </p>
 
               <p className="mt-3 text-xs leading-relaxed text-ivory/75 font-light">
-                Over 6 years of specialized bridal artistry trusted by brides across Meerut, Noida, Ghaziabad, and destination weddings.
+                Over 6 years of specialized bridal artistry trusted by brides across Meerut, Noida,
+                Ghaziabad, and destination weddings.
               </p>
             </div>
 
@@ -126,7 +132,8 @@ export function WhyChooseUs() {
                 World-class, skin-friendly cosmetics matched to your undertone
               </h3>
               <p className="mt-1.5 text-xs leading-relaxed text-ivory/75 font-light max-w-3xl">
-                Zero cheap drugstore foundations or harsh formulas. We custom-blend shades for your exact undertone using genuine international luxury products.
+                Zero cheap drugstore foundations or harsh formulas. We custom-blend shades for your
+                exact undertone using genuine international luxury products.
               </p>
 
               {/* Brand Pills Cluster with Charlotte Tilbury & Laura Mercier */}
@@ -136,7 +143,11 @@ export function WhyChooseUs() {
                     key={brand.name}
                     className="flex items-center gap-2 overflow-hidden rounded-lg bg-ivory p-2 shadow-sm border border-ivory/30 transition-all hover:scale-103"
                   >
-                    <img src={brand.logo} alt={`${brand.name} logo`} className="h-5 w-auto max-w-[70px] object-contain" />
+                    <img
+                      src={brand.logo}
+                      alt={`${brand.name} logo`}
+                      className="h-5 w-auto max-w-[70px] object-contain"
+                    />
                     <span className="text-[0.6rem] font-bold uppercase tracking-wider text-charcoal/85 truncate">
                       {brand.name}
                     </span>
@@ -145,7 +156,6 @@ export function WhyChooseUs() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Bottom Booking Guarantee Strip - Compact */}
@@ -155,12 +165,15 @@ export function WhyChooseUs() {
               Ready to reserve your wedding date?
             </p>
             <p className="mt-0.5 text-xs text-ivory/60">
-              Only 1 bridal slot accepted per event · Serving Meerut, Noida, Ghaziabad, Muzaffarnagar and Delhi NCR.
+              Only 1 bridal slot accepted per event · Serving Meerut, Noida, Ghaziabad,
+              Muzaffarnagar and Delhi NCR.
             </p>
           </div>
-          
+
           <a
-            href={buildWhatsAppLink("Hi Shreya, I'd like to check your availability for my wedding date.")}
+            href={buildWhatsAppLink(
+              "Hi Shreya, I'd like to check your availability for my wedding date.",
+            )}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => track("whatsapp_click", { source: "why_choose_us_bento_cta" })}
@@ -169,7 +182,6 @@ export function WhyChooseUs() {
             Check Availability on WhatsApp
           </a>
         </div>
-
       </div>
     </section>
   );

@@ -83,11 +83,7 @@ export const engagementFaqs: Faq[] = [
   homeFaqs[9]!, // Waterproof
 ];
 
-export const partyFaqs: Faq[] = [
-  homeFaqs[2]!,
-  homeFaqs[3]!,
-  homeFaqs[4]!,
-];
+export const partyFaqs: Faq[] = [homeFaqs[2]!, homeFaqs[3]!, homeFaqs[4]!];
 
 export const meerutFaqs: Faq[] = [
   homeFaqs[5]!, // Who is best

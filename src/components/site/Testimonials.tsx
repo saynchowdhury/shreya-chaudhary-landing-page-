@@ -112,11 +112,9 @@ export function TestimonialList() {
 
   return (
     <div className="space-y-12">
-      
       {/* 1. Official Google Verified Reviews Trust Badge Hub */}
       <div className="rounded-2xl border border-charcoal/15 bg-gradient-to-br from-[#FFFFFF] via-[#FAF6F0] to-[#F5EFE6] p-6 md:p-8 shadow-sm">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-          
           {/* Left: Google Rating & Business Profile Details */}
           <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
             <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-white border border-charcoal/15 shadow-md ring-4 ring-champagne/40">
@@ -126,15 +124,14 @@ export function TestimonialList() {
             <div>
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                 <span className="font-display text-3xl font-bold text-charcoal">5.0</span>
-                <div className="flex text-amber-500 text-xl tracking-tight">
-                  ★★★★★
-                </div>
+                <div className="flex text-amber-500 text-xl tracking-tight">★★★★★</div>
                 <span className="rounded-full bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 text-[0.68rem] font-bold uppercase tracking-wider text-emerald-800">
                   Google Verified Business
                 </span>
               </div>
               <p className="mt-1 text-sm text-charcoal/90 font-medium">
-                Based on <strong className="font-bold text-charcoal">45+ 5-Star Reviews</strong> on Google Maps for Shreya Chaudhary Makeup.
+                Based on <strong className="font-bold text-charcoal">45+ 5-Star Reviews</strong> on
+                Google Maps for Shreya Chaudhary Makeup.
               </p>
               <p className="text-xs text-charcoal/70 mt-0.5">
                 Roorkee Road, Konark Colony, Meerut &amp; Delhi NCR Bridal Suites.
@@ -165,12 +162,13 @@ export function TestimonialList() {
               <span>Write a Review ✎</span>
             </a>
           </div>
-
         </div>
 
         {/* Category Filters */}
         <div className="mt-6 flex flex-wrap items-center justify-center sm:justify-start gap-2 border-t border-charcoal/10 pt-5">
-          <span className="text-xs font-bold text-charcoal/70 uppercase tracking-wider mr-2">Filter Reviews:</span>
+          <span className="text-xs font-bold text-charcoal/70 uppercase tracking-wider mr-2">
+            Filter Reviews:
+          </span>
           {(
             [
               { id: "all", label: "All Reviews (5.0 ★)" },
@@ -198,10 +196,7 @@ export function TestimonialList() {
       <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filteredReviews.map((testimonial) => (
           <li key={testimonial.id}>
-            <TestimonialCard
-              testimonial={testimonial}
-              onSelect={handleReviewClick}
-            />
+            <TestimonialCard testimonial={testimonial} onSelect={handleReviewClick} />
           </li>
         ))}
       </ul>
@@ -355,11 +350,9 @@ export function TestimonialList() {
                 <span>Verify on Google Maps ↗</span>
               </a>
             </div>
-
           </div>
         </div>
       )}
-
     </div>
   );
 }

@@ -19,10 +19,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
                 </span>
               ) : (
                 <>
-                  <Link
-                    to={item.path}
-                    className="transition-colors hover:text-charcoal"
-                  >
+                  <Link to={item.path} className="transition-colors hover:text-charcoal">
                     {item.name}
                   </Link>
                   <span aria-hidden className="text-border">

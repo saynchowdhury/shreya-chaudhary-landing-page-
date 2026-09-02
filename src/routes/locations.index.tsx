@@ -180,7 +180,7 @@ function LocationsIndexPage() {
 
                 <div className="mt-6 pt-4 border-t border-charcoal/10">
                   <Link
-                    to={`/locations/${loc.slug}` as any}
+                    to={`/locations/${loc.slug}` as string}
                     className="inline-flex w-full items-center justify-between rounded-full bg-charcoal/5 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-charcoal transition-all group-hover:bg-charcoal group-hover:text-ivory"
                   >
                     <span>View {loc.name} Details</span>
@@ -202,7 +202,9 @@ function LocationsIndexPage() {
                   Planning a Wedding Outside Delhi NCR?
                 </h3>
                 <p className="mt-2 text-sm text-ivory/80 leading-relaxed">
-                  Shreya Chaudhary is available for pan-India destination weddings (Jaipur, Udaipur, Jim Corbett, Goa, Mussoorie). Travel and accommodation arrangements are coordinated transparently.
+                  Shreya Chaudhary is available for pan-India destination weddings (Jaipur, Udaipur,
+                  Jim Corbett, Goa, Mussoorie). Travel and accommodation arrangements are
+                  coordinated transparently.
                 </p>
               </div>
               <a

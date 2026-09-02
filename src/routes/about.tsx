@@ -55,13 +55,19 @@ function AboutPage() {
             />
             <div className="mt-8 space-y-4 text-base leading-relaxed text-charcoal/85">
               <p>
-                With <strong>6+ years of professional bridal artistry</strong>, Shreya Chaudhary has established a reputation for weightless, skin-like HD finishes that look just as luminous in person as they do in high-definition 4K wedding cinematography.
+                With <strong>6+ years of professional bridal artistry</strong>, Shreya Chaudhary has
+                established a reputation for weightless, skin-like HD finishes that look just as
+                luminous in person as they do in high-definition 4K wedding cinematography.
               </p>
               <p>
-                We reject the one-size-fits-all salon assembly line. We custom-blend base shades to match your exact undertone using strictly authentic international cosmetics (NARS, Charlotte Tilbury, Huda Beauty, Laura Mercier, Rare Beauty, MAC, Milani, Forever 52, PAC, Recode).
+                We reject the one-size-fits-all salon assembly line. We custom-blend base shades to
+                match your exact undertone using strictly authentic international cosmetics (NARS,
+                Charlotte Tilbury, Huda Beauty, Laura Mercier, Rare Beauty, MAC, Milani, Forever 52,
+                PAC, Recode).
               </p>
               <p>
-                Every bridal booking includes on-location hair styling, jewelry setting, dupatta draping, and calm, unhurried attention in your bridal suite.
+                Every bridal booking includes on-location hair styling, jewelry setting, dupatta
+                draping, and calm, unhurried attention in your bridal suite.
               </p>
             </div>
             <div className="mt-8 flex items-center gap-4">
@@ -73,8 +79,12 @@ function AboutPage() {
                 className="h-14 w-14 object-contain"
               />
               <div>
-                <p className="font-display text-xl font-semibold text-charcoal">{business.artist}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">Master Bridal Artist &amp; Founder</p>
+                <p className="font-display text-xl font-semibold text-charcoal">
+                  {business.artist}
+                </p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">
+                  Master Bridal Artist &amp; Founder
+                </p>
               </div>
             </div>
             <div className="mt-8">
@@ -101,15 +111,21 @@ function AboutPage() {
               <dl className="mt-4 grid grid-cols-2 gap-4 text-xs">
                 <div>
                   <dt className="text-muted-foreground">Experience</dt>
-                  <dd className="mt-0.5 font-display text-base text-charcoal font-semibold">6+ Years</dd>
+                  <dd className="mt-0.5 font-display text-base text-charcoal font-semibold">
+                    6+ Years
+                  </dd>
                 </div>
                 <div>
                   <dt className="text-muted-foreground">Google Rating</dt>
-                  <dd className="mt-0.5 font-display text-base text-charcoal font-semibold">5.0 ★ Verified (100% 5-Star)</dd>
+                  <dd className="mt-0.5 font-display text-base text-charcoal font-semibold">
+                    5.0 ★ Verified (100% 5-Star)
+                  </dd>
                 </div>
                 <div>
                   <dt className="text-muted-foreground">Location</dt>
-                  <dd className="mt-0.5 font-medium text-charcoal">{locationLabel} &amp; Delhi NCR</dd>
+                  <dd className="mt-0.5 font-medium text-charcoal">
+                    {locationLabel} &amp; Delhi NCR
+                  </dd>
                 </div>
                 <div>
                   <dt className="text-muted-foreground">Bookings</dt>
@@ -128,11 +144,16 @@ function AboutPage() {
             <p className="text-[0.65rem] uppercase tracking-[0.22em] text-peach font-semibold">
               On-Location Excellence
             </p>
-            <h2 id="action-heading" className="font-display text-3xl md:text-4xl text-ivory font-medium">
+            <h2
+              id="action-heading"
+              className="font-display text-3xl md:text-4xl text-ivory font-medium"
+            >
               Calm, unhurried suite sessions
             </h2>
             <p className="text-sm text-ivory/80 leading-relaxed font-light">
-              Your wedding morning should be peaceful and joyful. Shreya travels directly to your venue or suite with a complete professional setup, premium lighting, and luxury vanities — ensuring you step out looking breathtaking and feeling confident.
+              Your wedding morning should be peaceful and joyful. Shreya travels directly to your
+              venue or suite with a complete professional setup, premium lighting, and luxury
+              vanities — ensuring you step out looking breathtaking and feeling confident.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -144,7 +165,9 @@ function AboutPage() {
                 height={1000}
                 className="aspect-[3/4] w-full object-cover"
               />
-              <p className="p-2 text-center text-[0.65rem] text-ivory/70 bg-charcoal">Suite Touch-Up</p>
+              <p className="p-2 text-center text-[0.65rem] text-ivory/70 bg-charcoal">
+                Suite Touch-Up
+              </p>
             </div>
             <div className="overflow-hidden rounded border border-ivory/15 shadow-md">
               <img
@@ -154,7 +177,9 @@ function AboutPage() {
                 height={1000}
                 className="aspect-[3/4] w-full object-cover"
               />
-              <p className="p-2 text-center text-[0.65rem] text-ivory/70 bg-charcoal">Royal Bride Reveal</p>
+              <p className="p-2 text-center text-[0.65rem] text-ivory/70 bg-charcoal">
+                Royal Bride Reveal
+              </p>
             </div>
           </div>
         </div>

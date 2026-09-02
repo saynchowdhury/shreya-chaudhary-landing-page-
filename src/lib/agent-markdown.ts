@@ -2,9 +2,10 @@ import { business, locationLabel } from "@/data/business";
 import { services, whyShreya } from "@/data/services";
 import { homeFaqs } from "@/data/faqs";
 import { getLookBySlug } from "@/data/portfolio";
+import { posts, getPost } from "@/data/posts";
 
 export function getMarkdownForRoute(rawPath: string): string {
-  const pathname = rawPath.split("?")[0].replace(/\/$/, "") || "/";
+  const pathname = (rawPath.split("?")[0] ?? "").replace(/\/$/, "") || "/";
 
   if (pathname.startsWith("/services")) {
     const slug = pathname.replace("/services/", "").replace("/services", "");
@@ -95,6 +96,44 @@ https://shreyachaudharymakeup.com${look.src}
 [Check Availability for this Look (WhatsApp: +91 70037 81618)](https://wa.me/${business.whatsapp}?text=${encodeURIComponent(`Hi Shreya, I found your "${look.title}" look on Google and want to check your availability for my wedding date on [Date].`)})
 `;
     }
+  }
+
+  if (pathname === "/blog" || pathname.startsWith("/blog/")) {
+    if (pathname.startsWith("/blog/")) {
+      const slug = pathname.slice("/blog/".length);
+      if (slug) {
+        const post = getPost(slug);
+        if (post) {
+          return `# ${post.title} — Shreya Chaudhary Makeup Journal
+
+> ${post.excerpt}
+
+- **Author:** ${post.author} (${post.authorRole ?? "Principal Makeup Artist"})
+- **Published:** ${post.date}
+- **Reading Time:** ${post.readingTimeMinutes ?? 5} minutes
+
+${post.keyTakeaways?.length ? `## Key Takeaways for Brides\n${post.keyTakeaways.map((t) => `- ${t}`).join("\n")}\n\n` : ""}## Article Content
+${post.body
+  .map((b) => {
+    if (b.type === "heading") return `### ${b.text}`;
+    if (b.type === "subheading") return `#### ${b.text}`;
+    if (b.type === "callout") return `> **${b.title}**: ${b.text}`;
+    if (b.type === "list") return b.items.map((item) => `- ${item}`).join("\n");
+    return b.text;
+  })
+  .join("\n\n")}
+
+${post.faqs?.length ? `## Frequently Asked Questions\n${post.faqs.map((f) => `### Q: ${f.question}\n**A:** ${f.answer}`).join("\n\n")}\n\n` : ""}## Direct WhatsApp Booking Action:
+[Check Availability with Shreya Chaudhary on WhatsApp](https://wa.me/${business.whatsapp}?text=${encodeURIComponent(`Hi Shreya, I read your article "${post.title}" and would like to check your availability for my wedding.`)} )
+`;
+        }
+      }
+    }
+
+    return `# Shreya Chaudhary Makeup Journal & Bridal Guides
+
+${posts.map((p) => `- [${p.title}](https://shreyachaudharymakeup.com/blog/${p.slug}): ${p.excerpt}`).join("\n")}
+`;
   }
 
   if (pathname === "/why-shreya") {

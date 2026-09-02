@@ -39,10 +39,9 @@ function BookingPolicy() {
           <section>
             <h2 className="font-display text-2xl text-charcoal">How to book</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              All enquiries and bookings are handled over WhatsApp at{" "}
-              {business.whatsappDisplay}. Send your occasion, date and location; availability
-              is confirmed in that conversation. A booking is only held once it has been
-              confirmed there.
+              All enquiries and bookings are handled over WhatsApp at {business.whatsappDisplay}.
+              Send your occasion, date and location; availability is confirmed in that conversation.
+              A booking is only held once it has been confirmed there.
             </p>
           </section>
 
@@ -67,9 +66,9 @@ function BookingPolicy() {
           <section>
             <h2 className="font-display text-2xl text-charcoal">What is included</h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Every package includes the makeup application described on its service page,
-              premium authentic products, and on-location hairstyling. Travel expenses are
-              excluded from base package fees and are calculated on actuals based on venue distance.
+              Every package includes the makeup application described on its service page, premium
+              authentic products, and on-location hairstyling. Travel expenses are excluded from
+              base package fees and are calculated on actuals based on venue distance.
             </p>
           </section>
 
@@ -78,11 +77,11 @@ function BookingPolicy() {
               Timings, changes and cancellations
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Start times are agreed in advance so the look is finished before you need to
-              leave. If your date, timing or venue changes, tell {business.artist} on WhatsApp
-              as early as possible and the booking will be adjusted where availability allows.
-              Any deposit or cancellation terms that apply to your specific booking are stated
-              to you in writing on WhatsApp before you confirm.
+              Start times are agreed in advance so the look is finished before you need to leave. If
+              your date, timing or venue changes, tell {business.artist} on WhatsApp as early as
+              possible and the booking will be adjusted where availability allows. Any deposit or
+              cancellation terms that apply to your specific booking are stated to you in writing on
+              WhatsApp before you confirm.
             </p>
           </section>
 

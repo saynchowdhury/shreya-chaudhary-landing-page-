@@ -72,11 +72,7 @@ function ServicesPage() {
       </Section>
 
       <Section labelledBy="services-faq-heading">
-        <SectionHeading
-          id="services-faq-heading"
-          eyebrow="Questions"
-          title="Service questions"
-        />
+        <SectionHeading id="services-faq-heading" eyebrow="Questions" title="Service questions" />
         <div className="mt-10">
           <FaqAccordion faqs={homeFaqs} />
         </div>

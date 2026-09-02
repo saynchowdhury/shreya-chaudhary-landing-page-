@@ -4,11 +4,14 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 
 export function FloatingWhatsAppButton() {
   const whatsappUrl = buildWhatsAppLink(
-    "Hi Shreya, I would love to get a consultation for my wedding/event look. Please share your availability and package details."
+    "Hi Shreya, I would love to get a consultation for my wedding/event look. Please share your availability and package details.",
   );
 
   return (
-    <aside aria-label="Bridal Consultation on WhatsApp" className="fixed bottom-8 right-8 z-40 hidden lg:block">
+    <aside
+      aria-label="Bridal Consultation on WhatsApp"
+      className="fixed bottom-8 right-8 z-40 hidden lg:block"
+    >
       <a
         href={whatsappUrl}
         target="_blank"
@@ -27,9 +30,7 @@ export function FloatingWhatsAppButton() {
           <span className="text-[0.62rem] uppercase tracking-[0.18em] text-peach group-hover:text-charcoal font-semibold">
             Consultation
           </span>
-          <span className="font-display text-sm font-medium tracking-wide">
-            Chat on WhatsApp
-          </span>
+          <span className="font-display text-sm font-medium tracking-wide">Chat on WhatsApp</span>
         </div>
 
         {/* Official WhatsApp Icon */}

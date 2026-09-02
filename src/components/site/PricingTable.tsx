@@ -78,11 +78,7 @@ export function PricingTable({ tone = "dark" }: { tone?: "dark" | "light" }) {
           </li>
         ))}
       </ul>
-      <p
-        className={
-          light ? "mt-8 text-sm text-ivory/60" : "mt-8 text-sm text-muted-foreground"
-        }
-      >
+      <p className={light ? "mt-8 text-sm text-ivory/60" : "mt-8 text-sm text-muted-foreground"}>
         {business.pricingNote}
       </p>
     </div>

@@ -1,37 +1,38 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Resolve paths
-const postsPath = path.resolve(__dirname, '../src/data/posts.ts');
-const rssOutputPath = path.resolve(__dirname, '../public/rss.xml');
+const postsPath = path.resolve(__dirname, "../src/data/posts.ts");
+const rssOutputPath = path.resolve(__dirname, "../public/rss.xml");
 
 // Minimal regex parser since we can't easily import a TS file in raw Node without ts-node/tsx
 function parsePosts(tsContent) {
   const posts = [];
-  const postRegex = /{[\s\S]*?slug:\s*"([^"]+)"[\s\S]*?title:\s*"([^"]+)"[\s\S]*?excerpt:\s*"([^"]+)"[\s\S]*?date:\s*"([^"]+)"[\s\S]*?}/g;
+  const postRegex =
+    /{[\s\S]*?slug:\s*"([^"]+)"[\s\S]*?title:\s*"([^"]+)"[\s\S]*?excerpt:\s*"([^"]+)"[\s\S]*?date:\s*"([^"]+)"[\s\S]*?}/g;
   let match;
-  
+
   while ((match = postRegex.exec(tsContent)) !== null) {
     posts.push({
       slug: match[1],
       title: match[2],
       excerpt: match[3],
-      date: match[4]
+      date: match[4],
     });
   }
   return posts;
 }
 
 function generateRss() {
-  console.log('Generating RSS feed...');
+  console.log("Generating RSS feed...");
   try {
-    const tsContent = fs.readFileSync(postsPath, 'utf8');
+    const tsContent = fs.readFileSync(postsPath, "utf8");
     const posts = parsePosts(tsContent);
-    
+
     const rssHeader = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
@@ -43,23 +44,25 @@ function generateRss() {
   <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 `;
 
-    const rssItems = posts.map(post => {
-      const postUrl = `https://shreyachaudharymakeup.com/blog/${post.slug}`;
-      return `  <item>
+    const rssItems = posts
+      .map((post) => {
+        const postUrl = `https://shreyachaudharymakeup.com/blog/${post.slug}`;
+        return `  <item>
     <title><![CDATA[${post.title}]]></title>
     <link>${postUrl}</link>
     <guid isPermaLink="true">${postUrl}</guid>
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
     <description><![CDATA[${post.excerpt}]]></description>
   </item>`;
-    }).join('\n');
+      })
+      .join("\n");
 
     const rssFooter = `\n</channel>\n</rss>`;
-    
+
     fs.writeFileSync(rssOutputPath, rssHeader + rssItems + rssFooter);
     console.log(`Successfully generated rss.xml with ${posts.length} entries.`);
   } catch (error) {
-    console.error('Failed to generate RSS feed:', error);
+    console.error("Failed to generate RSS feed:", error);
     process.exit(1);
   }
 }

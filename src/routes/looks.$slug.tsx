@@ -57,13 +57,13 @@ export const Route = createFileRoute("/looks/$slug")({
           path,
           image: imageUrl,
         }),
-        { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+        {
+          name: "robots",
+          content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+        },
       ],
       links: canonical(path),
-      scripts: [
-        jsonLd(breadcrumbLd(crumbs)),
-        jsonLd(imageObjectLd),
-      ],
+      scripts: [jsonLd(breadcrumbLd(crumbs)), jsonLd(imageObjectLd)],
     };
   },
   component: LookShowcasePage,
@@ -136,9 +136,7 @@ function LookShowcasePage() {
                 </div>
               </div>
 
-              <p className="text-xs text-muted-foreground text-center italic">
-                {look.alt}
-              </p>
+              <p className="text-xs text-muted-foreground text-center italic">{look.alt}</p>
             </div>
 
             {/* Right: Detailed Look Specifications & Booking Funnel */}
@@ -152,7 +150,9 @@ function LookShowcasePage() {
                   {look.title}
                 </h1>
                 <p className="mt-3 text-sm text-charcoal/80 leading-relaxed">
-                  Every element of this look was customized exclusively for the bride's facial structure, lehenga color palette, and venue lighting. Created by principal artist {business.artist} with 100% genuine luxury cosmetics.
+                  Every element of this look was customized exclusively for the bride's facial
+                  structure, lehenga color palette, and venue lighting. Created by principal artist{" "}
+                  {business.artist} with 100% genuine luxury cosmetics.
                 </p>
 
                 <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-medium text-charcoal/70">
@@ -176,24 +176,44 @@ function LookShowcasePage() {
 
                   <dl className="grid gap-3.5 text-xs">
                     <div>
-                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">Skin Complexion Finish</dt>
-                      <dd className="mt-0.5 text-charcoal font-medium text-sm">{look.lookDetails.skinFinish}</dd>
+                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">
+                        Skin Complexion Finish
+                      </dt>
+                      <dd className="mt-0.5 text-charcoal font-medium text-sm">
+                        {look.lookDetails.skinFinish}
+                      </dd>
                     </div>
                     <div>
-                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">Eye Artistry &amp; Lashes</dt>
-                      <dd className="mt-0.5 text-charcoal font-medium text-sm">{look.lookDetails.eyeStyle}</dd>
+                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">
+                        Eye Artistry &amp; Lashes
+                      </dt>
+                      <dd className="mt-0.5 text-charcoal font-medium text-sm">
+                        {look.lookDetails.eyeStyle}
+                      </dd>
                     </div>
                     <div>
-                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">Hairstyling &amp; Flora</dt>
-                      <dd className="mt-0.5 text-charcoal font-medium text-sm">{look.lookDetails.hairStyling}</dd>
+                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">
+                        Hairstyling &amp; Flora
+                      </dt>
+                      <dd className="mt-0.5 text-charcoal font-medium text-sm">
+                        {look.lookDetails.hairStyling}
+                      </dd>
                     </div>
                     <div>
-                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">Dupatta Draping &amp; Jewelry Pinning</dt>
-                      <dd className="mt-0.5 text-charcoal font-medium text-sm">{look.lookDetails.draping}</dd>
+                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">
+                        Dupatta Draping &amp; Jewelry Pinning
+                      </dt>
+                      <dd className="mt-0.5 text-charcoal font-medium text-sm">
+                        {look.lookDetails.draping}
+                      </dd>
                     </div>
                     <div>
-                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">Recommended Occasion</dt>
-                      <dd className="mt-0.5 text-charcoal font-medium text-sm">{look.lookDetails.occasion}</dd>
+                      <dt className="font-bold uppercase tracking-wider text-[0.65rem] text-muted-foreground">
+                        Recommended Occasion
+                      </dt>
+                      <dd className="mt-0.5 text-charcoal font-medium text-sm">
+                        {look.lookDetails.occasion}
+                      </dd>
                     </div>
                   </dl>
                 </div>
@@ -206,13 +226,15 @@ function LookShowcasePage() {
                     <span className="text-[0.68rem] uppercase tracking-wider font-bold text-blush">
                       Corresponding Package
                     </span>
-                    <h3 className="font-display text-xl font-bold text-charcoal">
-                      {service.name}
-                    </h3>
+                    <h3 className="font-display text-xl font-bold text-charcoal">{service.name}</h3>
                   </div>
                   <div className="text-right">
-                    <p className="font-display text-2xl font-bold text-charcoal">{service.priceLabel}</p>
-                    <p className="text-[0.62rem] uppercase tracking-wider text-muted-foreground font-semibold">Hair &amp; Draping Included</p>
+                    <p className="font-display text-2xl font-bold text-charcoal">
+                      {service.priceLabel}
+                    </p>
+                    <p className="text-[0.62rem] uppercase tracking-wider text-muted-foreground font-semibold">
+                      Hair &amp; Draping Included
+                    </p>
                   </div>
                 </div>
 

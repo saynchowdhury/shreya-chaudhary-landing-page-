@@ -16,9 +16,8 @@ export function PortfolioGrid({ items, showFilters = true }: PortfolioGridProps)
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [active, setActive] = useState<number | null>(null);
 
-  const filteredItems = selectedCategory === "all"
-    ? items
-    : items.filter((item) => item.category === selectedCategory);
+  const filteredItems =
+    selectedCategory === "all" ? items : items.filter((item) => item.category === selectedCategory);
 
   const close = useCallback(() => setActive(null), []);
   const step = useCallback(
@@ -101,10 +100,10 @@ export function PortfolioGrid({ items, showFilters = true }: PortfolioGridProps)
                     decoding="async"
                     className="h-full w-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.04]"
                   />
-                  
+
                   {/* Subtle Gradient Overlay on Hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  
+
                   {/* Occasion Badge Top Left */}
                   <div className="absolute top-3 left-3 rounded-full bg-charcoal/85 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-wider text-ivory backdrop-blur-md border border-ivory/10">
                     {service.name}
@@ -125,9 +124,7 @@ export function PortfolioGrid({ items, showFilters = true }: PortfolioGridProps)
                 {/* Minimal Card Footer: Service Category & Pricing */}
                 <div className="flex items-center justify-between p-4 bg-card border-t border-charcoal/10">
                   <div>
-                    <p className="font-display text-lg text-charcoal font-medium">
-                      {service.name}
-                    </p>
+                    <p className="font-display text-lg text-charcoal font-medium">{service.name}</p>
                     <p className="text-[0.65rem] uppercase tracking-wider text-muted-foreground">
                       Real Client Artistry · {item.meta?.location ?? "Meerut"}
                     </p>
@@ -256,7 +253,12 @@ export function PortfolioGrid({ items, showFilters = true }: PortfolioGridProps)
                   href={buildWhatsAppLink(currentService.whatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => track("whatsapp_click", { source: "portfolio_modal_book", service: currentService.slug })}
+                  onClick={() =>
+                    track("whatsapp_click", {
+                      source: "portfolio_modal_book",
+                      service: currentService.slug,
+                    })
+                  }
                   className="w-full flex items-center justify-center gap-2.5 rounded-lg bg-[#25D366] py-4 text-xs font-semibold uppercase tracking-[0.16em] text-charcoal shadow-md transition-all hover:bg-emerald-400 active:scale-[0.99] text-center"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-charcoal shrink-0" />

@@ -6,13 +6,7 @@ import { track } from "@/lib/analytics";
 import { WhatsAppIcon } from "./WhatsAppIcon";
 import { ArrowUpRight } from "lucide-react";
 
-export function ServiceCard({
-  service,
-  index = 0,
-}: {
-  service: Service;
-  index?: number;
-}) {
+export function ServiceCard({ service, index = 0 }: { service: Service; index?: number }) {
   const portfolioPath = `/portfolio/${service.category}` as const;
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLElement>(null);
@@ -25,7 +19,7 @@ export function ServiceCard({
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (cardRef.current) {
@@ -42,16 +36,13 @@ export function ServiceCard({
     <article
       ref={cardRef}
       className={`group relative overflow-hidden rounded-2xl border border-charcoal/15 bg-card shadow-sm transition-all duration-700 hover:shadow-2xl hover:border-charcoal/30 ${
-        isVisible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8"
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
       style={{
         transitionDelay: `${index * 120}ms`,
       }}
     >
       <div className="grid md:grid-cols-12 gap-0 items-center">
-        
         {/* Left / Top Visual Column (5 cols on desktop, full width on mobile) */}
         <div className="md:col-span-5 lg:col-span-5 relative overflow-hidden h-[280px] sm:h-[340px] md:h-full min-h-[300px] md:min-h-[380px] bg-charcoal/5">
           <Link
@@ -75,7 +66,7 @@ export function ServiceCard({
               className="h-full w-full object-cover object-[center_25%] transition-transform duration-700 group-hover/img:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-charcoal/20" />
-            
+
             {/* Category Tag Overlay */}
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
               <span className="rounded-full bg-charcoal/90 backdrop-blur-md px-3 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-ivory border border-ivory/20 shadow-md">
@@ -90,7 +81,6 @@ export function ServiceCard({
 
         {/* Right / Bottom Content Column (7 cols on desktop, full width on mobile) */}
         <div className="md:col-span-7 lg:col-span-7 flex flex-col justify-between p-7 sm:p-8 md:pl-10 lg:pl-12 lg:pr-10 lg:py-10 space-y-6">
-          
           <div>
             {/* Top Row: Service Number & Price Pill */}
             <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-charcoal/10">
@@ -130,7 +120,10 @@ export function ServiceCard({
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-charcoal/90">
                 {service.inclusions.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-blush" aria-hidden="true" />
+                    <span
+                      className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-blush"
+                      aria-hidden="true"
+                    />
                     <span className="leading-snug">{item}</span>
                   </li>
                 ))}
@@ -170,9 +163,7 @@ export function ServiceCard({
               <ArrowUpRight className="h-3.5 w-3.5" />
             </Link>
           </div>
-
         </div>
-
       </div>
     </article>
   );

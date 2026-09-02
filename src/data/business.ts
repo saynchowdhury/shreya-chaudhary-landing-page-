@@ -20,9 +20,11 @@ export const business = {
   /** Google My Business listing & review link */
   googleMyBusinessUrl: "https://share.google/0MU1hPOtXvFMT4SeZ",
   /** JustDial verified directory profile */
-  justdialUrl: "https://www.justdial.com/Meerut/Shreya-Chaudhary-Makeup-Konark-Colony/9999PX121-X121-241211201125-I7A2_BZDET",
+  justdialUrl:
+    "https://www.justdial.com/Meerut/Shreya-Chaudhary-Makeup-Konark-Colony/9999PX121-X121-241211201125-I7A2_BZDET",
   /** WedMeGood verified bridal profile */
-  wedmegoodUrl: "https://www.wedmegood.com/profile/Shreya-Chaudhary-Makeup-26084368?srsltid=AfmBOorAgYkTo4U1FYxSvwviYs8rtlHYzQvNByrR76SU-0v_NY6XELoX",
+  wedmegoodUrl:
+    "https://www.wedmegood.com/profile/Shreya-Chaudhary-Makeup-26084368?srsltid=AfmBOorAgYkTo4U1FYxSvwviYs8rtlHYzQvNByrR76SU-0v_NY6XELoX",
   rating: "5.0",
   ratingText: "5.0 ★ Top Rated",
   addressStreet: "Roorkee Road, Konark Colony",
@@ -40,8 +42,7 @@ export const business = {
     "Destination Weddings",
   ],
   /** Editable note. Update once the exact engagement offer is confirmed. */
-  engagementBenefitNote:
-    "Ask about our engagement booking benefits and available add-ons.",
+  engagementBenefitNote: "Ask about our engagement booking benefits and available add-ons.",
   pricingNote:
     "Published prices exclude on-location travel expenses. Travel charges are calculated on actuals based on venue distance.",
 } as const;

@@ -37,10 +37,18 @@ function BlogIndex() {
       <div className="bg-charcoal text-ivory py-4 border-b border-ivory/10">
         <div className="mx-auto max-w-[1400px] px-5 sm:px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="flex flex-wrap justify-center items-center gap-2 text-ivory/90">
-            <span className="flex items-center gap-1.5 bg-ivory/10 px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold"><span className="text-amber-400">★ 5.0</span> Google Verified</span>
-            <span className="flex items-center gap-1.5 bg-ivory/10 px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold">WedMeGood Certified</span>
+            <span className="flex items-center gap-1.5 bg-ivory/10 px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold">
+              <span className="text-amber-400">★ 5.0</span> Google Verified
+            </span>
+            <span className="flex items-center gap-1.5 bg-ivory/10 px-3 py-1.5 rounded-full text-[0.65rem] uppercase tracking-wider font-bold">
+              WedMeGood Certified
+            </span>
           </div>
-          <WhatsAppButton source="blog_index_banner" variant="green" className="text-xs font-bold uppercase tracking-wider">
+          <WhatsAppButton
+            source="blog_index_banner"
+            variant="green"
+            className="text-xs font-bold uppercase tracking-wider"
+          >
             Check Availability on WhatsApp
           </WhatsAppButton>
         </div>
@@ -56,9 +64,9 @@ function BlogIndex() {
                 The first articles are being written and will appear here.
               </p>
               <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Nothing is published until it is genuinely written for this site. In the
-                meantime, the questions most brides ask are answered in full on the services
-                and packages pages.
+                Nothing is published until it is genuinely written for this site. In the meantime,
+                the questions most brides ask are answered in full on the services and packages
+                pages.
               </p>
               <Link
                 to="/services"
@@ -68,33 +76,70 @@ function BlogIndex() {
               </Link>
             </div>
           ) : (
-            <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {posts.map((post) => (
-                <li key={post.slug} className="border border-border bg-card p-7">
-                  <p className="eyebrow text-blush">
-                    <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString("en-IN", {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
-                      })}
-                    </time>
-                  </p>
-                  <h2 className="mt-4 font-display text-2xl text-charcoal">
-                    <Link to="/blog/$slug" params={{ slug: post.slug }}>
-                      {post.title}
+                <li
+                  key={post.slug}
+                  className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-peach/50"
+                >
+                  <div>
+                    {post.image ? (
+                      <Link
+                        to="/blog/$slug"
+                        params={{ slug: post.slug }}
+                        className="block overflow-hidden"
+                      >
+                        <img
+                          src={post.image}
+                          alt={post.imageAlt ?? post.title}
+                          className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </Link>
+                    ) : null}
+
+                    <div className="p-7">
+                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <time
+                          dateTime={post.date}
+                          className="font-semibold text-blush uppercase tracking-wider text-[0.65rem]"
+                        >
+                          {new Date(post.date).toLocaleDateString("en-IN", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
+                        </time>
+                        {post.readingTimeMinutes && (
+                          <span className="text-[0.65rem] uppercase tracking-wider font-medium">
+                            {post.readingTimeMinutes} min read
+                          </span>
+                        )}
+                      </div>
+
+                      <h2 className="mt-3 font-display text-xl font-bold leading-snug text-charcoal group-hover:text-blush transition-colors">
+                        <Link to="/blog/$slug" params={{ slug: post.slug }}>
+                          {post.title}
+                        </Link>
+                      </h2>
+
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-border/60 bg-muted/20 px-7 py-4">
+                    <Link
+                      to="/blog/$slug"
+                      params={{ slug: post.slug }}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-charcoal transition-colors hover:text-blush"
+                    >
+                      <span>Read Full Guide</span>
+                      <span aria-hidden="true">→</span>
                     </Link>
-                  </h2>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {post.excerpt}
-                  </p>
-                  <Link
-                    to="/blog/$slug"
-                    params={{ slug: post.slug }}
-                    className="mt-6 inline-flex text-[0.68rem] uppercase tracking-[0.18em] text-charcoal underline decoration-blush decoration-1 underline-offset-4"
-                  >
-                    Read article
-                  </Link>
+                  </div>
                 </li>
               ))}
             </ul>

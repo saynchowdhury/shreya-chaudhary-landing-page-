@@ -4,13 +4,14 @@ import { track } from "@/lib/analytics";
 
 export function AboutVision() {
   return (
-    <section aria-labelledby="about-vision-heading" className="bg-card px-5 py-16 sm:py-20 md:py-24 border-b border-charcoal/10">
+    <section
+      aria-labelledby="about-vision-heading"
+      className="bg-card px-5 py-16 sm:py-20 md:py-24 border-b border-charcoal/10"
+    >
       <div className="mx-auto max-w-[1300px]">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
-          
           {/* Left Double Editorial Imagery: IMG_7352 & IMG_6562 */}
           <div className="lg:col-span-6 grid grid-cols-2 gap-4 sm:gap-6">
-            
             {/* Image 1: IMG_7352.JPG.jpeg (Suite Touchups & Artistry in action) */}
             <div className="space-y-3">
               <div className="overflow-hidden rounded-xl border border-charcoal/15 bg-charcoal/5 shadow-md">
@@ -57,7 +58,6 @@ export function AboutVision() {
                 />
               </div>
             </div>
-
           </div>
 
           {/* Right Personal Human Philosophy (Generous Whitespace & Headspace) */}
@@ -69,19 +69,26 @@ export function AboutVision() {
               </span>
             </div>
 
-            <h2 id="about-vision-heading" className="mt-4 font-serif italic text-2xl sm:text-3xl lg:text-[2.4rem] leading-snug sm:leading-[1.2] text-charcoal font-normal">
-              “You are not just an appointment. <span className="text-blush block sm:inline font-semibold">You are my muse.</span>”
+            <h2
+              id="about-vision-heading"
+              className="mt-4 font-serif italic text-2xl sm:text-3xl lg:text-[2.4rem] leading-snug sm:leading-[1.2] text-charcoal font-normal"
+            >
+              “You are not just an appointment.{" "}
+              <span className="text-blush block sm:inline font-semibold">You are my muse.</span>”
             </h2>
 
             <div className="mt-6 space-y-4 text-sm sm:text-base leading-relaxed text-charcoal/80 font-light">
               <p>
-                Makeup should make you feel like the most radiant version of yourself, not a completely different person.
+                Makeup should make you feel like the most radiant version of yourself, not a
+                completely different person.
               </p>
               <p>
-                I don't believe in generic salon templates. We sit down together, understand your vision, and match your makeup to your outfit, jewelry, and skin tone.
+                I don't believe in generic salon templates. We sit down together, understand your
+                vision, and match your makeup to your outfit, jewelry, and skin tone.
               </p>
               <p>
-                The result is a lightweight, glowing finish that feels natural, photographs beautifully in 4K, and lasts comfortably all night.
+                The result is a lightweight, glowing finish that feels natural, photographs
+                beautifully in 4K, and lasts comfortably all night.
               </p>
             </div>
 
@@ -118,7 +125,9 @@ export function AboutVision() {
                   className="h-10 w-10 object-contain"
                 />
                 <div>
-                  <p className="font-display text-base font-medium text-charcoal">{business.artist}</p>
+                  <p className="font-display text-base font-medium text-charcoal">
+                    {business.artist}
+                  </p>
                   <p className="text-[0.62rem] uppercase tracking-[0.14em] text-muted-foreground">
                     Founder &amp; Master Artist
                   </p>
@@ -126,7 +135,9 @@ export function AboutVision() {
               </div>
 
               <a
-                href={buildWhatsAppLink("Hi Shreya, I'd love to chat about my wedding look and check availability.")}
+                href={buildWhatsAppLink(
+                  "Hi Shreya, I'd love to chat about my wedding look and check availability.",
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("whatsapp_click", { source: "about_vision_consult" })}
@@ -135,9 +146,7 @@ export function AboutVision() {
                 Discuss Your Dream Look 💬
               </a>
             </div>
-
           </div>
-
         </div>
       </div>
     </section>
