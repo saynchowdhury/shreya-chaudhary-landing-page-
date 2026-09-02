@@ -15,6 +15,9 @@ import { TestimonialList } from "@/components/site/Testimonials";
 import { SmartBookingInquirer } from "@/components/site/SmartBookingInquirer";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { AnswerBlock } from "@/components/site/AnswerBlock";
+import { MapPin, ArrowRight } from "lucide-react";
+import { locationsList } from "@/data/locations";
+import { posts } from "@/data/posts";
 import { CTASection } from "@/components/site/CTASection";
 
 const title = "Best Bridal Makeup Artist Meerut | Shreya Chaudhary";
@@ -134,6 +137,52 @@ function Home() {
         </div>
       </Section>
 
+      {/* 7.5 REGIONAL ON-LOCATION DESTINATIONS (INTERNAL LINKING CORRIDOR) */}
+      <Section tone="default" labelledBy="locations-heading">
+        <SectionHeading
+          id="locations-heading"
+          eyebrow="Regional Destinations"
+          title="On-Location Bridal Artistry Across Western UP & Delhi NCR"
+          intro="Shreya Chaudhary travels directly to your bridal suite or wedding banquet with a complete luxury vanity, professional lighting setup, and styling team."
+        />
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {locationsList.map((loc) => (
+            <Link
+              key={loc.slug}
+              to={`/locations/${loc.slug}`}
+              className="group flex flex-col justify-between rounded-xl border border-charcoal/10 bg-ivory p-6 transition-all duration-300 hover:border-charcoal/30 hover:shadow-lg hover:-translate-y-1"
+            >
+              <div>
+                <div className="flex items-center gap-1.5 mb-2">
+                  <MapPin className="h-4 w-4 text-peach" />
+                  <span className="text-[0.65rem] font-bold uppercase tracking-wider text-charcoal/60">
+                    {loc.district}
+                  </span>
+                </div>
+                <h3 className="font-display text-xl font-bold text-charcoal group-hover:text-peach transition-colors">
+                  Bridal Makeup in {loc.name}
+                </h3>
+                <p className="mt-2 text-xs text-charcoal/70 leading-relaxed">
+                  {loc.distanceNote}
+                </p>
+              </div>
+              <div className="mt-6 flex items-center gap-1 text-[0.7rem] font-bold uppercase tracking-wider text-charcoal group-hover:text-peach transition-colors">
+                <span>Explore {loc.name} Packages</span>
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            to="/locations"
+            className="inline-flex border border-charcoal/30 px-8 py-3.5 text-[0.7rem] uppercase tracking-[0.18em] text-charcoal transition-colors hover:bg-charcoal hover:text-ivory font-medium"
+          >
+            View All Regional Service Corridors
+          </Link>
+        </div>
+      </Section>
+
       {/* 8. 1-CLICK WHATSAPP INQUIRER & FREQUENTLY ASKED QUESTIONS */}
       <Section labelledBy="booking-inquiry-heading">
         <div className="mx-auto max-w-4xl">
@@ -141,7 +190,73 @@ function Home() {
         </div>
       </Section>
 
-      <Section tone="champagne" labelledBy="faq-heading">
+      {/* 8.5 BRIDAL BEAUTY JOURNAL & EXPERT GUIDES (INTERNAL LINKING PILLAR) */}
+      <Section tone="champagne" labelledBy="journal-heading">
+        <SectionHeading
+          id="journal-heading"
+          eyebrow="Bridal Beauty Journal"
+          title="Expert Advice for the Modern Winter Bride"
+          intro="Deep-dive beauty timelines, pricing transparency, and honest advice written with real bridal experience."
+        />
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {posts.slice(0, 3).map((post) => (
+            <article
+              key={post.slug}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-charcoal/10 bg-ivory shadow-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
+            >
+              {post.image && (
+                <div className="relative aspect-[4/5] overflow-hidden bg-charcoal/5">
+                  <img
+                    src={post.image}
+                    alt={post.imageAlt || post.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {post.readingTimeMinutes && (
+                    <span className="absolute bottom-3 left-3 rounded-full bg-charcoal/80 px-2.5 py-1 text-[0.62rem] font-medium uppercase tracking-wider text-ivory backdrop-blur-xs">
+                      {post.readingTimeMinutes} Min Read
+                    </span>
+                  )}
+                </div>
+              )}
+              <div className="flex flex-1 flex-col justify-between p-6">
+                <div>
+                  <time dateTime={post.date} className="text-[0.68rem] font-bold uppercase tracking-widest text-peach">
+                    {post.date}
+                  </time>
+                  <h3 className="font-display mt-2 text-lg font-bold leading-snug text-charcoal group-hover:text-peach transition-colors">
+                    <Link to={`/blog/${post.slug}`}>
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-xs text-charcoal/70 line-clamp-3 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-charcoal/10">
+                  <Link
+                    to={`/blog/${post.slug}`}
+                    className="inline-flex items-center gap-1.5 text-[0.7rem] font-bold uppercase tracking-widest text-charcoal group-hover:text-peach transition-colors"
+                  >
+                    <span>Read Article</span>
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex rounded-full bg-charcoal px-8 py-4 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-ivory transition-all hover:bg-peach hover:text-charcoal hover:shadow-lg"
+          >
+            Explore All Bridal Beauty Guides ({posts.length} Articles)
+          </Link>
+        </div>
+      </Section>
+
+      <Section tone="default" labelledBy="faq-heading">
         <SectionHeading
           id="faq-heading"
           eyebrow="Frequently Asked Questions"

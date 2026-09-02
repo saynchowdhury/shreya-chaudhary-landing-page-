@@ -28,3 +28,11 @@
 
 /llms.txt
   Cache-Control: public, max-age=86400, stale-while-revalidate=3600
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+/auth.md
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=86400
