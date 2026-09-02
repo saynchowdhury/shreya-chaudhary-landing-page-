@@ -90,9 +90,14 @@ export function Footer() {
             </ul>
 
             <div className="pt-4 border-t border-ivory/15">
-              <p className="text-[0.68rem] uppercase tracking-[0.18em] text-peach font-bold mb-2.5">
-                Areas Served:
-              </p>
+              <div className="flex items-center justify-between mb-2.5">
+                <Link to="/locations" className="text-[0.68rem] uppercase tracking-[0.18em] text-peach font-bold hover:underline inline-flex items-center gap-1">
+                  Areas Served:
+                </Link>
+                <Link to="/locations" className="text-[0.65rem] text-ivory/60 hover:text-peach transition-colors">
+                  All Hubs →
+                </Link>
+              </div>
               <div className="flex flex-wrap gap-x-2.5 gap-y-1.5 text-xs font-medium text-ivory/80">
                 <Link to="/locations/meerut" className="hover:text-peach transition-colors">Meerut</Link>
                 <span className="text-ivory/30">·</span>

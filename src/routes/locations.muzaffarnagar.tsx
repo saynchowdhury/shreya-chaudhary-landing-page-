@@ -34,7 +34,7 @@ const muzaffarnagarFaqs = [
 
 const crumbs = [
   { name: "Home", path: "/" },
-  { name: "Locations", path: "/locations/muzaffarnagar" },
+  { name: "Locations", path: "/locations" },
   { name: "Muzaffarnagar", path: "/locations/muzaffarnagar" },
 ];
 

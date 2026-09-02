@@ -16,7 +16,7 @@ const description =
 
 const crumbs = [
   { name: "Home", path: "/" },
-  { name: "Locations", path: "/locations/meerut" },
+  { name: "Locations", path: "/locations" },
   { name: "Meerut", path: "/locations/meerut" },
 ];
 

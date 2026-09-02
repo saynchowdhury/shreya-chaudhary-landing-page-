@@ -32,7 +32,7 @@ const delhiFaqs = [
 
 const crumbs = [
   { name: "Home", path: "/" },
-  { name: "Locations", path: "/locations/meerut" },
+  { name: "Locations", path: "/locations" },
   { name: "Delhi NCR", path: "/locations/delhi-ncr" },
 ];
 

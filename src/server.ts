@@ -44,9 +44,27 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+import { getMarkdownForRoute } from "./lib/agent-markdown";
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const accept = request.headers.get("accept") || "";
+      if (accept.includes("text/markdown")) {
+        const url = new URL(request.url);
+        const md = getMarkdownForRoute(url.pathname);
+        const tokenCount = Math.ceil(md.length / 4);
+        return new Response(md, {
+          status: 200,
+          headers: {
+            "content-type": "text/markdown; charset=utf-8",
+            "x-markdown-tokens": String(tokenCount),
+            "cache-control": "public, max-age=86400, stale-while-revalidate=3600",
+            "vary": "Accept",
+          },
+        });
+      }
+
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);

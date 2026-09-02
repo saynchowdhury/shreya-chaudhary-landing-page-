@@ -20,6 +20,7 @@ import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as WhyShreyaRouteImport } from './routes/why-shreya'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as LocationsIndexRouteImport } from './routes/locations.index'
 import { Route as LocationsDelhiNcrRouteImport } from './routes/locations.delhi-ncr'
 import { Route as LocationsGhaziabadRouteImport } from './routes/locations.ghaziabad'
 import { Route as LocationsGreaterNoidaRouteImport } from './routes/locations.greater-noida'
@@ -87,6 +88,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocationsIndexRoute = LocationsIndexRouteImport.update({
+  id: '/locations/',
+  path: '/locations/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsDelhiNcrRoute = LocationsDelhiNcrRouteImport.update({
@@ -178,6 +184,7 @@ export interface FileRoutesByFullPath {
   '/portfolio/party': typeof PortfolioPartyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/locations/': typeof LocationsIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -204,6 +211,7 @@ export interface FileRoutesByTo {
   '/portfolio/party': typeof PortfolioPartyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/locations': typeof LocationsIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -231,6 +239,7 @@ export interface FileRoutesById {
   '/portfolio/party': typeof PortfolioPartyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/locations/': typeof LocationsIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -259,6 +268,7 @@ export interface FileRouteTypes {
     | '/portfolio/party'
     | '/services/$slug'
     | '/blog/'
+    | '/locations/'
     | '/portfolio/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -285,6 +295,7 @@ export interface FileRouteTypes {
     | '/portfolio/party'
     | '/services/$slug'
     | '/blog'
+    | '/locations'
     | '/portfolio'
     | '/services'
   id:
@@ -311,6 +322,7 @@ export interface FileRouteTypes {
     | '/portfolio/party'
     | '/services/$slug'
     | '/blog/'
+    | '/locations/'
     | '/portfolio/'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -338,6 +350,7 @@ export interface RootRouteChildren {
   PortfolioPartyRoute: typeof PortfolioPartyRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  LocationsIndexRoute: typeof LocationsIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
@@ -419,6 +432,13 @@ declare module '@tanstack/react-router' {
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locations/': {
+      id: '/locations/'
+      path: '/locations'
+      fullPath: '/locations/'
+      preLoaderRoute: typeof LocationsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations/delhi-ncr': {
@@ -538,6 +558,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioPartyRoute: PortfolioPartyRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  LocationsIndexRoute: LocationsIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }

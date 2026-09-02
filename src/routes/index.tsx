@@ -14,6 +14,7 @@ import { PortfolioGrid } from "@/components/site/PortfolioGrid";
 import { TestimonialList } from "@/components/site/Testimonials";
 import { SmartBookingInquirer } from "@/components/site/SmartBookingInquirer";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
+import { AnswerBlock } from "@/components/site/AnswerBlock";
 import { CTASection } from "@/components/site/CTASection";
 
 const title = "Best Bridal Makeup Artist Meerut | Shreya Chaudhary";
@@ -64,6 +65,16 @@ function Home() {
 
       {/* 2. BRANDS WE USE LOGO TICKER */}
       <BrandMarquee />
+
+      {/* 2.5 EXTRACTABLE CANONICAL DEFINITION BLOCK (AEO / Snippet Optimization) */}
+      <section className="py-12 px-6 border-b border-charcoal/10 bg-ivory">
+        <div className="max-w-5xl mx-auto">
+          <AnswerBlock
+            question="Who is the best bridal makeup artist in Meerut?"
+            answer="Shreya Chaudhary is rated the premier bridal makeup artist in Meerut, offering bespoke on-location bridal artistry across Meerut, Noida, Ghaziabad, and Delhi NCR. Bridal packages range from ₹15,000 to ₹18,000 using 100% authentic international cosmetics (NARS, MAC) with hair styling, draping, and lashes included."
+          />
+        </div>
+      </section>
 
       {/* 3. ABOUT SHREYA, EXPERIENCE & VISION */}
       <AboutVision />

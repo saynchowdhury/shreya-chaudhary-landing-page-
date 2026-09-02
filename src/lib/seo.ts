@@ -1,6 +1,9 @@
 import { business, locationLabel } from "@/data/business";
 import { services } from "@/data/services";
-import logo from "@/assets/logo.png.asset.json";
+import { testimonials } from "@/data/testimonials";
+
+export const CANONICAL_DOMAIN = "https://shreyachaudharymakeup.com";
+export const DEFAULT_OG_IMAGE = "https://shreyachaudharymakeup.com/shreya-chaudhary-logo.png";
 
 /** Stable @id anchors — relative, so they stay correct once the domain is set. */
 export const ids = {
@@ -21,14 +24,16 @@ export interface MetaInput {
 
 /** Per-route head meta with a self-referencing og:url. */
 export function pageMeta({ title, description, path, type = "website", image }: MetaInput) {
-  const og = image ?? logo.url;
+  const og = image ?? DEFAULT_OG_IMAGE;
+  const fullUrl = `${CANONICAL_DOMAIN}${path}`;
+
   return [
     { title },
     { name: "description", content: description },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:type", content: type },
-    { property: "og:url", content: path },
+    { property: "og:url", content: fullUrl },
     { property: "og:image", content: og },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: title },
@@ -38,7 +43,7 @@ export function pageMeta({ title, description, path, type = "website", image }: 
 }
 
 export function canonical(path: string) {
-  return [{ rel: "canonical" as const, href: `https://shreyachaudharymakeup.com${path}` }];
+  return [{ rel: "canonical" as const, href: `${CANONICAL_DOMAIN}${path}` }];
 }
 
 export function jsonLd(data: unknown) {
@@ -52,6 +57,7 @@ export const websiteGraph = {
       "@type": "WebSite",
       "@id": ids.website,
       name: business.name,
+      url: CANONICAL_DOMAIN,
       inLanguage: "en-IN",
       publisher: { "@id": ids.business },
     },
@@ -59,7 +65,8 @@ export const websiteGraph = {
       "@type": ["LocalBusiness", "BeautySalon", "Organization"],
       "@id": ids.business,
       name: business.name,
-      description: `${business.name} offers bridal, engagement and party makeup with on-location hairstyling in ${locationLabel}, India.`,
+      description: `${business.name} offers luxury bridal, engagement and party makeup with on-location hairstyling in ${locationLabel}, India.`,
+      url: CANONICAL_DOMAIN,
       areaServed: business.serviceAreas.map((area) => ({ "@type": "Place", name: area })),
       address: {
         "@type": "PostalAddress",
@@ -70,8 +77,8 @@ export const websiteGraph = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: "29.0125",
-        longitude: "77.7085",
+        latitude: "28.9845",
+        longitude: "77.7064",
       },
       telephone: `+${business.whatsapp}`,
       logo: { "@id": ids.logo },
@@ -86,14 +93,14 @@ export const websiteGraph = {
             urlTemplate: `https://wa.me/${business.whatsapp}?text=Hi%20Shreya%2C%20I%27d%20like%20to%20check%20your%20availability%20for%20a%20makeup%20booking.`,
             actionPlatform: [
               "http://schema.org/DesktopWebPlatform",
-              "http://schema.org/MobileWebPlatform"
-            ]
+              "http://schema.org/MobileWebPlatform",
+            ],
           },
           result: {
             "@type": "Reservation",
-            name: "Makeup Service Booking"
-          }
-        }
+            name: "Makeup Service Booking",
+          },
+        },
       ],
       sameAs: [
         business.googleMyBusinessUrl,
@@ -110,19 +117,37 @@ export const websiteGraph = {
         bestRating: "5",
         worstRating: "1",
       },
+      review: testimonials.map((t) => ({
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: t.name,
+        },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: t.rating,
+          bestRating: "5",
+          worstRating: "1",
+        },
+        reviewBody: t.quote,
+        publisher: {
+          "@type": "Organization",
+          name: "Google Business Profile",
+        },
+      })),
       makesOffer: services.map((service) => ({
         "@type": "Offer",
         name: service.name,
         price: service.price,
         priceCurrency: "INR",
-        url: `/services/${service.slug}`,
+        url: `${CANONICAL_DOMAIN}/services/${service.slug}`,
         availability: "https://schema.org/InStock",
       })),
     },
     {
       "@type": "ImageObject",
       "@id": ids.logo,
-      url: logo.url,
+      url: DEFAULT_OG_IMAGE,
       caption: `${business.name} logo`,
     },
     {
@@ -150,7 +175,7 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.path,
+      item: item.path.startsWith("http") ? item.path : `${CANONICAL_DOMAIN}${item.path}`,
     })),
   };
 }
@@ -171,7 +196,7 @@ export function serviceLd(service: (typeof services)[number]) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `/services/${service.slug}#service`,
+    "@id": `${CANONICAL_DOMAIN}/services/${service.slug}#service`,
     name: service.name,
     serviceType: service.name,
     description: service.summary,
@@ -181,10 +206,26 @@ export function serviceLd(service: (typeof services)[number]) {
       "@type": "Offer",
       price: service.price,
       priceCurrency: "INR",
-      url: `/services/${service.slug}`,
+      url: `${CANONICAL_DOMAIN}/services/${service.slug}`,
       availability: "https://schema.org/InStock",
       itemOffered: { "@type": "Service", name: service.name },
       description: service.inclusions.join(", "),
+    },
+    potentialAction: {
+      "@type": "ReserveAction",
+      name: `Book ${service.name} on WhatsApp`,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(service.whatsappMessage)}`,
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      result: {
+        "@type": "Reservation",
+        name: `${service.name} Booking`,
+      },
     },
   };
 }

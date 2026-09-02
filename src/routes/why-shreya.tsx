@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CheckCircle2, XCircle } from "lucide-react";
 import { business } from "@/data/business";
 import { services, whyShreya } from "@/data/services";
 import { breadcrumbLd, canonical, jsonLd, pageMeta } from "@/lib/seo";
@@ -97,6 +98,127 @@ function WhyShreyaPage() {
           ))}
         </ul>
         <p className="mt-10 text-xs text-ivory/60">{business.pricingNote}</p>
+      </Section>
+
+      {/* 3. STRUCTURED COMPARISON MATRIX (Extractable by AI & High-Converting for Brides) */}
+      <Section labelledBy="comparison-heading">
+        <div className="max-w-5xl mx-auto">
+          <SectionHeading
+            id="comparison-heading"
+            eyebrow="The Standard Compared"
+            title="Shreya Chaudhary 1-on-1 vs High-Street Commercial Salons"
+            intro="Why discerning brides across Meerut and Delhi NCR choose private on-location artistry over crowded conveyor-belt salon appointments."
+          />
+
+          <div className="mt-12 overflow-x-auto rounded-2xl border border-charcoal/15 bg-card shadow-lg">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-charcoal/15 bg-charcoal/5">
+                  <th className="p-5 font-bold uppercase tracking-wider text-xs text-charcoal/70">
+                    Artistry Feature
+                  </th>
+                  <th className="p-5 font-bold text-charcoal bg-peach/15 border-x border-charcoal/10 text-base">
+                    Shreya Chaudhary Makeup
+                  </th>
+                  <th className="p-5 font-bold text-charcoal/60 text-xs uppercase tracking-wider">
+                    Commercial High-Street Salons
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-charcoal/10 text-charcoal/90">
+                <tr className="hover:bg-charcoal/[0.02] transition-colors">
+                  <td className="p-5 font-bold text-charcoal">
+                    Bride Attention &amp; Focus
+                  </td>
+                  <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
+                    <div className="flex items-start gap-2.5">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>Strictly 1 Bride per slot:</strong> 100% undivided focus from skin prep to final dupatta draping.</span>
+                    </div>
+                  </td>
+                  <td className="p-5 text-charcoal/70">
+                    <div className="flex items-start gap-2.5">
+                      <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
+                      <span>8 to 12 brides booked simultaneously in rushed conveyor-belt slots.</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-charcoal/[0.02] transition-colors">
+                  <td className="p-5 font-bold text-charcoal">
+                    Vanity Kit Authenticity
+                  </td>
+                  <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
+                    <div className="flex items-start gap-2.5">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>100% Genuine International Luxury:</strong> NARS Radiant, Charlotte Tilbury, MAC, Huda Beauty.</span>
+                    </div>
+                  </td>
+                  <td className="p-5 text-charcoal/70">
+                    <div className="flex items-start gap-2.5">
+                      <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
+                      <span>Often mixed with bulk commercial or unbranded drugstore duplicates.</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-charcoal/[0.02] transition-colors">
+                  <td className="p-5 font-bold text-charcoal">
+                    Getting Ready Location
+                  </td>
+                  <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
+                    <div className="flex items-start gap-2.5">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>On-Location Hotel Suite / Venue:</strong> Shreya travels to you. Zero morning traffic stress.</span>
+                    </div>
+                  </td>
+                  <td className="p-5 text-charcoal/70">
+                    <div className="flex items-start gap-2.5">
+                      <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
+                      <span>Bride must travel to crowded salon and navigate wedding traffic in heavy lehenga.</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-charcoal/[0.02] transition-colors">
+                  <td className="p-5 font-bold text-charcoal">
+                    Pricing Transparency
+                  </td>
+                  <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
+                    <div className="flex items-start gap-2.5">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>All-Inclusive Upfront:</strong> Hair styling, floral setting, draping &amp; lashes are always included.</span>
+                    </div>
+                  </td>
+                  <td className="p-5 text-charcoal/70">
+                    <div className="flex items-start gap-2.5">
+                      <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
+                      <span>Hidden add-on fees for lashes, draping, and senior artist presence.</span>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr className="hover:bg-charcoal/[0.02] transition-colors">
+                  <td className="p-5 font-bold text-charcoal">
+                    Longevity &amp; 4K Camera Finish
+                  </td>
+                  <td className="p-5 bg-peach/10 border-x border-charcoal/10 font-semibold text-charcoal">
+                    <div className="flex items-start gap-2.5">
+                      <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
+                      <span><strong>16-Hour Sweat-Proof &amp; Flashback-Free:</strong> Formulated for high-definition 4K photography.</span>
+                    </div>
+                  </td>
+                  <td className="p-5 text-charcoal/70">
+                    <div className="flex items-start gap-2.5">
+                      <XCircle className="h-5 w-5 text-rose-500 shrink-0 mt-0.5" />
+                      <span>Heavy matte pancake layers prone to oxidizing, flashback, and creasing.</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </Section>
 
       <CTASection source="why_shreya_final_cta" />

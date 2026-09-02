@@ -34,7 +34,7 @@ const greaterNoidaFaqs = [
 
 const crumbs = [
   { name: "Home", path: "/" },
-  { name: "Locations", path: "/locations/greater-noida" },
+  { name: "Locations", path: "/locations" },
   { name: "Greater Noida", path: "/locations/greater-noida" },
 ];
 

@@ -34,7 +34,7 @@ const ghaziabadFaqs = [
 
 const crumbs = [
   { name: "Home", path: "/" },
-  { name: "Locations", path: "/locations/ghaziabad" },
+  { name: "Locations", path: "/locations" },
   { name: "Ghaziabad", path: "/locations/ghaziabad" },
 ];
 

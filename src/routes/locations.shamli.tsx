@@ -34,7 +34,7 @@ const shamliFaqs = [
 
 const crumbs = [
   { name: "Home", path: "/" },
-  { name: "Locations", path: "/locations/shamli" },
+  { name: "Locations", path: "/locations" },
   { name: "Shamli", path: "/locations/shamli" },
 ];
 

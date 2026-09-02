@@ -71,7 +71,7 @@ export function ServiceCard({
               height={1000}
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
-              fetchpriority={index === 0 ? "high" : "auto"}
+              fetchPriority={index === 0 ? "high" : "auto"}
               className="h-full w-full object-cover object-[center_25%] transition-transform duration-700 group-hover/img:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-charcoal/20" />

@@ -57,6 +57,29 @@ export default defineConfig({
         });
       },
     },
+    {
+      name: "agent-markdown-dev-middleware",
+      configureServer(server) {
+        server.middlewares.use(async (req, res, next) => {
+          const accept = req.headers.accept || "";
+          if (accept.includes("text/markdown")) {
+            try {
+              const { getMarkdownForRoute } = await server.ssrLoadModule("./src/lib/agent-markdown.ts");
+              const md = getMarkdownForRoute(req.url || "/");
+              const tokenCount = Math.ceil(md.length / 4);
+              res.setHeader("Content-Type", "text/markdown; charset=utf-8");
+              res.setHeader("x-markdown-tokens", String(tokenCount));
+              res.setHeader("Vary", "Accept");
+              res.end(md);
+              return;
+            } catch (err) {
+              console.error("Agent markdown dev middleware error:", err);
+            }
+          }
+          next();
+        });
+      },
+    },
   ],
 });
 
