@@ -158,7 +158,7 @@ export function SmartBookingInquirer() {
             <input
               id="custom-notes"
               type="text"
-              placeholder="e.g. Red lehenga, morning pheras, airbrush preferred"
+              placeholder="e.g. Red lehenga, morning pheras, glass skin HD preferred"
               value={customNotes}
               onChange={(e) => setCustomNotes(e.target.value)}
               className="w-full rounded-lg border border-charcoal/20 bg-background px-4 py-3 text-sm text-charcoal focus:border-charcoal focus:outline-hidden"

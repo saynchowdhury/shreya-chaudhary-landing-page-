@@ -58,9 +58,9 @@ export const homeFaqs: Faq[] = [
       "Yes. Every bridal and occasion makeup base is constructed to be completely sweat-resistant, waterproof, and tear-proof, providing a pristine 16+ hour wear through all your ceremonies without creasing.",
   },
   {
-    question: "Do you offer airbrush bridal makeup?",
+    question: "What makeup techniques does Shreya specialize in?",
     answer:
-      "Shreya specializes in high-definition (HD) makeup techniques that deliver the flawless, skin-like finish often associated with airbrushing, but with better longevity, custom blending, and 4K camera readiness.",
+      "Shreya specializes in camera-ready High-Definition (HD) and Glass Skin bridal makeup using authentic luxury formulations (NARS, MAC, Charlotte Tilbury). This delivers a weightless, natural skin finish with 16-hour tear-proof durability and zero flashback in 4K wedding photography.",
   },
 ];
 
@@ -73,7 +73,7 @@ export const bridalFaqs: Faq[] = [
   homeFaqs[7]!, // Advance booking
   homeFaqs[8]!, // Glass skin
   homeFaqs[9]!, // Waterproof
-  homeFaqs[10]!, // Airbrush
+  homeFaqs[10]!, // HD Artistry
 ];
 
 export const engagementFaqs: Faq[] = [

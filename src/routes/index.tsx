@@ -28,7 +28,25 @@ const description =
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: pageMeta({ title, description, path: "/" }),
-    links: canonical("/"),
+    links: [
+      ...canonical("/"),
+      {
+        rel: "preload",
+        as: "image",
+        href: "/IMG_0398-600.webp",
+        type: "image/webp",
+        media: "(max-width: 767px)",
+        fetchPriority: "high",
+      },
+      {
+        rel: "preload",
+        as: "image",
+        href: "/IMG_0398.webp",
+        type: "image/webp",
+        media: "(min-width: 768px)",
+        fetchPriority: "high",
+      },
+    ],
     scripts: [jsonLd(faqLd(homeFaqs))],
   }),
   component: Home,

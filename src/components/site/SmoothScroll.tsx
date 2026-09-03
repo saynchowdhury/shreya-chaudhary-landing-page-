@@ -3,13 +3,17 @@ import Lenis from "lenis";
 
 export function SmoothScroll() {
   useEffect(() => {
-    // 1. Accessibility: Check user's OS preference for reduced motion
+    // 1. Accessibility & Mobile: Check user's OS preference or mobile touch screen
     const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (motionQuery.matches) {
+    if (
+      motionQuery.matches ||
+      window.innerWidth < 768 ||
+      window.matchMedia("(pointer: coarse)").matches
+    ) {
       return;
     }
 
-    // 2. Initialize Lenis with luxury momentum curve
+    // 2. Initialize Lenis with luxury momentum curve (desktop pointer devices only)
     const lenis = new Lenis({
       duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

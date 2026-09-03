@@ -66,20 +66,20 @@ export function WhyChooseUs() {
                 </div>
               </div>
 
-              {/* Visual Side with Real Bride Photo */}
+              {/* Visual Side with Bride Photo */}
               <div className="md:col-span-5 w-full h-[280px] sm:h-[320px] md:h-full min-h-[250px] md:min-h-[280px] relative overflow-hidden rounded-lg border border-ivory/15 bg-charcoal">
-                <img
-                  src="/IMG_9056.JPEG"
-                  alt="Shreya Chaudhary real bride in red lehenga with royal emerald jewelry"
-                  width={500}
-                  height={650}
-                  className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2.5 text-center">
-                  <p className="text-[0.6rem] uppercase tracking-wider text-peach font-semibold">
-                    Real Bride Reveal
-                  </p>
-                </div>
+                <picture>
+                  <source srcSet="/IMG_9056.webp" type="image/webp" />
+                  <img
+                    src="/IMG_9056.JPEG"
+                    alt="Shreya Chaudhary bride in red lehenga with royal emerald jewelry"
+                    width={500}
+                    height={650}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 group-hover:scale-105"
+                  />
+                </picture>
               </div>
             </div>
           </div>

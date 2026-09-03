@@ -67,7 +67,7 @@ function WhyShreyaPage() {
               />
               <div className="p-4 bg-card border-t border-charcoal/10">
                 <p className="font-display text-sm font-semibold text-charcoal">
-                  Real Bride &amp; Shreya
+                  Bridal Artistry &amp; Shreya
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Flawless HD glow &amp; personalized suite attention

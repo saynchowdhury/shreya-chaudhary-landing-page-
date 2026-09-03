@@ -14,6 +14,11 @@ export function Hero() {
     // Elegant entrance on initial mount/load
     const timer = setTimeout(() => setIsLoaded(true), 60);
 
+    // Only bind parallax scroll listener on desktop to keep mobile main-thread at 0ms overhead
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      return () => clearTimeout(timer);
+    }
+
     // Subtle scroll-driven parallax & depth reaction
     let ticking = false;
     const handleScroll = () => {
@@ -84,19 +89,20 @@ export function Hero() {
             {/* Mobile Hero Image (First Screen / First Pixel) */}
             <div className="mt-5 w-full max-w-sm sm:max-w-md block lg:hidden animate-fade-up delay-150">
               <div className="relative mx-auto overflow-hidden rounded-2xl border-2 border-charcoal/15 bg-card shadow-xl">
-                <img
-                  src="/IMG_0398.JPEG"
-                  alt="Shreya Chaudhary real bride in royal gold bridal lehenga and jewelry"
-                  width={900}
-                  height={1200}
-                  loading="eager"
-                  fetchPriority="high"
-                  className="aspect-[4/5] w-full object-cover object-center"
-                />
+                <picture>
+                  <source srcSet="/IMG_0398-600.webp" type="image/webp" />
+                  <img
+                    src="/IMG_0398.JPEG"
+                    alt="Shreya Chaudhary bridal artistry in royal gold lehenga and jewelry"
+                    width={600}
+                    height={800}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="aspect-[4/5] w-full object-cover object-center"
+                  />
+                </picture>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/95 via-charcoal/50 to-transparent p-4 text-ivory text-left">
-                  <p className="text-[0.62rem] uppercase tracking-[0.2em] text-peach font-bold">
-                    Real Bride
-                  </p>
                   <p className="font-display text-base text-ivory font-bold">
                     Shreya Chaudhary Makeup
                   </p>
@@ -269,21 +275,25 @@ export function Hero() {
             <div className="relative mx-auto max-w-lg">
               {/* Luxury Framed Bridal Portrait */}
               <div className="relative overflow-hidden rounded-2xl border-2 border-charcoal/15 bg-card shadow-2xl transition-all duration-500 hover:shadow-3xl group">
-                <img
-                  src="/IMG_0398.JPEG"
-                  alt="Shreya Chaudhary real bride in royal gold bridal lehenga and jewelry"
-                  width={1200}
-                  height={1600}
-                  loading="eager"
-                  fetchPriority="high"
-                  className="aspect-[3/4] w-full object-cover object-center transition-transform duration-700 group-hover:scale-103"
-                />
+                <picture>
+                  <source srcSet="/IMG_0398.webp" type="image/webp" />
+                  <img
+                    src="/IMG_0398.JPEG"
+                    alt="Shreya Chaudhary bridal artistry in royal gold lehenga and jewelry"
+                    width={1200}
+                    height={1600}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="aspect-[3/4] w-full object-cover object-center transition-transform duration-700 group-hover:scale-103"
+                  />
+                </picture>
 
                 {/* Elegant Top-Left Corner Tag */}
                 <div className="absolute top-4 left-4 rounded-full bg-charcoal/80 backdrop-blur-md px-3.5 py-1.5 border border-ivory/20 shadow-md">
                   <p className="text-[0.62rem] uppercase tracking-[0.2em] text-peach font-bold flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                    Real Bride Lookbook
+                    Bridal Lookbook
                   </p>
                 </div>
               </div>

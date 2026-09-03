@@ -55,7 +55,7 @@ Commercial salon chains bid blindly on broad keywords like `bridal makeup` or `b
   [best bridal makeup artist meerut]
   "best bridal makeup artist meerut"
   "hd bridal makeup meerut"
-  "airbrush bridal makeup meerut"
+  "glass skin bridal makeup meerut"
   "bridal makeup artist at home meerut"
   "freelance bridal makeup artist meerut"
   "bridal makeup packages meerut"
@@ -72,7 +72,7 @@ Commercial salon chains bid blindly on broad keywords like `bridal makeup` or `b
   "freelance makeup artist in noida"
   "luxury bridal makeup noida"
   "doorstep bridal makeup noida"
-  "airbrush bridal makeup noida sector 50"
+  "glass skin bridal makeup noida"
   "freelance bridal makeup artist noida expressway"
   ```
 
@@ -98,7 +98,7 @@ Commercial salon chains bid blindly on broad keywords like `bridal makeup` or `b
   "bridal makeup artist at home ghaziabad"
   "bridal makeup in indirapuram"
   "freelance makeup artist in raj nagar extension"
-  "airbrush bridal makeup ghaziabad"
+  "glass skin bridal makeup ghaziabad"
   "bridal makeup artist vasundhara ghaziabad"
   ```
 
@@ -145,7 +145,7 @@ Commercial salon chains bid blindly on broad keywords like `bridal makeup` or `b
   "charlotte tilbury bridal makeup"
   "1 on 1 bridal makeup artist"
   "doorstep bridal makeup service"
-  "airbrush vs hd makeup price"
+  "hd bridal makeup price"
   "sweat proof bridal makeup for winter"
   ```
 
@@ -257,8 +257,8 @@ Using Google's **Dynamic Location Insertion (DLI)** `{LOCATION(City):Meerut}`, a
 | **1** | `Shreya Chaudhary Makeup` | 23 / 30 | Brand Anchor |
 | **2** | `Bridal Artist {LOCATION(City):Meerut}` | 27 / 30 | Dynamic Location Exact Match |
 | **3** | `Makeup in {LOCATION(City):Meerut}` | 24 / 30 | Dynamic Local Service Query |
-| **4** | `Luxury Bridal HD & Airbrush` | 28 / 30 | Core Service Specialization |
-| **5** | `Strictly 1 Bride Per Slot` | 26 / 30 | Anti-Conveyor-Belt UVP |
+| **4** | `Luxury Bridal HD Artistry` | 27 / 30 | Core Service Specialization |
+| **5** | `Dedicated 1-on-1 Artist` | 24 / 30 | Anti-Conveyor-Belt UVP |
 | **6** | `100% Genuine Luxury Vanity` | 26 / 30 | Product Authenticity Guarantee |
 | **7** | `MAC, NARS & Charlotte` | 22 / 30 | Premium Cosmetic Credibility |
 | **8** | `On-Location Suite Artistry` | 27 / 30 | Travel to Venue / Hotel |
@@ -276,7 +276,7 @@ Using Google's **Dynamic Location Insertion (DLI)** `{LOCATION(City):Meerut}`, a
 
 | # | Description Text | Chars | Angle |
 |---|---|---|---|
-| **1** | `Luxury HD & Airbrush bridal makeup in {LOCATION(City):Meerut}. Strictly 1 bride per slot. Check date.` | 89 / 90 | Local Scarcity & Quality Standard |
+| **1** | `Luxury HD bridal makeup in {LOCATION(City):Meerut}. Dedicated 1-on-1 artistry. Check date.` | 89 / 90 | Local Scarcity & Quality Standard |
 | **2** | `100% authentic cosmetics: NARS, MAC & Charlotte Tilbury. 16-hr camera-ready bridal glow.` | 89 / 90 | Product Authenticity & 4K Durability |
 | **3** | `Shreya travels directly to your venue or suite across NCR. Transparent package pricing.` | 88 / 90 | Travel Convenience & Honest Cost |
 | **4** | `Flawless glass skin & bespoke styling for your wedding day. Highly rated 5.0★ by brides.` | 89 / 90 | Aesthetic Outcome & Social Proof |
@@ -293,7 +293,7 @@ Configuring rich ad assets improves Google Ad Rank and lowers required CPC bids:
    - *Why Shreya Chaudhary (5 Standards):* `https://shreyachaudharymakeup.com/why-shreya`
    - *5.0★ Verified Reviews:* `https://shreyachaudharymakeup.com/testimonials`
 2. **Callout Assets:**
-   - `Strictly 1 Bride Per Slot`
+   - `Dedicated 1-on-1 Focus`
    - `100% Genuine Luxury Vanity`
    - `On-Location Suite Travel`
    - `Hair & Draping Included`
@@ -301,7 +301,7 @@ Configuring rich ad assets improves Google Ad Rank and lowers required CPC bids:
    - `16-Hour Sweat-Proof Lock`
 3. **Structured Snippet Assets:**
    - **Header:** *Services*
-   - **Values:** `Bridal HD Makeup, Airbrush Makeup, Engagement Makeup, Party Makeup, Saree & Lehenga Draping, Luxury Hairstyling`
+   - **Values:** `Bridal HD Makeup, Glass Skin Bridal, Engagement Makeup, Party Makeup, Saree & Lehenga Draping, Luxury Hairstyling`
 4. **Call / Message Asset:**
    - Phone: `+91 70037 81618`
 

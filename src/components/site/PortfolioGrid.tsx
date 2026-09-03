@@ -96,7 +96,7 @@ export function PortfolioGrid({ items, showFilters = true }: PortfolioGridProps)
                     alt={item.alt}
                     width={item.width}
                     height={item.height}
-                    loading={index < 3 ? "eager" : "lazy"}
+                    loading="lazy"
                     decoding="async"
                     className="h-full w-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-[1.04]"
                   />

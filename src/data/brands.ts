@@ -18,7 +18,7 @@ export const brands: Brand[] = [
   {
     name: "CHARLOTTE TILBURY",
     category: "Flawless Filter",
-    tagline: "Airbrush Flawless Finish & Magic Cream",
+    tagline: "Flawless Setting Powder & Magic Cream",
     logo: "/brands/charlottetilbury.jpg",
   },
   {

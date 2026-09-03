@@ -55,7 +55,7 @@ export const portfolio: PortfolioItem[] = [
     alt: "Editorial portrait of a client in an intricate antique gold and ruby embroidered lehenga with elegant diamond-ruby necklace and maang tikka",
     title: "Antique Gold & Ruby Editorial Engagement",
     category: "engagement",
-    technique: "Luminous Velvet HD Airbrush",
+    technique: "Luminous Velvet HD Complexion",
     width: 1200,
     height: 1600,
     lookDetails: {
@@ -118,7 +118,7 @@ export const portfolio: PortfolioItem[] = [
     alt: "Bride in ethereal pastel silver and rose-gold lehenga with open wavy hairstyle",
     title: "Twilight Rose Gold & Silver Cocktail Glam",
     category: "engagement",
-    technique: "Soft Glam Airbrush Finish",
+    technique: "Soft Glam HD Finish",
     width: 1200,
     height: 1600,
     lookDetails: {
@@ -474,7 +474,7 @@ export const portfolioCategories: {
 }[] = [
   {
     category: "bridal",
-    label: "Bridal HD Airbrush",
+    label: "Bridal HD Artistry",
     path: "/portfolio/bridal",
     blurb: "Bespoke wedding looks personalized to each bride's undertone, jewelry, and outfit.",
   },
