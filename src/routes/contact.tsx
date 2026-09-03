@@ -10,7 +10,7 @@ import { SocialLinks } from "@/components/site/SocialLinks";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { track } from "@/lib/analytics";
 
-const title = "Contact & Book on WhatsApp | Shreya Chaudhary Makeup, Meerut";
+const title = "Contact & Book on WhatsApp | Shreya Chaudhary Makeup";
 const description =
   "Book bridal, engagement or party makeup in Meerut with Shreya Chaudhary. Enquiries are handled directly on WhatsApp at +91 70037 81618.";
 

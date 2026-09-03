@@ -19,7 +19,7 @@ export const Route = createFileRoute("/looks/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData?.look) return {};
     const { look } = loaderData;
-    const title = `${look.title} | Bridal Makeup Meerut | Shreya Chaudhary`;
+    const title = `${look.title} | Shreya Chaudhary`;
     const description = `${look.alt}. Luxury real bride artistry by Shreya Chaudhary in ${look.meta?.location ?? locationLabel}, Meerut & Delhi NCR. 100% authentic vanity kit.`;
     const path = `/looks/${look.slug}`;
     const imageUrl = `${CANONICAL_DOMAIN}${look.src}`;

@@ -27,9 +27,13 @@ export const Route = createFileRoute("/blog/$slug")({
     const path = `/blog/${params.slug}`;
     const imageUrl = post.image ? `${CANONICAL_DOMAIN}${post.image}` : undefined;
 
+    const title =
+      post.seoTitle ||
+      (post.title.length <= 42 ? `${post.title} | Shreya Chaudhary` : post.title);
+
     return {
       meta: pageMeta({
-        title: `${post.title} | Shreya Chaudhary Makeup`,
+        title,
         description: post.excerpt,
         path,
         type: "article",

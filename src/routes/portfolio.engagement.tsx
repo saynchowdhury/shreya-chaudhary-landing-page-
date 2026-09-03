@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PortfolioCategoryPage } from "@/components/site/PortfolioCategoryPage";
 import { breadcrumbLd, canonical, jsonLd, pageMeta } from "@/lib/seo";
 
-const title = "Engagement Makeup Portfolio in Meerut | Shreya Chaudhary Makeup";
+const title = "Engagement Makeup Portfolio Meerut | Shreya Chaudhary";
 const description =
   "Engagement makeup work by Shreya Chaudhary in Meerut — softer, photograph-led looks with premium products and on-location hairstyling. Enquire on WhatsApp.";
 

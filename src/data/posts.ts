@@ -1,6 +1,7 @@
 export interface Post {
   slug: string;
   title: string;
+  seoTitle?: string;
   excerpt: string;
   /** ISO date, e.g. "2026-09-02". */
   date: string;
@@ -34,6 +35,7 @@ export const posts: Post[] = [
   {
     slug: "winter-bridal-makeup-trends-2026",
     title: "Winter Bridal Makeup Trends 2026: Glass Skin, Soft Glam & More",
+    seoTitle: "Winter Bridal Makeup Trends 2026 | Shreya Chaudhary",
     excerpt:
       "What real brides are asking for this winter wedding season. Moving away from heavy matte layers towards a lit-from-within glow that looks incredible in person and photographs flawlessly.",
     date: "2026-09-02",
@@ -85,8 +87,8 @@ export const posts: Post[] = [
       },
       {
         type: "callout",
-        title: "The 1-Bride-Per-Slot Standard",
-        text: "Commercial salons often book 5 to 10 brides concurrently, rushing through applications in conveyor-belt vanity rooms. At Shreya Chaudhary Makeup, I take strictly one bride per time slot, ensuring 3 full hours of undivided luxury attention.",
+        title: "Dedicated Personalized Bridal Focus",
+        text: "Commercial salons often book 5 to 10 brides concurrently, rushing through applications in conveyor-belt vanity rooms. At Shreya Chaudhary Makeup, you receive dedicated personalized attention, ensuring 3 full hours of unhurried luxury artistry in your private suite.",
       },
     ],
     relatedServices: ["bridal-makeup", "engagement-makeup"],
@@ -115,6 +117,7 @@ export const posts: Post[] = [
   {
     slug: "airbrush-vs-hd-bridal-makeup-winter-wedding",
     title: "Airbrush vs HD Bridal Makeup: Which is Best for Winter Weddings in Meerut & Delhi NCR?",
+    seoTitle: "Airbrush vs HD Bridal Makeup Guide | Shreya Chaudhary",
     excerpt:
       "An expert comparison of Airbrush and HD bridal makeup for North Indian winter weddings. Discover which technique prevents dry patches, withstands 16-hour pheras, and photographs best in 4K.",
     date: "2026-09-02",
@@ -203,6 +206,7 @@ export const posts: Post[] = [
   {
     slug: "pre-bridal-skincare-prep-timeline-winter",
     title: "The 3-Month Pre-Bridal Skincare & Prep Timeline for Winter Weddings (2026–2027)",
+    seoTitle: "Pre-Bridal Skincare Prep Timeline | Shreya Chaudhary",
     excerpt:
       "The definitive week-by-week bridal skincare prep countdown for winter weddings in Meerut & NCR. How to hydrate, prep your skin barrier, and schedule treatments so your makeup glides on like glass skin.",
     date: "2026-09-02",
@@ -291,6 +295,7 @@ export const posts: Post[] = [
   {
     slug: "how-to-choose-best-bridal-makeup-artist-meerut",
     title: "How to Choose the Best Bridal Makeup Artist in Meerut (2026 Guide)",
+    seoTitle: "Best Bridal Makeup Artist Meerut (2026) | Shreya Chaudhary",
     excerpt:
       "A practical guide from an insider on what you actually need to look for when booking your makeup artist for your big day in Meerut and Delhi NCR.",
     date: "2026-09-01",
@@ -404,6 +409,7 @@ export const posts: Post[] = [
   {
     slug: "complete-bridal-makeup-price-guide-2026",
     title: "Complete Bridal Makeup Price Guide: Meerut & Delhi NCR (2026)",
+    seoTitle: "Bridal Makeup Price Guide 2026 | Meerut & Delhi NCR",
     excerpt:
       "Transparent pricing is rare in the bridal industry. Here is exactly what you should expect to pay for premium bridal and engagement makeup services this season.",
     date: "2026-08-31",
@@ -457,7 +463,7 @@ export const posts: Post[] = [
       {
         question: "How do I secure my wedding date?",
         answer:
-          "Dates are reserved on a first-confirmed basis with an advance deposit. Due to our strictly 1-bride-per-slot policy, reservations fill up fast for the November–February season. Message Shreya on WhatsApp to verify date availability.",
+          "Dates are reserved on a first-confirmed basis with an advance deposit. Due to high seasonal demand across Meerut & Delhi NCR, reservations fill up fast for the November–February season. Message Shreya on WhatsApp to verify date availability.",
       },
     ],
   },

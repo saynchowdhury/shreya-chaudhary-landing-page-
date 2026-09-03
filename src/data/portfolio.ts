@@ -431,7 +431,7 @@ export const portfolio: PortfolioItem[] = [
     slug: "editorial-skin-texture-and-precision-eye-glam",
     src: "/IMG_0391.JPEG",
     alt: "Macro close-up of bridal makeup showcasing flawless skin texture, rose eye glam and kundan jewelry",
-    title: "Editorial Skin Texture & Precision Eye Glam",
+    title: "Editorial Skin & Precision Eye Glam",
     category: "bridal",
     technique: "Micro-Skin Match HD (Zero Flashback)",
     width: 1200,

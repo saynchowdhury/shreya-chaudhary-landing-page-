@@ -8,7 +8,7 @@ import { PricingTable } from "@/components/site/PricingTable";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { CTASection } from "@/components/site/CTASection";
 
-const title = "Makeup Packages & Prices in Meerut | Shreya Chaudhary Makeup";
+const title = "Makeup Packages & Prices Meerut | Shreya Chaudhary";
 const description =
   "Makeup packages in Meerut: bridal ₹15,000–₹18,000 (Luxury NARS kit), engagement ₹8,000–₹10,000, party ₹4,000 — with on-location hairstyling and travel included. Confirm your date on WhatsApp.";
 

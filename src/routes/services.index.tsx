@@ -10,7 +10,7 @@ import { AnswerBlock } from "@/components/site/AnswerBlock";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { CTASection } from "@/components/site/CTASection";
 
-const title = "Makeup Services & Prices in Meerut | Shreya Chaudhary Makeup";
+const title = "Makeup Services & Prices Meerut | Shreya Chaudhary";
 const description =
   "Bridal makeup ₹15,000–₹18,000, engagement makeup ₹8,000–₹10,000 and party makeup ₹4,000 in Meerut. Premium products and on-location hairstyling included. Check availability on WhatsApp.";
 

@@ -10,7 +10,7 @@ import { AnswerBlock } from "@/components/site/AnswerBlock";
 import { CTASection } from "@/components/site/CTASection";
 
 const city = "Muzaffarnagar";
-const title = "Best Bridal Makeup Artist in Muzaffarnagar | Shreya Chaudhary";
+const title = "Bridal Makeup Artist Muzaffarnagar | Shreya Chaudhary";
 const description =
   "Best bridal makeup artist in Muzaffarnagar. Shreya Chaudhary provides luxury HD bridal (₹15,000–₹18,000), engagement (₹8,000–₹10,000), and party makeup with on-location hairstyling in Muzaffarnagar, UP.";
 
