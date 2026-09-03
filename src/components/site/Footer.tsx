@@ -202,6 +202,22 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/faqs"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
+                  Frequently Asked Questions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/glossary"
+                  className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
+                >
+                  Bridal Makeup Glossary
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="transition-colors hover:text-peach inline-block hover:translate-x-0.5 transition-transform"
                 >

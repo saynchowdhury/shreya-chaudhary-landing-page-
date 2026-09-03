@@ -20,6 +20,10 @@ import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as WhyShreyaRouteImport } from './routes/why-shreya'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as FaqsIndexRouteImport } from './routes/faqs.index'
+import { Route as FaqsSlugRouteImport } from './routes/faqs.$slug'
+import { Route as GlossaryIndexRouteImport } from './routes/glossary.index'
+import { Route as GlossarySlugRouteImport } from './routes/glossary.$slug'
 import { Route as LocationsIndexRouteImport } from './routes/locations.index'
 import { Route as LocationsDelhiNcrRouteImport } from './routes/locations.delhi-ncr'
 import { Route as LocationsGhaziabadRouteImport } from './routes/locations.ghaziabad'
@@ -89,6 +93,26 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
   path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqsIndexRoute = FaqsIndexRouteImport.update({
+  id: '/faqs/',
+  path: '/faqs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqsSlugRoute = FaqsSlugRouteImport.update({
+  id: '/faqs/$slug',
+  path: '/faqs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossaryIndexRoute = GlossaryIndexRouteImport.update({
+  id: '/glossary/',
+  path: '/glossary/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossarySlugRoute = GlossarySlugRouteImport.update({
+  id: '/glossary/$slug',
+  path: '/glossary/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsIndexRoute = LocationsIndexRouteImport.update({
@@ -178,6 +202,8 @@ export interface FileRoutesByFullPath {
   '/testimonials': typeof TestimonialsRoute
   '/why-shreya': typeof WhyShreyaRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/faqs/$slug': typeof FaqsSlugRoute
+  '/glossary/$slug': typeof GlossarySlugRoute
   '/locations/delhi-ncr': typeof LocationsDelhiNcrRoute
   '/locations/ghaziabad': typeof LocationsGhaziabadRoute
   '/locations/greater-noida': typeof LocationsGreaterNoidaRoute
@@ -191,6 +217,8 @@ export interface FileRoutesByFullPath {
   '/portfolio/party': typeof PortfolioPartyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/faqs/': typeof FaqsIndexRoute
+  '/glossary/': typeof GlossaryIndexRoute
   '/locations/': typeof LocationsIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -206,6 +234,8 @@ export interface FileRoutesByTo {
   '/testimonials': typeof TestimonialsRoute
   '/why-shreya': typeof WhyShreyaRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/faqs/$slug': typeof FaqsSlugRoute
+  '/glossary/$slug': typeof GlossarySlugRoute
   '/locations/delhi-ncr': typeof LocationsDelhiNcrRoute
   '/locations/ghaziabad': typeof LocationsGhaziabadRoute
   '/locations/greater-noida': typeof LocationsGreaterNoidaRoute
@@ -219,6 +249,8 @@ export interface FileRoutesByTo {
   '/portfolio/party': typeof PortfolioPartyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/faqs': typeof FaqsIndexRoute
+  '/glossary': typeof GlossaryIndexRoute
   '/locations': typeof LocationsIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
   '/services': typeof ServicesIndexRoute
@@ -235,6 +267,8 @@ export interface FileRoutesById {
   '/testimonials': typeof TestimonialsRoute
   '/why-shreya': typeof WhyShreyaRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/faqs/$slug': typeof FaqsSlugRoute
+  '/glossary/$slug': typeof GlossarySlugRoute
   '/locations/delhi-ncr': typeof LocationsDelhiNcrRoute
   '/locations/ghaziabad': typeof LocationsGhaziabadRoute
   '/locations/greater-noida': typeof LocationsGreaterNoidaRoute
@@ -248,6 +282,8 @@ export interface FileRoutesById {
   '/portfolio/party': typeof PortfolioPartyRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/faqs/': typeof FaqsIndexRoute
+  '/glossary/': typeof GlossaryIndexRoute
   '/locations/': typeof LocationsIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
   '/services/': typeof ServicesIndexRoute
@@ -265,6 +301,8 @@ export interface FileRouteTypes {
     | '/testimonials'
     | '/why-shreya'
     | '/blog/$slug'
+    | '/faqs/$slug'
+    | '/glossary/$slug'
     | '/locations/delhi-ncr'
     | '/locations/ghaziabad'
     | '/locations/greater-noida'
@@ -278,6 +316,8 @@ export interface FileRouteTypes {
     | '/portfolio/party'
     | '/services/$slug'
     | '/blog/'
+    | '/faqs/'
+    | '/glossary/'
     | '/locations/'
     | '/portfolio/'
     | '/services/'
@@ -293,6 +333,8 @@ export interface FileRouteTypes {
     | '/testimonials'
     | '/why-shreya'
     | '/blog/$slug'
+    | '/faqs/$slug'
+    | '/glossary/$slug'
     | '/locations/delhi-ncr'
     | '/locations/ghaziabad'
     | '/locations/greater-noida'
@@ -306,6 +348,8 @@ export interface FileRouteTypes {
     | '/portfolio/party'
     | '/services/$slug'
     | '/blog'
+    | '/faqs'
+    | '/glossary'
     | '/locations'
     | '/portfolio'
     | '/services'
@@ -321,6 +365,8 @@ export interface FileRouteTypes {
     | '/testimonials'
     | '/why-shreya'
     | '/blog/$slug'
+    | '/faqs/$slug'
+    | '/glossary/$slug'
     | '/locations/delhi-ncr'
     | '/locations/ghaziabad'
     | '/locations/greater-noida'
@@ -334,6 +380,8 @@ export interface FileRouteTypes {
     | '/portfolio/party'
     | '/services/$slug'
     | '/blog/'
+    | '/faqs/'
+    | '/glossary/'
     | '/locations/'
     | '/portfolio/'
     | '/services/'
@@ -350,6 +398,8 @@ export interface RootRouteChildren {
   TestimonialsRoute: typeof TestimonialsRoute
   WhyShreyaRoute: typeof WhyShreyaRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  FaqsSlugRoute: typeof FaqsSlugRoute
+  GlossarySlugRoute: typeof GlossarySlugRoute
   LocationsDelhiNcrRoute: typeof LocationsDelhiNcrRoute
   LocationsGhaziabadRoute: typeof LocationsGhaziabadRoute
   LocationsGreaterNoidaRoute: typeof LocationsGreaterNoidaRoute
@@ -363,6 +413,8 @@ export interface RootRouteChildren {
   PortfolioPartyRoute: typeof PortfolioPartyRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  FaqsIndexRoute: typeof FaqsIndexRoute
+  GlossaryIndexRoute: typeof GlossaryIndexRoute
   LocationsIndexRoute: typeof LocationsIndexRoute
   PortfolioIndexRoute: typeof PortfolioIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -445,6 +497,34 @@ declare module '@tanstack/react-router' {
       path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faqs/': {
+      id: '/faqs/'
+      path: '/faqs'
+      fullPath: '/faqs/'
+      preLoaderRoute: typeof FaqsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faqs/$slug': {
+      id: '/faqs/$slug'
+      path: '/faqs/$slug'
+      fullPath: '/faqs/$slug'
+      preLoaderRoute: typeof FaqsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossary/': {
+      id: '/glossary/'
+      path: '/glossary'
+      fullPath: '/glossary/'
+      preLoaderRoute: typeof GlossaryIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossary/$slug': {
+      id: '/glossary/$slug'
+      path: '/glossary/$slug'
+      fullPath: '/glossary/$slug'
+      preLoaderRoute: typeof GlossarySlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations/': {
@@ -566,6 +646,8 @@ const rootRouteChildren: RootRouteChildren = {
   TestimonialsRoute: TestimonialsRoute,
   WhyShreyaRoute: WhyShreyaRoute,
   BlogSlugRoute: BlogSlugRoute,
+  FaqsSlugRoute: FaqsSlugRoute,
+  GlossarySlugRoute: GlossarySlugRoute,
   LocationsDelhiNcrRoute: LocationsDelhiNcrRoute,
   LocationsGhaziabadRoute: LocationsGhaziabadRoute,
   LocationsGreaterNoidaRoute: LocationsGreaterNoidaRoute,
@@ -579,6 +661,8 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioPartyRoute: PortfolioPartyRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  FaqsIndexRoute: FaqsIndexRoute,
+  GlossaryIndexRoute: GlossaryIndexRoute,
   LocationsIndexRoute: LocationsIndexRoute,
   PortfolioIndexRoute: PortfolioIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
