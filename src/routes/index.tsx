@@ -15,6 +15,7 @@ import { TestimonialList } from "@/components/site/Testimonials";
 import { SmartBookingInquirer } from "@/components/site/SmartBookingInquirer";
 import { FaqAccordion } from "@/components/site/FaqAccordion";
 import { AnswerBlock } from "@/components/site/AnswerBlock";
+import { SmartAeoSnippet } from "@/components/site/SmartAeoSnippet";
 import { MapPin, ArrowRight } from "lucide-react";
 import { locationsList } from "@/data/locations";
 import { posts } from "@/data/posts";
@@ -70,15 +71,8 @@ function Home() {
       {/* 2. BRANDS WE USE LOGO TICKER */}
       <BrandMarquee />
 
-      {/* 2.5 EXTRACTABLE CANONICAL DEFINITION BLOCK (AEO / Snippet Optimization) */}
-      <section className="py-12 px-6 border-b border-charcoal/10 bg-ivory">
-        <div className="max-w-5xl mx-auto">
-          <AnswerBlock
-            question="Who is the best bridal makeup artist in Meerut?"
-            answer="Shreya Chaudhary is rated the premier bridal makeup artist in Meerut, offering bespoke on-location bridal artistry across Meerut, Noida, Ghaziabad, and Delhi NCR. Bridal packages range from ₹15,000 to ₹18,000 using 100% authentic international cosmetics (NARS, MAC) with hair styling, draping, and lashes included."
-          />
-        </div>
-      </section>
+      {/* 2.5 EXTRACTABLE CANONICAL DEFINITION & REGIONAL SERVICE SNIPPET (AEO / Snippet / Multi-Location Optimization) */}
+      <SmartAeoSnippet />
 
       {/* 3. ABOUT SHREYA, EXPERIENCE & VISION */}
       <AboutVision />
@@ -138,7 +132,7 @@ function Home() {
       </Section>
 
       {/* 7.5 REGIONAL ON-LOCATION DESTINATIONS (INTERNAL LINKING CORRIDOR) */}
-      <Section tone="default" labelledBy="locations-heading">
+      <Section tone="ivory" labelledBy="locations-heading">
         <SectionHeading
           id="locations-heading"
           eyebrow="Regional Destinations"
@@ -147,9 +141,9 @@ function Home() {
         />
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {locationsList.map((loc) => (
-            <Link
+            <a
               key={loc.slug}
-              to={`/locations/${loc.slug}`}
+              href={`/locations/${loc.slug}`}
               className="group flex flex-col justify-between rounded-xl border border-charcoal/10 bg-ivory p-6 transition-all duration-300 hover:border-charcoal/30 hover:shadow-lg hover:-translate-y-1"
             >
               <div>
@@ -170,7 +164,7 @@ function Home() {
                 <span>Explore {loc.name} Packages</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
               </div>
-            </Link>
+            </a>
           ))}
         </div>
         <div className="mt-10 text-center">
@@ -198,8 +192,8 @@ function Home() {
           title="Expert Advice for the Modern Winter Bride"
           intro="Deep-dive beauty timelines, pricing transparency, and honest advice written with real bridal experience."
         />
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {posts.slice(0, 3).map((post) => (
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {posts.slice(0, 4).map((post) => (
             <article
               key={post.slug}
               className="group flex flex-col overflow-hidden rounded-2xl border border-charcoal/10 bg-ivory shadow-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
@@ -225,7 +219,7 @@ function Home() {
                     {post.date}
                   </time>
                   <h3 className="font-display mt-2 text-lg font-bold leading-snug text-charcoal group-hover:text-peach transition-colors">
-                    <Link to={`/blog/${post.slug}`}>
+                    <Link to="/blog/$slug" params={{ slug: post.slug }}>
                       {post.title}
                     </Link>
                   </h3>
@@ -235,7 +229,8 @@ function Home() {
                 </div>
                 <div className="mt-6 pt-4 border-t border-charcoal/10">
                   <Link
-                    to={`/blog/${post.slug}`}
+                    to="/blog/$slug"
+                    params={{ slug: post.slug }}
                     className="inline-flex items-center gap-1.5 text-[0.7rem] font-bold uppercase tracking-widest text-charcoal group-hover:text-peach transition-colors"
                   >
                     <span>Read Article</span>
@@ -256,7 +251,7 @@ function Home() {
         </div>
       </Section>
 
-      <Section tone="default" labelledBy="faq-heading">
+      <Section tone="ivory" labelledBy="faq-heading">
         <SectionHeading
           id="faq-heading"
           eyebrow="Frequently Asked Questions"

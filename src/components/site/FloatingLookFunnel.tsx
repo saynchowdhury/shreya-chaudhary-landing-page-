@@ -74,7 +74,7 @@ export function FloatingLookFunnel({ look }: FloatingLookFunnelProps) {
               {look.title}
             </h4>
             <p className="text-[0.68rem] text-muted-foreground mt-0.5">
-              Strictly 1 bride per slot · On-location artistry
+              Meerut &amp; Delhi NCR · On-location artistry
             </p>
           </div>
         </div>

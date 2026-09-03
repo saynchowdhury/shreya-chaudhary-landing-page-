@@ -37,7 +37,7 @@ export const locationsList: LocationCard[] = [
     highlights: [
       "Experienced with high-capacity wedding resorts & farmhouses",
       "Full HD bases formulated for outdoor wedding humidity & lighting",
-      "Strictly 1 bride per slot for calm, focused getting-ready",
+      "On-location wedding venue & suite service across Greater Noida",
     ],
   },
   {

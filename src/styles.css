@@ -244,6 +244,61 @@ html.lenis body {
   animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+@utility animate-fade-up {
+  animation: reveal-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@utility animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+@utility cta-sheen {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 25%;
+    height: 200%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.38),
+      transparent
+    );
+    transform: rotate(25deg);
+    animation: cta-sheen-sweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    pointer-events: none;
+  }
+}
+
+@utility delay-100 {
+  animation-delay: 100ms;
+}
+
+@utility delay-200 {
+  animation-delay: 200ms;
+}
+
+@utility delay-300 {
+  animation-delay: 300ms;
+}
+
+@utility delay-400 {
+  animation-delay: 400ms;
+}
+
+@utility delay-500 {
+  animation-delay: 500ms;
+}
+
 @utility animate-marquee {
   animation: marquee 32s linear infinite;
 }
@@ -260,6 +315,33 @@ html.lenis body {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes cta-sheen-sweep {
+  0% {
+    left: -60%;
+  }
+  20%, 100% {
+    left: 140%;
   }
 }
 

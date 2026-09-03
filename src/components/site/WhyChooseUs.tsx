@@ -38,22 +38,22 @@ export function WhyChooseUs() {
                 <div>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-peach/15 px-3 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wider text-peach">
                     <HeartHandshake className="h-3 w-3" />
-                    Dedicated 1-on-1 Personal Attention
+                    Dedicated Personalized Artistry
                   </span>
                   <h3 className="mt-3 font-display text-xl sm:text-2xl text-ivory font-medium leading-snug">
                     Zero salon rush. 100% focused suite artistry.
                   </h3>
                   <p className="mt-2.5 text-xs leading-relaxed text-ivory/75 font-light">
-                    Unlike commercial salons that rush multiple brides simultaneously, Shreya
-                    accepts <strong>strictly 1 bride per time slot</strong>. You receive calm,
-                    unhurried attention in your private suite.
+                    Unlike commercial salons that rush multiple appointments, Shreya delivers{" "}
+                    <strong>bespoke on-location artistry</strong>. You receive calm, unhurried
+                    attention in your private venue suite across Meerut &amp; Delhi NCR.
                   </p>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 border-t border-ivory/10 pt-3.5 text-xs">
                   <div>
-                    <p className="font-display text-base text-peach font-semibold">1 Bride</p>
-                    <p className="text-[0.62rem] text-ivory/60">Per Time Slot</p>
+                    <p className="font-display text-base text-peach font-semibold">Meerut &amp; NCR</p>
+                    <p className="text-[0.62rem] text-ivory/60">On-Location</p>
                   </div>
                   <div>
                     <p className="font-display text-base text-peach font-semibold">100%</p>

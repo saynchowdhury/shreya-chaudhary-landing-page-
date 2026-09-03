@@ -28,26 +28,29 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-md">
-      <div className="mx-auto flex h-18 md:h-20 w-full max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-10">
-        <Logo size={48} />
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/95 backdrop-blur-md transition-all">
+      <div className="mx-auto flex h-16 md:h-20 w-full max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10">
+        <Logo size={44} className="shrink-0 mr-4 xl:mr-8" />
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center lg:flex lg:gap-3 xl:gap-5 2xl:gap-6.5 shrink-0">
           {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{ className: "text-charcoal after:w-full font-bold" }}
-              className="relative text-[0.75rem] uppercase tracking-[0.16em] font-semibold text-charcoal/80 transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-blush after:transition-all after:duration-300 hover:text-charcoal hover:after:w-full"
+              className="relative whitespace-nowrap py-1 text-[0.66rem] xl:text-[0.72rem] 2xl:text-[0.75rem] uppercase tracking-[0.10em] xl:tracking-[0.13em] 2xl:tracking-[0.16em] font-semibold text-charcoal/80 transition-colors after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:w-0 after:bg-blush after:transition-all after:duration-300 hover:text-charcoal hover:after:w-full"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:block">
-          <WhatsAppButton source="header" className="px-5 py-2.5 text-[0.68rem]">
+        <div className="hidden shrink-0 ml-4 xl:ml-8 lg:block">
+          <WhatsAppButton
+            source="header"
+            className="px-4 py-2.5 text-[0.64rem] xl:px-5 xl:py-2.5 xl:text-[0.68rem] shadow-sm hover:shadow transition-all"
+          >
             Book on WhatsApp
           </WhatsAppButton>
         </div>
@@ -59,7 +62,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="flex h-10 w-10 items-center justify-center rounded-full text-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-colors lg:hidden"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-charcoal hover:bg-charcoal/5 active:bg-charcoal/10 transition-colors lg:hidden"
         >
           {open ? <X size={22} aria-hidden /> : <Menu size={22} aria-hidden />}
         </button>

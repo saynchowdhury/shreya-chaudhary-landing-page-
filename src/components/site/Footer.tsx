@@ -33,7 +33,7 @@ export function Footer() {
 
             <p className="text-sm leading-relaxed text-ivory/85 font-normal">
               Luxury personalized bridal, engagement, and party artistry with 100% authentic
-              international vanity kits. Strictly one bride per slot.
+              international vanity kits across Meerut &amp; Delhi NCR.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-ivory/90 pt-1">

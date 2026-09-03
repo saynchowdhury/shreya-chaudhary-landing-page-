@@ -45,7 +45,7 @@ export const posts: Post[] = [
       "Winter 2026 bridal trends have pivoted away from thick, heavy matte powders toward deeply hydrated 'glass skin' finishes.",
       "Soft glam with monochromatic copper, peach, and champagne tones replaces heavy, disconnected dark smokey eyes.",
       "High flash photography and 4K video require authentic international luxury foundations (NARS, Charlotte Tilbury) to prevent flashback and creasing.",
-      "Booking early is essential: North Indian winter wedding dates (Nov–Feb) peak months in advance with strictly 1 bride per slot.",
+      "Booking early is essential: North Indian winter wedding dates (Nov–Feb) across Meerut & Delhi NCR book out months in advance.",
     ],
     image: "/IMG_5032.JPG.jpeg",
     imageAlt:
@@ -108,7 +108,7 @@ export const posts: Post[] = [
       {
         question: "When should I book my winter 2026–2027 wedding date?",
         answer:
-          "Peak auspicious wedding dates in November, December, January, and February fill up 2 to 4 months in advance. Because Shreya Chaudhary accepts strictly one bride per slot, early booking via WhatsApp is recommended to lock in your date.",
+          "Peak auspicious wedding dates in November, December, January, and February fill up 2 to 4 months in advance across Meerut and Delhi NCR venues. Early booking via WhatsApp is recommended to lock in your date.",
       },
     ],
   },
@@ -329,11 +329,43 @@ export const posts: Post[] = [
       },
       {
         type: "heading",
-        text: "3. Insist on On-Location Suite Artistry",
+        text: "3. Insist on On-Location Suite Artistry (Zero Travel Surcharge)",
       },
       {
         type: "paragraph",
-        text: "Navigating Meerut traffic or Delhi NCR bypasses on your wedding evening while wearing a 15-kilogram lehenga and ornate kundan jewelry is exhausting and ruins your hair setting. Shreya Chaudhary travels directly to your venue or hotel dressing suite, allowing you to relax with your family until the moment you walk to the mandap.",
+        text: "Navigating Meerut traffic or Delhi NCR bypasses on your wedding evening while wearing a 15-kilogram lehenga and ornate kundan jewelry is exhausting and ruins your hair setting. Shreya Chaudhary travels directly to your venue or hotel dressing suite with on-location travel included, allowing you to relax with your family until the moment you walk to the mandap.",
+      },
+      {
+        type: "heading",
+        text: "4. Ask for Unedited 4K Phone Videos, Not Filtered Portraits",
+      },
+      {
+        type: "paragraph",
+        text: "In the era of Instagram FaceTune and heavy digital blur, any makeup can look acceptable under a heavy filter. The ultimate litmus test is raw 4K phone video under natural daylight and tungsten stage lighting. Real bridal skin should exhibit soft, natural skin texture — not an artificial plastic sheet.",
+      },
+      {
+        type: "heading",
+        text: "5. Clarify What 'All-Inclusive' Actually Means",
+      },
+      {
+        type: "paragraph",
+        text: "Many salons quote ₹10,000 upfront, but charge ₹2,500 extra for lashes, ₹1,500 for colored lenses, ₹3,000 for hair extensions, and ₹2,000 for dupatta draping on the wedding day. At Shreya Chaudhary Makeup, the published price (₹15,000 Forever 52 / ₹18,000 NARS Radiant) is 100% all-inclusive with zero surprise day-of add-ons.",
+      },
+      {
+        type: "heading",
+        text: "6. Check Skin Prep & Custom Undertone Matching",
+      },
+      {
+        type: "paragraph",
+        text: "A master bridal artist never applies a generic 'fair' foundation two shades lighter than your skin. Look for an artist who custom-mixes pigments according to your neutral, warm, or golden undertones, ensuring your neck, chest, and face match flawlessly in photographs.",
+      },
+      {
+        type: "heading",
+        text: "7. Lock Your Shubh Muhurat Date Early",
+      },
+      {
+        type: "paragraph",
+        text: "Because top bridal artists in Meerut and Delhi NCR have high seasonal demand, peak winter wedding dates (November, December, January, February) book out 3 to 6 months in advance. Once you confirm your venue, locking your makeup artist should be your very next step.",
       },
     ],
     relatedServices: ["bridal-makeup", "engagement-makeup", "party-makeup"],
@@ -343,14 +375,29 @@ export const posts: Post[] = [
     ],
     faqs: [
       {
-        question: "Does Shreya Chaudhary travel to venues outside Meerut?",
+        question: "How do I know if an artist's vanity kit is 100% authentic?",
         answer:
-          "Yes. Shreya provides on-location suite makeup across Noida, Greater Noida, Ghaziabad, Muzaffarnagar, Shamli, Delhi NCR, and destination wedding venues throughout North India.",
+          "Ask your artist during your consultation to see their working kit. Authentic luxury brands like NARS, Charlotte Tilbury, MAC, and Huda Beauty feature distinct packaging, batch codes, and formula textures. Shreya Chaudhary proudly opens her complete international vanity to every client.",
       },
       {
-        question: "Are hair styling and dupatta draping included in the package?",
+        question: "Which locations in Meerut and Delhi NCR are covered for on-location bridal makeup?",
         answer:
-          "Yes. Every signature bridal and engagement package includes complete luxury hair styling with floral/accessory placement, precision dupatta draping, and jewelry pinning.",
+          "Shreya Chaudhary provides full on-location bridal and occasion makeup services across all Meerut banquet halls and farmhouses (Roorkee Road, Bypass, Shastri Nagar), Noida (Sectors 15–150), Greater Noida, Ghaziabad (Indirapuram, Raj Nagar Extension), and Delhi NCR.",
+      },
+      {
+        question: "Does Shreya Chaudhary travel to venues outside Meerut?",
+        answer:
+          "Yes. Shreya provides on-location suite makeup across Noida, Greater Noida, Ghaziabad, Muzaffarnagar, Shamli, Delhi NCR, and destination wedding venues throughout North India with on-location travel included.",
+      },
+      {
+        question: "Are hair styling, lashes, and dupatta draping included in the package?",
+        answer:
+          "Yes. Every signature bridal and engagement package includes complete luxury hair styling with floral/accessory placement, precision dupatta draping, jewelry pinning, custom lashes, and zero-powered lenses with zero hidden surcharges.",
+      },
+      {
+        question: "What is the price difference between Forever 52 and NARS Radiant Bridal?",
+        answer:
+          "Forever 52 Bridal HD is ₹15,000, offering high coverage and longwear durability. NARS Radiant Luxury Bridal is ₹18,000, utilizing international prestige formulations (NARS, Charlotte Tilbury, Laura Mercier) for an ultra-weightless, lit-from-within glass skin luminosity.",
       },
     ],
   },

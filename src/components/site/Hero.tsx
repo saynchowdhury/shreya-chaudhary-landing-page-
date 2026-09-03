@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import { Download, ArrowUpRight } from "lucide-react";
 import { business, locationLabel } from "@/data/business";
@@ -6,6 +7,37 @@ import { track } from "@/lib/analytics";
 import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Hero() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    // Elegant entrance on initial mount/load
+    const timer = setTimeout(() => setIsLoaded(true), 60);
+
+    // Subtle scroll-driven parallax & depth reaction
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Compute subtle, smooth transform values based on scroll
+  const headlineParallax = Math.min(scrollY * 0.12, 45);
+  const subtitleParallax = Math.min(scrollY * 0.16, 60);
+  const headlineOpacity = Math.max(0.2, 1 - scrollY / 700);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#FAF6F0] via-[#FDFBF7] to-[#FAF6F0] px-5 pt-16 pb-8 sm:px-6 sm:pt-20 sm:pb-10 md:px-10 md:pt-24 md:pb-16 lg:pt-32 lg:pb-20 border-b border-charcoal/10">
       {/* Decorative luxury radial auras */}
@@ -16,16 +48,41 @@ export function Hero() {
         <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-14">
           {/* Main Editorial Content Column — centered on mobile, left on desktop */}
           <div className="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left">
-            {/* Main Luxury Headline */}
-            <h1 className="font-sans text-[2.4rem] leading-[1.08] tracking-tight text-charcoal sm:text-[3.4rem] md:text-[4rem] lg:text-[4.6rem] font-extrabold">
-              Best Bridal, Engagement & Party Makeup Artist in Meerut & Delhi NCR
-              <span className="block font-sans text-charcoal/80 font-medium tracking-normal text-[1.2rem] sm:text-[1.6rem] md:text-[2rem] lg:text-[2.2rem] mt-6 lg:mt-8 leading-snug">
+            {/* Main Luxury Headline — Subtle Animation upon Load and Scroll */}
+            <h1
+              style={{
+                transform: `translate3d(0, ${headlineParallax}px, 0)`,
+                opacity: headlineOpacity,
+                willChange: "transform, opacity",
+              }}
+              className="font-sans text-[2.4rem] leading-[1.08] tracking-tight text-charcoal sm:text-[3.4rem] md:text-[4rem] lg:text-[4.6rem] font-extrabold transition-transform duration-75 ease-out"
+            >
+              <span
+                className={`block transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  isLoaded
+                    ? "opacity-100 translate-y-0 filter-none"
+                    : "opacity-0 translate-y-4 blur-[2px]"
+                }`}
+              >
+                Best Bridal, Engagement &amp; Party Makeup Artist in Meerut &amp; Delhi NCR
+              </span>
+              <span
+                style={{
+                  transform: `translate3d(0, ${subtitleParallax - headlineParallax}px, 0)`,
+                  willChange: "transform",
+                }}
+                className={`block font-sans text-charcoal/80 font-medium tracking-normal text-[1.2rem] sm:text-[1.6rem] md:text-[2rem] lg:text-[2.2rem] mt-6 lg:mt-8 leading-snug transition-all duration-1000 delay-150 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  isLoaded
+                    ? "opacity-100 translate-y-0 filter-none"
+                    : "opacity-0 translate-y-4 blur-[2px]"
+                }`}
+              >
                 Luxury on-location HD artistry for your special moments.
               </span>
             </h1>
 
             {/* Mobile Hero Image (First Screen / First Pixel) */}
-            <div className="mt-5 w-full max-w-sm sm:max-w-md block lg:hidden">
+            <div className="mt-5 w-full max-w-sm sm:max-w-md block lg:hidden animate-fade-up delay-150">
               <div className="relative mx-auto overflow-hidden rounded-2xl border-2 border-charcoal/15 bg-card shadow-xl">
                 <img
                   src="/IMG_0398.JPEG"
@@ -48,7 +105,7 @@ export function Hero() {
             </div>
 
             {/* Verified Directory & Social Trust Badges (Google, Instagram, WedMeGood, JustDial) */}
-            <div className="mt-5 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 w-full max-w-sm sm:max-w-xl">
+            <div className="mt-5 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 w-full max-w-sm sm:max-w-xl animate-fade-up delay-200">
               {/* Google Verified 5.0 Star Badge */}
               <a
                 href={business.googleMyBusinessUrl}
@@ -136,52 +193,56 @@ export function Hero() {
             </div>
 
             {/* Punchy Value Proposition */}
-            <p className="mt-5 max-w-sm sm:max-w-2xl text-sm leading-relaxed text-charcoal/90 sm:text-base md:text-[1.12rem] font-normal">
-              Bespoke bridal &amp; occasion makeup by the best makeup artist near you in{" "}
-              <strong className="font-bold text-charcoal">{locationLabel} &amp; Delhi NCR</strong>.
-              <strong className="font-bold text-charcoal"> Strictly 1 bride per slot</strong> with{" "}
+            <p className="mt-5 max-w-sm sm:max-w-2xl text-sm leading-relaxed text-charcoal/90 sm:text-base md:text-[1.12rem] font-normal animate-fade-up delay-300">
+              Bespoke bridal &amp; occasion makeup by the premier makeup artist in{" "}
+              <strong className="font-bold text-charcoal">{locationLabel}, Meerut &amp; Delhi NCR</strong>.
+              Crafted with{" "}
               <strong className="font-bold text-charcoal">
                 authentic international vanity kits
               </strong>{" "}
-              — delivering a weightless, 4K camera-ready bridal look so you feel radiantly confident
-              all night.
+              — on-location artistry at your venue or suite, delivering a weightless, 4K camera-ready bridal look so you feel radiantly confident all night.
             </p>
 
-            {/* High-Converting Action Boxes Group */}
-            <div className="mt-6 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 w-full max-w-sm sm:max-w-2xl">
-              {/* Box 1: WhatsApp Consultation */}
-              <WhatsAppButton
-                source="hero_primary"
-                variant="green"
-                className="flex-1 rounded-full py-3.5 px-5 shadow-md hover:shadow-lg font-bold text-xs justify-center min-w-[200px]"
-              >
-                Free Consultation on WhatsApp
-              </WhatsAppButton>
+            {/* High-Converting Action Boxes Group with Clean Luxury Aesthetics */}
+            <div className="mt-7 flex flex-col items-center lg:items-start gap-3 w-full max-w-2xl animate-fade-up delay-400">
+              {/* Row 1: Primary WhatsApp Consultation & Lookbook */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-3.5 w-full">
+                {/* Box 1: Primary WhatsApp Consultation with Subtle Shimmer */}
+                <WhatsAppButton
+                  source="hero_primary"
+                  variant="green"
+                  className="cta-sheen rounded-full py-4 px-7 shadow-md hover:shadow-xl font-bold text-xs sm:text-[0.76rem] tracking-wider justify-center transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+                >
+                  Free Consultation on WhatsApp
+                </WhatsAppButton>
 
-              {/* Box 2: Lookbook Box Component */}
-              <Link
-                to="/portfolio"
-                className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-charcoal bg-charcoal text-ivory hover:bg-charcoal/85 px-5 py-3.5 text-[0.7rem] uppercase tracking-[0.14em] transition-all font-bold text-center shadow-xs hover:shadow-md active:scale-[0.98] min-w-[170px]"
-              >
-                <span>Explore Lookbook</span>
-              </Link>
+                {/* Box 2: Lookbook Box Component */}
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-charcoal bg-charcoal text-ivory hover:bg-charcoal/90 px-6 py-4 text-xs sm:text-[0.74rem] uppercase tracking-[0.14em] transition-all font-bold text-center shadow-xs hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+                >
+                  <span>Explore Lookbook</span>
+                </Link>
+              </div>
 
-              {/* Box 3: PDF Bridal Catalog Box Component */}
-              <a
-                href="/shreya-chaudhary-makeup-catalog.pdf"
-                download="Shreya-Chaudhary-Bridal-Catalog-2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track("brochure_download", { source: "hero_cta_button" })}
-                className="group flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/25 bg-card px-5 py-3.5 text-[0.7rem] uppercase tracking-[0.14em] text-charcoal transition-all hover:bg-charcoal hover:text-ivory font-bold text-center shadow-2xs hover:shadow-md active:scale-[0.98] min-w-[190px]"
-              >
-                <Download className="h-3.5 w-3.5 text-blush group-hover:text-peach transition-colors shrink-0 group-hover:translate-y-0.5" />
-                <span>Download Bridal Catalog (PDF)</span>
-              </a>
+              {/* Row 2: Clean, Elegant Download Catalog Button — centered naturally without awkward offsets */}
+              <div className="w-full flex justify-center lg:justify-start pt-0.5">
+                <a
+                  href="/shreya-chaudhary-makeup-catalog.pdf"
+                  download="Shreya-Chaudhary-Bridal-Catalog-2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("brochure_download", { source: "hero_cta_button" })}
+                  className="group inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/25 bg-card px-6 py-3.5 text-xs sm:text-[0.74rem] uppercase tracking-[0.12em] text-charcoal transition-all duration-300 hover:border-charcoal hover:bg-charcoal hover:text-ivory font-bold text-center shadow-2xs hover:shadow-md hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto"
+                >
+                  <Download className="h-3.5 w-3.5 text-blush group-hover:text-peach transition-colors shrink-0 group-hover:translate-y-0.5" />
+                  <span>Download Bridal Catalog (PDF)</span>
+                </a>
+              </div>
             </div>
 
             {/* Authentic Metrics Bar */}
-            <div className="mt-6 grid grid-cols-3 gap-4 sm:gap-6 border-t border-charcoal/15 pt-5 w-full max-w-sm sm:max-w-lg">
+            <div className="mt-7 grid grid-cols-3 gap-4 sm:gap-6 border-t border-charcoal/15 pt-5 w-full max-w-sm sm:max-w-lg animate-fade-up delay-500">
               <div>
                 <p className="font-display text-xl sm:text-3xl text-charcoal font-bold">5.0★</p>
                 <p className="mt-0.5 text-[0.62rem] sm:text-xs uppercase tracking-[0.14em] text-charcoal/70 font-bold">
@@ -204,10 +265,10 @@ export function Hero() {
           </div>
 
           {/* Desktop Right Column: High Fashion Framed Model & Floating Glassmorphism Badges */}
-          <div className="hidden lg:block lg:col-span-5">
+          <div className="hidden lg:block lg:col-span-5 animate-fade-up delay-200">
             <div className="relative mx-auto max-w-lg">
               {/* Luxury Framed Bridal Portrait */}
-              <div className="relative overflow-hidden rounded-2xl border-2 border-charcoal/15 bg-card shadow-2xl transition-all duration-500 hover:shadow-3xl">
+              <div className="relative overflow-hidden rounded-2xl border-2 border-charcoal/15 bg-card shadow-2xl transition-all duration-500 hover:shadow-3xl group">
                 <img
                   src="/IMG_0398.JPEG"
                   alt="Shreya Chaudhary real bride in royal gold bridal lehenga and jewelry"
@@ -215,30 +276,26 @@ export function Hero() {
                   height={1600}
                   loading="eager"
                   fetchPriority="high"
-                  className="aspect-[3/4] w-full object-cover object-center transition-transform duration-700 hover:scale-103"
+                  className="aspect-[3/4] w-full object-cover object-center transition-transform duration-700 group-hover:scale-103"
                 />
 
-                {/* Subtle Editorial Caption Overlay */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/95 via-charcoal/45 to-transparent p-6 text-ivory">
-                  <div>
-                    <p className="text-[0.65rem] uppercase tracking-[0.2em] text-peach font-bold">
-                      Real Bride
-                    </p>
-                    <p className="font-display text-xl text-ivory font-bold mt-0.5">
-                      Shreya Chaudhary Makeup
-                    </p>
-                  </div>
+                {/* Elegant Top-Left Corner Tag */}
+                <div className="absolute top-4 left-4 rounded-full bg-charcoal/80 backdrop-blur-md px-3.5 py-1.5 border border-ivory/20 shadow-md">
+                  <p className="text-[0.62rem] uppercase tracking-[0.2em] text-peach font-bold flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                    Real Bride Lookbook
+                  </p>
                 </div>
               </div>
 
-              {/* Floating Brochure Access Badge (Top Right) */}
+              {/* Floating Brochure Access Badge (Top Right) with Weightless Float Animation */}
               <a
                 href="/shreya-chaudhary-makeup-catalog.pdf"
                 download="Shreya-Chaudhary-Bridal-Catalog-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => track("brochure_download", { source: "hero_floating_badge" })}
-                className="group absolute -top-4 -right-4 rounded-xl bg-ivory/95 backdrop-blur-md border border-charcoal/15 p-3.5 shadow-xl transition-all hover:border-charcoal hover:scale-[1.03]"
+                className="group absolute -top-4 -right-4 rounded-xl bg-ivory/95 backdrop-blur-md border border-charcoal/15 p-3.5 shadow-xl transition-all hover:border-charcoal hover:scale-[1.03] animate-float-slow"
               >
                 <div className="flex items-center gap-2.5">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-peach/20 text-charcoal group-hover:bg-charcoal group-hover:text-ivory transition-colors">
@@ -256,12 +313,18 @@ export function Hero() {
                 </div>
               </a>
 
-              {/* Floating On-Location Badge (Bottom Left) */}
-              <div className="absolute -bottom-4 -left-4 rounded-xl bg-charcoal/95 backdrop-blur-md border border-ivory/20 p-3.5 shadow-xl text-ivory">
-                <p className="text-[0.65rem] uppercase tracking-[0.16em] text-peach font-bold">
-                  On-Location Artistry
-                </p>
-                <p className="text-[0.7rem] text-ivory/80 font-medium mt-0.5">
+              {/* Floating On-Location Badge (Bottom Left) with Weightless Reverse Float Animation */}
+              <div className="absolute -bottom-5 -left-5 rounded-xl bg-charcoal/95 backdrop-blur-md border border-ivory/20 p-4 shadow-xl text-ivory animate-float-reverse">
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  <p className="text-[0.65rem] uppercase tracking-[0.18em] text-peach font-bold">
+                    On-Location Artistry
+                  </p>
+                </div>
+                <p className="text-[0.72rem] text-ivory/85 font-medium mt-1">
                   Bespoke Bridal &amp; Occasion Makeup
                 </p>
               </div>

@@ -74,4 +74,6 @@ This website is a public luxury bridal artistry portfolio and booking inquiry pl
       }
     } catch {}
   }
+
+  return undefined;
 });

@@ -139,7 +139,7 @@ function WhyShreyaPage() {
                     <div className="flex items-start gap-2.5">
                       <CheckCircle2 className="h-5 w-5 text-emerald-600 shrink-0 mt-0.5" />
                       <span>
-                        <strong>Strictly 1 Bride per slot:</strong> 100% undivided focus from skin
+                        <strong>Dedicated Personal Artistry:</strong> Attentive personal focus from skin
                         prep to final dupatta draping.
                       </span>
                     </div>

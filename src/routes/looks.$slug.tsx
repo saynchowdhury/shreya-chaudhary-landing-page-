@@ -20,7 +20,7 @@ export const Route = createFileRoute("/looks/$slug")({
     if (!loaderData?.look) return {};
     const { look } = loaderData;
     const title = `${look.title} | Bridal Makeup Meerut | Shreya Chaudhary`;
-    const description = `${look.alt}. Luxury real bride artistry by Shreya Chaudhary in ${look.meta?.location ?? locationLabel}. 100% authentic vanity kit, strictly 1 bride per slot.`;
+    const description = `${look.alt}. Luxury real bride artistry by Shreya Chaudhary in ${look.meta?.location ?? locationLabel}, Meerut & Delhi NCR. 100% authentic vanity kit.`;
     const path = `/looks/${look.slug}`;
     const imageUrl = `${CANONICAL_DOMAIN}${look.src}`;
 
@@ -247,7 +247,7 @@ function LookShowcasePage() {
                   ))}
                   <li className="flex items-center gap-2">
                     <Check className="h-3.5 w-3.5 text-emerald-600 shrink-0" />
-                    <span>Strictly 1 bride per slot (zero conveyor-belt rush)</span>
+                    <span>On-location venue service across Meerut &amp; Delhi NCR</span>
                   </li>
                 </ul>
 

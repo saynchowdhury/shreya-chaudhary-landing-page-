@@ -82,6 +82,62 @@ export const Route = createFileRoute("/blog/$slug")({
               }),
             ]
           : []),
+        ...(post.slug === "how-to-choose-best-bridal-makeup-artist-meerut"
+          ? [
+              jsonLd({
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                name: post.title,
+                description: post.excerpt,
+                image: imageUrl,
+                totalTime: "PT5M",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    name: "1. Demand Transparency in Product Vanity",
+                    text: "Verify authentic international cosmetics like NARS, Charlotte Tilbury, and MAC, and beware of unbranded parlour dilutions.",
+                    url: `${CANONICAL_DOMAIN}${path}#step-1`,
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "2. Beware the Conveyor-Belt Salon Trap",
+                    text: "Ensure attentive personal focus with the lead artist doing the complete makeup from skin prep to final dupatta pin in Meerut & Delhi NCR.",
+                    url: `${CANONICAL_DOMAIN}${path}#step-2`,
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "3. Insist on On-Location Suite Artistry",
+                    text: "Ensure the artist travels directly to your venue or hotel suite with zero travel surcharge, eliminating wedding-day traffic stress.",
+                    url: `${CANONICAL_DOMAIN}${path}#step-3`,
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "4. Ask for Unedited 4K Phone Videos",
+                    text: "Review raw 4K videos in natural daylight rather than filtered Instagram portraits with artificial blur.",
+                    url: `${CANONICAL_DOMAIN}${path}#step-4`,
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "5. Clarify All-Inclusive Package Terms",
+                    text: "Confirm that hair styling, floral setting, draping, lashes, and lenses are included with zero surprise day-of charges.",
+                    url: `${CANONICAL_DOMAIN}${path}#step-5`,
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "6. Check Undertone Customization",
+                    text: "Ensure the artist custom-mixes pigments to match your natural undertone rather than applying an artificial fair whitewash.",
+                    url: `${CANONICAL_DOMAIN}${path}#step-6`,
+                  },
+                  {
+                    "@type": "HowToStep",
+                    name: "7. Lock Your Auspicious Date Early",
+                    text: "Reserve your date 3 to 6 months in advance with an advance deposit to secure your wedding day artist in Meerut.",
+                    url: `${CANONICAL_DOMAIN}${path}#step-7`,
+                  },
+                ],
+              }),
+            ]
+          : []),
       ],
     };
   },

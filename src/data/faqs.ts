@@ -10,7 +10,7 @@ export const homeFaqs: Faq[] = [
   {
     question: "How much does bridal makeup cost in Meerut?",
     answer:
-      "Bridal makeup with Shreya Chaudhary Makeup is ₹15,000 for Forever 52 Bridal and ₹18,000 for NARS Radiant Bridal. Both packages are completed with on-location hair styling, draping, custom lashes, and zero-powered lens. Travel expenses are excluded and calculated on actuals.",
+      "Bridal makeup with Shreya Chaudhary Makeup is ₹15,000 for Forever 52 Bridal and ₹18,000 for NARS Radiant Bridal. Both packages are completed with on-location hair styling, draping, custom lashes, zero-powered lens, and on-location travel included.",
   },
   {
     question: "What is included in engagement makeup?",
@@ -35,7 +35,7 @@ export const homeFaqs: Faq[] = [
   {
     question: "Who is the best bridal makeup artist in Meerut?",
     answer:
-      "With a verified 5.0 Google rating and exclusively using authentic international kits like NARS, MAC, and Huda Beauty, Shreya Chaudhary is rated as the premier bridal makeup artist in Meerut and Delhi NCR. She strictly takes 1 bride per slot to ensure dedicated, un-rushed perfection.",
+      "With a verified 5.0 Google rating and exclusively using authentic international kits like NARS, MAC, and Huda Beauty, Shreya Chaudhary is rated as the premier bridal makeup artist in Meerut and Delhi NCR, providing personalized on-location artistry for your special day.",
   },
   {
     question: "What are the bridal makeup trends for winter 2026?",

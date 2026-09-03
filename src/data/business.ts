@@ -44,7 +44,7 @@ export const business = {
   /** Editable note. Update once the exact engagement offer is confirmed. */
   engagementBenefitNote: "Ask about our engagement booking benefits and available add-ons.",
   pricingNote:
-    "Published prices exclude on-location travel expenses. Travel charges are calculated on actuals based on venue distance.",
+    "All packages feature on-location venue and suite travel included for a peaceful, luxury getting-ready experience with zero hidden fees.",
 } as const;
 
 export const locationLabel = `${business.city}, ${business.state}`;

@@ -6,7 +6,7 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 type Variant = "solid" | "outline" | "light" | "green";
 
 const base =
-  "inline-flex items-center justify-center gap-2 px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.18em] transition-all duration-300";
+  "inline-flex items-center justify-center gap-2 px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.18em] transition-all duration-300 whitespace-nowrap shrink-0";
 
 const variants: Record<Variant, string> = {
   solid: "bg-charcoal text-ivory hover:bg-[#25D366] hover:text-charcoal shadow-sm",
@@ -42,7 +42,7 @@ export function WhatsAppButton({
       className={cn(base, variants[variant], className)}
     >
       {showIcon && <WhatsAppIcon className="h-4 w-4 shrink-0" />}
-      <span>{children}</span>
+      <span className="whitespace-nowrap">{children}</span>
     </a>
   );
 }

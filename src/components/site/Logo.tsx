@@ -18,7 +18,7 @@ export function Logo({
   return (
     <Link
       to="/"
-      className={cn("group inline-flex items-center gap-3 py-1", className)}
+      className={cn("group inline-flex items-center gap-3 py-1 shrink-0", className)}
       aria-label={`${business.name} — home`}
     >
       <img
@@ -31,10 +31,10 @@ export function Logo({
         decoding="async"
       />
       {withWordmark ? (
-        <div className="flex items-center text-left">
+        <div className="flex items-center text-left whitespace-nowrap">
           <span
             className={cn(
-              "font-display text-[1.18rem] sm:text-[1.32rem] leading-none tracking-[-0.01em] font-semibold",
+              "font-display text-[1.15rem] sm:text-[1.28rem] leading-none tracking-[-0.01em] font-semibold whitespace-nowrap",
               tone === "light" ? "text-ivory" : "text-charcoal",
             )}
           >

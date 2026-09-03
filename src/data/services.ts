@@ -39,19 +39,19 @@ export const services: Service[] = [
       "Hair styling & floral/veil setting on location",
       "Dupatta & jewelry draping included",
       "Zero-powered lens included",
-      "Travel expenses excluded (calculated on venue distance)",
+      "On-location venue & suite travel included",
     ],
     whatsappMessage:
       "Hi Shreya, I found you through your website and I'm interested in bridal makeup (Forever 52 / NARS Radiant). I'd like to check availability for my wedding date.",
     answer: {
       question: "How much does bridal makeup cost in Meerut?",
       answer:
-        "Shreya Chaudhary Makeup offers Forever 52 Bridal Makeup at ₹15,000 and NARS Radiant Bridal Makeup at ₹18,000. Packages are completed with hairstyling, draping, lash styling, and zero-powered lens. Travel expenses are excluded and calculated on actuals.",
+        "Shreya Chaudhary Makeup offers Forever 52 Bridal Makeup at ₹15,000 and NARS Radiant Bridal Makeup at ₹18,000. Packages are completed with on-location hair styling, draping, lash styling, zero-powered lens, and on-location travel included.",
     },
     seo: {
       title: "Best Bridal Makeup in Meerut (₹15K–₹18K) | Shreya Chaudhary",
       description:
-        "Bridal makeup in Meerut & Delhi NCR by Shreya Chaudhary Makeup: Forever 52 Bridal (₹15,000) & NARS Radiant Bridal (₹18,000). Completed with hairstyling, draping, lash, and zero-powered lens. Travel excluded.",
+        "Bridal makeup in Meerut & Delhi NCR by Shreya Chaudhary Makeup: Forever 52 Bridal (₹15,000) & NARS Radiant Bridal (₹18,000). Completed with hairstyling, draping, lash, and zero-powered lens. On-location travel included.",
     },
   },
   {
@@ -140,8 +140,8 @@ export const whyShreya = [
     body: "Bridal, engagement and party makeup are approached differently — the outfit, venue light and photography all shape the result.",
   },
   {
-    title: "Travel available",
-    body: "Travel is available for bridal bookings. Share your venue and date on WhatsApp and it can be confirmed for you.",
+    title: "On-location travel included",
+    body: "Shreya travels directly to your venue, bridal suite, or hotel room across Meerut, Noida, Ghaziabad, and Delhi NCR with travel included.",
   },
 ];
 
